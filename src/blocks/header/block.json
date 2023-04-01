@@ -1,0 +1,48 @@
+{
+	"$schema": "https://json.schemastore.org/block.json",
+	"apiVersion": 2,
+	"title": "Article Gen Header",
+	"name": "wrc/header",
+	"category": "formatting",
+	"attributes": {
+		"title": {
+			"type": "string",
+			"default": "Article Generator Text Header"
+		},
+		"description": {
+			"type": "string",
+			"default": ""
+		},
+		"bgColor": {
+			"type": "string",
+			"default": "#f5f5f5"
+		},
+		"padding": {
+			"type": "object",
+			"default": {
+				"top": "10px",
+				"left": "30px",
+				"right": "30px",
+				"bottom": "10px"
+			}
+		}
+	},
+	"example": {
+		"attributes": {
+			"title": "Article Generator Text Header",
+			"description": "Article Generator Description",
+			"bgColor": "#f5f5f5",
+			"padding": {
+				"top": "10px",
+				"left": "30px",
+				"right": "30px",
+				"bottom": "10px"
+			}
+		}
+	},
+	"supports": {
+		"html": false
+	},
+	"editorScript": "file:./index.js",
+	"style": "file:./style-index.css"
+}

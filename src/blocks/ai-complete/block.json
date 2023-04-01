@@ -1,0 +1,48 @@
+{
+	"$schema": "https://json.schemastore.org/block.json",
+	"apiVersion": 2,
+	"title": "GPT Create Text",
+	"name": "ag/create-text",
+	"category": "formatting",
+	"attributes": {
+		"prompt": {
+			"type": "string",
+			"default": "Article Generator Text"
+		},
+		"context": {
+			"type": "string",
+			"default": ""
+		},
+		"bgColor": {
+			"type": "string",
+			"default": "#ffffff"
+		},
+		"padding": {
+			"type": "object",
+			"default": {
+				"top": "10px",
+				"left": "30px",
+				"right": "30px",
+				"bottom": "10px"
+			}
+		}
+	},
+	"example": {
+		"attributes": {
+			"prompt": "Health and wellness",
+			"context": "The COVID-19 pandemic has brought many challenges to people's physical and mental health. Many are looking for ways to stay healthy and reduce stress during this difficult time. As a result, there is a growing demand for health and wellness content.",
+			"bgColor": "#ffffff",
+			"padding": {
+				"top": "10px",
+				"left": "30px",
+				"right": "30px",
+				"bottom": "10px"
+			}
+		}
+	},
+	"supports": {
+		"html": false
+	},
+	"editorScript": "file:./index.js",
+	"style": "file:./style-index.css"
+}

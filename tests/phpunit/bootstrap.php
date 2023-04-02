@@ -33,7 +33,7 @@ require_once "{$_tests_dir}/includes/functions.php";
  */
 function _manually_load_plugin(): void {
 	_manually_load_required_plugins();
-	require_once dirname( dirname( dirname( __FILE__ ) ) ) . '/job-place.php';
+	require_once dirname( dirname( dirname( __FILE__ ) ) ) . '/article-gen.php';
 }
 
 /**
@@ -70,7 +70,7 @@ tests_add_filter( 'muplugins_loaded', '_manually_load_plugin' );
 function install_plugin_databases(): void {
 	_manually_load_plugin();
 
-	$installer = new \ArticleGen\JobPlace\Setup\Installer();
+	$installer = new \ArticleGen\CBPlugin\Setup\Installer();
 	$installer->run();
 }
 

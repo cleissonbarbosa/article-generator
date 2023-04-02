@@ -1,12 +1,11 @@
 import { __ } from '@wordpress/i18n';
 import Layout from "../../components/layout/Layout";
 import PageHeading from '../../components/layout/PageHeading';
-import SettingSubmit from '../../components/settings/SettingSubmit';
 import { useSelect } from '@wordpress/data';
 import settingsStore from '../../data/settings';
-import { ISetting, ISettings } from '../../interfaces';
-import SettingsOpenAiKeyForm from '../../components/settings/SettingsForm';
-import SettingsOpenAiKey2Form from '../../components/settings/SettingsOpenAiKey2Form';
+import { ISettings } from '../../interfaces';
+import SettingsForm from '../../components/settings/SettingsForm';
+import SettingSubmit from '../../components/settings/SettingSubmit';
 
 const settings = () => {
 
@@ -22,14 +21,24 @@ const settings = () => {
         (select) => select(settingsStore).getSettings(),
         []
     );
+
+    /**
+     * Get Right Side Content - Create Context form data.
+     */
+    const pageRightSideContent = (
+        <div className="mt-7 fixed invisible md:visible md:top-28 right-10 z-50">
+            <SettingSubmit />
+        </div>
+    );
     
     return (
         <Layout
             title={pageTitleContent}
             slug="settings"
             hasRightSideContent={true}
+            rightSideContent={pageRightSideContent}
         >
-            <SettingsOpenAiKeyForm settings={settings} />
+            <SettingsForm settings={settings} />
         </Layout>
     );
 }

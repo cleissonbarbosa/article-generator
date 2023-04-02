@@ -1,6 +1,6 @@
 <?php
 
-namespace ArticleGen\JobPlace\Common;
+namespace ArticleGen\CBPlugin\Common;
 
 /**
  * Manage all key strings.
@@ -10,40 +10,40 @@ namespace ArticleGen\JobPlace\Common;
 class Keys {
 
     /**
-     * Job place installed option key.
+     * Context place installed option key.
      *
      * @var string
      *
      * @since 0.3.0
      */
-    const JOB_PLACE_INSTALLED = 'article_gen_installed';
+    const ARTICLE_GEN_INSTALLED = 'article_gen_installed';
 
     /**
-     * Job place version key.
+     * Context place version key.
      *
      * @var string
      *
      * @since 0.3.0
      */
-    const JOB_PLACE_VERSION = 'article_gen_version';
+    const ARTICLE_GEN_VERSION = 'article_gen_version';
 
     /**
-     * Job type seeder ran key.
+     * Context type seeder ran key.
      *
      * @var string
      *
      * @since 0.5.0
      */
-    const JOB_TYPE_SEEDER_RAN = 'article_gen_job_type_seeder_ran';
+    const CONTEXT_TYPE_SEEDER_RAN = 'article_gen_context_type_seeder_ran';
 
     /**
-     * Job seeder ran key.
+     * Context seeder ran key.
      *
      * @var string
      *
      * @since 0.3.0
      */
-    const JOB_SEEDER_RAN = 'article_gen_job_seeder_ran';
+    const CONTEXT_SEEDER_RAN = 'article_gen_context_seeder_ran';
 
      /**
      * Setting seeder ran key.

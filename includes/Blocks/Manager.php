@@ -1,6 +1,6 @@
 <?php
 
-namespace ArticleGen\JobPlace\Blocks;
+namespace ArticleGen\CBPlugin\Blocks;
 
 /**
  * Block Manager class.
@@ -52,15 +52,14 @@ class Manager {
      */
     protected function register_block_metas(): void {
         $blocks = [
-            'header/',
 			'ai-complete/',
 			'ai-gen-image'
         ];
 
         foreach ( $blocks as $block ) {
-            $block_folder    = JOB_PLACE_PATH . '/build/blocks/' . $block;
+            $block_folder    = ARTICLE_GEN_PATH . '/build/blocks/' . $block;
             $block_options   = [];
-            $markup_file_path = JOB_PLACE_TEMPLATE_PATH . '/blocks/' . $block . 'markup.php';
+            $markup_file_path = ARTICLE_GEN_TEMPLATE_PATH . '/blocks/' . $block . 'markup.php';
 
             if ( file_exists( $markup_file_path ) ) {
                 $block_options['render_callback'] = function( $attributes, $content, $block ) use ( $markup_file_path ) {

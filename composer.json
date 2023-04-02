@@ -29,8 +29,8 @@
     },
     "autoload": {
         "psr-4": {
-            "ArticleGen\\JobPlace\\": "includes/",
-            "ArticleGen\\JobPlace\\Tests\\": "tests/phpunit/"
+            "ArticleGen\\CBPlugin\\": "includes/",
+            "ArticleGen\\CBPlugin\\Tests\\": "tests/phpunit/"
         }
     },
     "scripts": {

@@ -1,6 +1,6 @@
 <?php
 
-namespace ArticleGen\JobPlace\Traits;
+namespace ArticleGen\CBPlugin\Traits;
 
 /**
  * Queryable trait.

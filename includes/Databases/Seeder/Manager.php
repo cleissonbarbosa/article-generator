@@ -1,6 +1,6 @@
 <?php
 
-namespace ArticleGen\JobPlace\Databases\Seeder;
+namespace ArticleGen\CBPlugin\Databases\Seeder;
 
 /**
  * Database Seeder class.
@@ -19,9 +19,9 @@ class Manager {
      */
     public function run() {
         $seeder_classes = [
-            \ArticleGen\JobPlace\Databases\Seeder\JobTypeSeeder::class,
-            \ArticleGen\JobPlace\Databases\Seeder\JobsSeeder::class,
-            \ArticleGen\JobPlace\Databases\Seeder\SettingsSeeder::class,
+            \ArticleGen\CBPlugin\Databases\Seeder\ContextTypeSeeder::class,
+            \ArticleGen\CBPlugin\Databases\Seeder\ContextsSeeder::class,
+            \ArticleGen\CBPlugin\Databases\Seeder\SettingsSeeder::class,
         ];
 
         foreach ( $seeder_classes as $seeder_class ) {

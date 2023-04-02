@@ -1,6 +1,6 @@
 <?php
 
-namespace ArticleGen\JobPlace\Admin;
+namespace ArticleGen\CBPlugin\Admin;
 
 /**
  * Admin Menu class.
@@ -28,16 +28,16 @@ class Menu {
     public function init_menu() {
         global $submenu;
 
-        $slug          = JOB_PLACE_SLUG;
+        $slug          = ARTICLE_GEN_SLUG;
         $menu_position = 50;
         $capability    = 'manage_options';
-        $logo_icon     = JOB_PLACE_ASSETS . '/images/article-generator-logo.png';
+        $logo_icon     = ARTICLE_GEN_ASSETS . '/images/article-generator-logo.png';
 
         add_menu_page( esc_attr__( 'Article Generator', 'article-gen' ), esc_attr__( 'Article Generator', 'article-gen' ), $capability, $slug, [ $this, 'plugin_page' ], $logo_icon, $menu_position );
 
         if ( current_user_can( $capability ) ) {
             $submenu[ $slug ][] = [ esc_attr__( 'Home', 'article-gen' ), $capability, 'admin.php?page=' . $slug . '#/' ]; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
-            $submenu[ $slug ][] = [ esc_attr__( 'Jobs', 'article-gen' ), $capability, 'admin.php?page=' . $slug . '#/jobs' ]; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
+            $submenu[ $slug ][] = [ esc_attr__( 'Contexts', 'article-gen' ), $capability, 'admin.php?page=' . $slug . '#/contexts' ]; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
             $submenu[ $slug ][] = [ esc_attr__( 'Settings', 'article-gen' ), $capability, 'admin.php?page=' . $slug . '#/settings' ]; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
         }
     }
@@ -50,6 +50,6 @@ class Menu {
      * @return void
      */
     public function plugin_page() {
-        require_once JOB_PLACE_TEMPLATE_PATH . '/app.php';
+        require_once ARTICLE_GEN_TEMPLATE_PATH . '/app.php';
     }
 }

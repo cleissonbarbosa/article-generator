@@ -1,9 +1,9 @@
 <?php
 
-namespace ArticleGen\JobPlace\Abstracts;
+namespace ArticleGen\CBPlugin\Abstracts;
 
-use ArticleGen\JobPlace\Traits\InputSanitizer;
-use ArticleGen\JobPlace\Traits\Queryable;
+use ArticleGen\CBPlugin\Traits\InputSanitizer;
+use ArticleGen\CBPlugin\Traits\Queryable;
 
 /**
  * Base model class.

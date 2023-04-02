@@ -33,103 +33,103 @@ msgstr ""
 
 #: includes/Admin/Menu.php:40
 #: build/index.js:1
-msgid "Jobs"
+msgid "Contexts"
 msgstr ""
 
-#: includes/Jobs/Manager.php:117
-msgid "Failed to create job."
+#: includes/Contexts/Manager.php:117
+msgid "Failed to create context."
 msgstr ""
 
-#: includes/Jobs/Manager.php:170
-msgid "Failed to update job."
+#: includes/Contexts/Manager.php:170
+msgid "Failed to update context."
 msgstr ""
 
-#: includes/Jobs/Manager.php:187
-msgid "Failed to update the job."
+#: includes/Contexts/Manager.php:187
+msgid "Failed to update the context."
 msgstr ""
 
-#: includes/REST/JobsController.php:56
+#: includes/REST/ContextsController.php:56
 msgid "Post IDs which will be deleted."
 msgstr ""
 
-#: includes/REST/JobsController.php:142
-msgid "Job not found. May be job has been deleted or you don't have access to that."
+#: includes/REST/ContextsController.php:142
+msgid "Context not found. May be context has been deleted or you don't have access to that."
 msgstr ""
 
-#: includes/REST/JobsController.php:164
+#: includes/REST/ContextsController.php:164
 msgid "Cannot create existing email template."
 msgstr ""
 
-#: includes/REST/JobsController.php:212
-msgid "Invalid Job ID."
+#: includes/REST/ContextsController.php:212
+msgid "Invalid Context ID."
 msgstr ""
 
-#: includes/REST/JobsController.php:259
-msgid "No job ids found."
+#: includes/REST/ContextsController.php:259
+msgid "No context ids found."
 msgstr ""
 
-#: includes/REST/JobsController.php:265
-msgid "Jobs deleted successfully."
+#: includes/REST/ContextsController.php:265
+msgid "Contexts deleted successfully."
 msgstr ""
 
-#: includes/REST/JobsController.php:275
-msgid "No job deleted. Job has already been deleted. Please try again."
+#: includes/REST/ContextsController.php:275
+msgid "No context deleted. Context has already been deleted. Please try again."
 msgstr ""
 
-#: includes/REST/JobsController.php:296
-msgid "ID of the job"
+#: includes/REST/ContextsController.php:296
+msgid "ID of the context"
 msgstr ""
 
-#: includes/REST/JobsController.php:302
+#: includes/REST/ContextsController.php:302
 #: build/index.js:1
-msgid "Job title"
+msgid "Context title"
 msgstr ""
 
-#: includes/REST/JobsController.php:312
-msgid "Job slug"
+#: includes/REST/ContextsController.php:312
+msgid "Context slug"
 msgstr ""
 
-#: includes/REST/JobsController.php:321
-msgid "Job description"
+#: includes/REST/ContextsController.php:321
+msgid "Context description"
 msgstr ""
 
-#: includes/REST/JobsController.php:328
+#: includes/REST/ContextsController.php:328
 #: build/index.js:1
-msgid "Job type"
+msgid "Context type"
 msgstr ""
 
-#: includes/REST/JobsController.php:337
+#: includes/REST/ContextsController.php:337
 #: includes/User/Hooks.php:50
 #: build/index.js:1
 msgid "Company"
 msgstr ""
 
-#: includes/REST/JobsController.php:346
-msgid "Job status"
+#: includes/REST/ContextsController.php:346
+msgid "Context status"
 msgstr ""
 
-#: includes/REST/JobsController.php:355
+#: includes/REST/ContextsController.php:355
 msgid "Created by user"
 msgstr ""
 
-#: includes/REST/JobsController.php:363
+#: includes/REST/ContextsController.php:363
 msgid "Updated by user"
 msgstr ""
 
-#: includes/REST/JobsController.php:371
+#: includes/REST/ContextsController.php:371
 msgid "Created at time"
 msgstr ""
 
-#: includes/REST/JobsController.php:378
+#: includes/REST/ContextsController.php:378
 msgid "Updated at time"
 msgstr ""
 
-#: includes/REST/JobsController.php:385
+#: includes/REST/ContextsController.php:385
 msgid "Deleted at time"
 msgstr ""
 
-#: includes/REST/JobsController.php:507
-msgid "Job slug already exists."
+#: includes/REST/ContextsController.php:507
+msgid "Context slug already exists."
 msgstr ""
 
 #: includes/User/Hooks.php:46
@@ -144,11 +144,11 @@ msgstr ""
 msgid "Candidate"
 msgstr ""
 
-#: job-place.php:310
+#: article-generator.php:310
 msgid "Settings"
 msgstr ""
 
-#: job-place.php:311
+#: article-generator.php:311
 msgid "Documentation"
 msgstr ""
 
@@ -177,7 +177,7 @@ msgid "Edit Dashboard component at "
 msgstr ""
 
 #: build/index.js:1
-msgid "View Jobs"
+msgid "View Contexts"
 msgstr ""
 
 #: build/index.js:1
@@ -193,7 +193,7 @@ msgid "Are you sure?"
 msgstr ""
 
 #: build/index.js:1
-msgid "Are you sure to delete the job?"
+msgid "Are you sure to delete the context?"
 msgstr ""
 
 #: build/index.js:1
@@ -205,11 +205,11 @@ msgid "Delete"
 msgstr ""
 
 #: build/index.js:1
-msgid "Job status updated"
+msgid "Context status updated"
 msgstr ""
 
 #: build/index.js:1
-msgid "Job has been updated successfully."
+msgid "Context has been updated successfully."
 msgstr ""
 
 #: build/index.js:1
@@ -253,7 +253,7 @@ msgid "-- Select --"
 msgstr ""
 
 #: build/index.js:1
-msgid "Please select job type."
+msgid "Please select context type."
 msgstr ""
 
 #: build/index.js:1
@@ -261,11 +261,11 @@ msgid "Please select a company."
 msgstr ""
 
 #: build/index.js:1
-msgid "Please give job description."
+msgid "Please give context description."
 msgstr ""
 
 #: build/index.js:1
-msgid "Please give a job title."
+msgid "Please give a context title."
 msgstr ""
 
 #: build/index.js:1
@@ -285,11 +285,11 @@ msgid "Error"
 msgstr ""
 
 #: build/index.js:1
-msgid "Job saved"
+msgid "Context saved"
 msgstr ""
 
 #: build/index.js:1
-msgid "Job has been saved successfully."
+msgid "Context has been saved successfully."
 msgstr ""
 
 #: build/index.js:1
@@ -309,7 +309,7 @@ msgid "General Information"
 msgstr ""
 
 #: build/index.js:1
-msgid "Job Description"
+msgid "Context Description"
 msgstr ""
 
 #: build/index.js:1
@@ -321,15 +321,15 @@ msgid "Quick Jump"
 msgstr ""
 
 #: build/index.js:1
-msgid "Enter Job title, eg: Software Engineer"
+msgid "Enter Context title, eg: Software Engineer"
 msgstr ""
 
 #: build/index.js:1
-msgid "Job details"
+msgid "Context details"
 msgstr ""
 
 #: build/index.js:1
-msgid "Enter Job description and necessary requirements."
+msgid "Enter Context description and necessary requirements."
 msgstr ""
 
 #: build/index.js:1
@@ -341,11 +341,11 @@ msgid "New"
 msgstr ""
 
 #: build/index.js:1
-msgid "Search Jobs…"
+msgid "Search Contexts…"
 msgstr ""
 
 #: build/index.js:1
-msgid "Job"
+msgid "Context"
 msgstr ""
 
 #: build/index.js:1
@@ -357,19 +357,19 @@ msgid "Action"
 msgstr ""
 
 #: build/index.js:1
-msgid "Sorry !! No jobs found…"
+msgid "Sorry !! No contexts found…"
 msgstr ""
 
 #: build/index.js:1
-msgid "Back to jobs"
+msgid "Back to contexts"
 msgstr ""
 
 #: build/index.js:1
-msgid "Create New Job"
+msgid "Create New Context"
 msgstr ""
 
 #: build/index.js:1
-msgid "Edit Job"
+msgid "Edit Context"
 msgstr ""
 
 #: build/blocks/header/block.json

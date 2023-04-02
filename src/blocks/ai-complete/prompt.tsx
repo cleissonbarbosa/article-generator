@@ -2,22 +2,20 @@
  * External dependencies.
  */
 import { __ } from "@wordpress/i18n";
+import { parse } from '@wordpress/blocks';
+import { dispatch, select } from '@wordpress/data';
+import Swal, { SweetAlertResult } from "sweetalert2";
+import { useState, useEffect } from '@wordpress/element'
+import { faMarker } from "@fortawesome/free-solid-svg-icons";
 import { InspectorControls, RichText, useBlockProps } from "@wordpress/block-editor";
 import { PanelBody, __experimentalBoxControl as BoxControl } from '@wordpress/components';
-import { dispatch, select } from '@wordpress/data';
-import { createBlock, parse } from '@wordpress/blocks';
-import { useEffect, useState } from '@wordpress/element';
-import { createArticle } from '../../integrations/OpenAi'
 /**
  * Internal dependencies.
- */
+*/
 import "./editor.scss";
 import Button from "../../components/button/Button";
+import { createArticle } from '../../integrations/openai/createArticle'
 
-interface IArticlePopulate {
-  title: string,
-  content: string,
-}
 /**
  * The edit function describes the structure of your block in the context of the
  * editor. This represents what the editor will render when the block is used.
@@ -26,19 +24,32 @@ interface IArticlePopulate {
  * @return {WPElement} Element to render.
  */
 export default function Prompt({ attributes, setAttributes } ) {
-  const { prompt, context, bgColor, padding } = attributes;
-  //const [title, setTitle] = useState('');
-
+  const { prompt, context } = attributes;
+  const [loading, setLoading] = useState<boolean>(false);
+  useEffect(() => {
+    let alert: Promise<SweetAlertResult<any>> | undefined;
+    if(loading) {
+      alert = Swal.fire({
+        title: __('Wait...', 'article-gen'),
+        text: `Writing text about: ${prompt}`,
+        icon: 'info',
+        toast: true,
+        position: 'center',
+        showConfirmButton: false,
+        timer: 3000
+      })
+    }
+  })
   return (
     <div
         {...useBlockProps()}
         style={{
-            backgroundColor: bgColor,
-            padding: `${padding?.top} ${padding?.right} ${padding?.bottom} ${padding?.left}`
+            backgroundColor: '#ffffff',
+            padding: `20px 20px 20px 20px`
         }}
     >
       <RichText
-        className="wp-block-article-generator-subject"
+        className="wp-block-article-generator-prompt"
         tagName="h4"
         placeholder={__("Write the subject of the article", "article-gen")}
         value={prompt}
@@ -54,73 +65,47 @@ export default function Prompt({ attributes, setAttributes } ) {
         value={context}
         onChange={(context: string) => setAttributes({ context })}
       />
+      
 
       <Button 
-        text="Generate"
-        buttonCustomClass="components-button is-primary"
-        onClick={() => handlePopulate({title: prompt, content: context})}
+        text={loading ? " Generating..." : " Generate"}
+        buttonCustomClass="components-button is-primary article-gen-btn"
+        disabled={loading}
+        iconCustomClass="btn-icon"
+        icon={faMarker}
+        onClick={() => handlePopulate({prompt: prompt, context: context}, setLoading)}
         />
-
         <InspectorControls>
             <PanelBody
                 title={__('Settings', 'article-gen')}
                 initialOpen={false}
                 opened={false}
             >
-                <RichText
-                  className="wp-block-article-generator-subject-side"
-                  tagName="div"
-                  placeholder={__("Write the subject of the article", "article-gen")}
-                  value={prompt}
-                  onChange={(prompt: string) => setAttributes({ prompt })}
-                  required
-                  hidden
-                />
-            </PanelBody>
-            <PanelBody
-                title={__('Padding/Margin Settings', 'cartpulse')}
-                initialOpen={false}
-            >
-                <BoxControl
-                    label={__('Inline Padding', 'cartpulse')}
-                    values={padding}
-                    onChange={(padding: object) => setAttributes({ padding })}
-                />
             </PanelBody>
         </InspectorControls>
     </div>
   );
 }
 
-function handlePopulate({ title, content }: IArticlePopulate) {
-  const blocks = parse(content);
-  //createArticle(prompt).then((response)=> {
-    dispatch('core/editor').editPost({title});
+function handlePopulate({ prompt, context } : { prompt: string, context: string }, setLoading: React.Dispatch<React.SetStateAction<boolean>>) {
+  setLoading(true)
+  createArticle(prompt, context).then(( response )=> {
+    const blocks = parse(response.content);
+    dispatch('core/editor').editPost({title: response.title});
     dispatch('core/block-editor').removeBlock(
       select('core/block-editor').getSelectedBlockClientId() ?? ''
     )
     dispatch('core/block-editor').insertBlocks(blocks)
 
-  //})
-}
-
-export function extractArticle(response: string): IArticlePopulate {
-  const article: IArticlePopulate = {
-    title: '',
-    content: '',
-  };
-
-  const titleRegex = /# (.+)\n/;
-  const titleMatch = response.match(titleRegex);
-  if (titleMatch) {
-    article.title = titleMatch[1];
-  }
-
-  const contentRegex = /# .+\n((?:.|\n)+)/;
-  const contentMatch = response.match(contentRegex);
-  if (contentMatch) {
-    article.content = contentMatch[1];
-  }
-
-  return article;
+  }).catch((e) => {
+    Swal.fire({
+      title: __('Error', 'article-gen'),
+      text: e.message,
+      icon: 'error',
+      toast: true,
+      position: 'bottom',
+      showConfirmButton: false,
+      timer: 3000,
+    }).finally( () => setLoading(false) )
+  })
 }

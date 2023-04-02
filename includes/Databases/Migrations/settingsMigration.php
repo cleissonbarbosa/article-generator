@@ -1,16 +1,16 @@
 <?php
 
-namespace ArticleGen\JobPlace\Databases\Migrations;
+namespace ArticleGen\CBPlugin\Databases\Migrations;
 
-use ArticleGen\JobPlace\Abstracts\DBMigrator;
+use ArticleGen\CBPlugin\Abstracts\DBMigrator;
 
 /**
- * Jobs migration.
+ * Settings migration.
  */
 class SettingsMigration extends DBMigrator {
 
     /**
-     * Migrate the jobs table.
+     * Migrate the contexts table.
      *
      * @since 0.3.0
      *
@@ -21,7 +21,7 @@ class SettingsMigration extends DBMigrator {
 
         $charset_collate = $wpdb->get_charset_collate();
 
-        $schema_jobs = "CREATE TABLE IF NOT EXISTS `{$wpdb->article_gen_settings}` (
+        $schema_contexts = "CREATE TABLE IF NOT EXISTS `{$wpdb->article_gen_settings}` (
             `key` varchar(255) NOT NULL,
             `value` varchar(255) NOT NULL,
             `created_at` datetime NOT NULL,
@@ -32,6 +32,6 @@ class SettingsMigration extends DBMigrator {
         ) $charset_collate";
 
         // Create the tables.
-        dbDelta( $schema_jobs );
+        dbDelta( $schema_contexts );
     }
 }

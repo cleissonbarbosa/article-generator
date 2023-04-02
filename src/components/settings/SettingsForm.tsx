@@ -7,7 +7,7 @@ import { __ } from '@wordpress/i18n';
 /**
  * Internal dependencies.
  */
-import JobCard from '../jobs/JobCard';
+import ContextCard from '../contexts/ContextCard';
 import settingsStore from '../../data/settings';
 import SettingFormSidebar from './SettingsFormSidebar';
 import { IInputResponse, Input } from '../inputs/Input';
@@ -17,6 +17,7 @@ import SettingSubmit from './SettingSubmit';
 interface Props {
     settings?: ISettings
 }
+
 export default function SettingsForm({ settings } : Props) {
     const dispatch = useDispatch();
 
@@ -52,16 +53,16 @@ export default function SettingsForm({ settings } : Props) {
 
                     {loadingSettings ? (
                         <div className="md:basis-4/5">
-                            <JobCard>
+                            <ContextCard>
                                 <div className="animate-pulse h-4 bg-slate-100 w-full p-2.5 rounded-lg mt-5"></div>
                                 <div className="animate-pulse h-4 bg-slate-100 w-full p-2.5 rounded-lg mt-5"></div>
                                 <div className="animate-pulse h-4 bg-slate-100 w-full p-2.5 rounded-lg mt-5"></div>
-                            </JobCard>
+                            </ContextCard>
                         </div>
                     ) : (
                         <>
                             <div className="md:basis-4/5">
-                                <JobCard className="setting-general-info">
+                                <ContextCard className="setting-general-info">
                                     <Input
                                         type="password"
                                         label={__('OpenAi API Key', 'article-gen')}
@@ -74,8 +75,8 @@ export default function SettingsForm({ settings } : Props) {
                                         value={form[0]?.value}
                                         onChange={onChange}
                                     />
-                                </JobCard>
-                                <div className="flex justify-end">
+                                </ContextCard>
+                                <div className="flex justify-end md:hidden">
                                     <SettingSubmit />
                                 </div>
                             </div>

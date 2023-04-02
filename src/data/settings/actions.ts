@@ -52,8 +52,8 @@ const actions = {
                 yield actions.setSavingSettings(false);
             }
         } catch (error) {
-            console.log('error', error)
             yield actions.setSavingSettings(false);
+            return error
         }
     },
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace ArticleGen\JobPlace\Tests\Api;
+namespace ArticleGen\CBPlugin\Tests\Api;
 
 class CompanyRestApiTest extends \WP_UnitTestCase {
 
@@ -16,7 +16,7 @@ class CompanyRestApiTest extends \WP_UnitTestCase {
      *
      * @var string
      */
-    protected $namespace = 'job-place/v1';
+    protected $namespace = 'article-generator/v1';
 
     /**
      * Route base.

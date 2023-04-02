@@ -1,43 +1,41 @@
 {
 	"$schema": "https://json.schemastore.org/block.json",
 	"apiVersion": 2,
-	"title": "ReactKit Header",
-	"name": "wrc/header2",
-	"category": "formatting",
+	"title": "GPT Image Generator",
+	"name": "ag/img-generator",
+	"category": "media",
+	"icon": "image",
 	"attributes": {
-		"title": {
+		"prompt": {
 			"type": "string",
-			"default": "Article Generator Text Header"
+			"default": ""
 		},
-		"description": {
+		"sizesAvailable": {
+			"type": "array",
+			"default": [
+				{
+					"value": "1024x1024",
+					"label": "Big (1024x1024)"
+				},
+				{
+					"value":"512x512",
+					"label":"Medium (512x512)"
+				},
+				{
+					"value": "256x256",
+					"label": "Small (256x256)"
+				}
+			]
+		},
+		"sizeValue": {
 			"type": "string",
-			"default": "Article Generator Description"
-		},
-		"bgColor": {
-			"type": "string",
-			"default": "#f5f5f5"
-		},
-		"padding": {
-			"type": "object",
-			"default": {
-				"top": "10px",
-				"left": "30px",
-				"right": "30px",
-				"bottom": "10px"
-			}
+			"default": "512x512"
 		}
 	},
 	"example": {
 		"attributes": {
-			"title": "Article Generator Text Header",
-			"description": "Article Generator Description",
-			"bgColor": "#f5f5f5",
-			"padding": {
-				"top": "10px",
-				"left": "30px",
-				"right": "30px",
-				"bottom": "10px"
-			}
+			"prompt": "Create a high-quality image of an exciting soccer match in a crowded stadium. In the scene, two teams in different uniforms are competing for control of the ball on the field. The sun is setting in the background, tinting the sky orange and pink. In the stands, fans are cheering and waving flags as they root for their teams. Ensure the image has high quality to capture all the details and emotions of the scene.",
+			"sizeValue": "1024x1024"
 		}
 	},
 	"supports": {

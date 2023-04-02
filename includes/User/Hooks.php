@@ -1,6 +1,6 @@
 <?php
 
-namespace ArticleGen\JobPlace\User;
+namespace ArticleGen\CBPlugin\User;
 
 /**
  * User related hooks.

@@ -14,7 +14,7 @@ const pluginFiles = [
     'languages/',
     'templates/',
     'changelog.txt',
-    'job-place.php',
+    'article-gen.php',
 ];
 
 const removeFiles = [

@@ -1,8 +1,8 @@
 <?php
 
-namespace ArticleGen\JobPlace\Setup;
+namespace ArticleGen\CBPlugin\Setup;
 
-use ArticleGen\JobPlace\Common\Keys;
+use ArticleGen\CBPlugin\Common\Keys;
 
 /**
  * Class Installer.
@@ -30,7 +30,7 @@ class Installer {
         $this->make_admin_as_company();
 
         // Run the database seeders.
-        $seeder = new \ArticleGen\JobPlace\Databases\Seeder\Manager();
+        $seeder = new \ArticleGen\CBPlugin\Databases\Seeder\Manager();
         $seeder->run();
     }
 
@@ -56,8 +56,8 @@ class Installer {
         global $wpdb;
 
         // Register the tables to wpdb global.
-        $wpdb->article_gen_job_types = $wpdb->prefix . 'article_gen_job_types';
-        $wpdb->article_gen_jobs      = $wpdb->prefix . 'article_gen_jobs';
+        $wpdb->article_gen_context_types = $wpdb->prefix . 'article_gen_context_types';
+        $wpdb->article_gen_contexts      = $wpdb->prefix . 'article_gen_contexts';
         $wpdb->article_gen_settings  = $wpdb->prefix . 'article_gen_settings';
     }
 
@@ -70,19 +70,19 @@ class Installer {
      * @return void
      */
     public function add_version(): void {
-        $installed = get_option( Keys::JOB_PLACE_INSTALLED );
+        $installed = get_option( Keys::ARTICLE_GEN_INSTALLED );
 
         if ( ! $installed ) {
-            update_option( Keys::JOB_PLACE_INSTALLED, time() );
+            update_option( Keys::ARTICLE_GEN_INSTALLED, time() );
         }
 
-        update_option( Keys::JOB_PLACE_VERSION, JOB_PLACE_VERSION );
+        update_option( Keys::ARTICLE_GEN_VERSION, ARTICLE_GEN_VERSION );
     }
 
     /**
      * Create necessary database tables.
      *
-     * @since JOB_PLACE_
+     * @since ARTICLE_GEN_
      *
      * @return void
      */
@@ -92,8 +92,8 @@ class Installer {
         }
 
         // Run the database table migrations.
-        \ArticleGen\JobPlace\Databases\Migrations\JobTypeMigration::migrate();
-        \ArticleGen\JobPlace\Databases\Migrations\JobsMigration::migrate();
-        \ArticleGen\JobPlace\Databases\Migrations\SettingsMigration::migrate();
+        \ArticleGen\CBPlugin\Databases\Migrations\ContextTypeMigration::migrate();
+        \ArticleGen\CBPlugin\Databases\Migrations\ContextsMigration::migrate();
+        \ArticleGen\CBPlugin\Databases\Migrations\SettingsMigration::migrate();
     }
 }

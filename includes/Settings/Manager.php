@@ -1,6 +1,6 @@
 <?php
 
-namespace ArticleGen\JobPlace\Settings;
+namespace ArticleGen\CBPlugin\Settings;
 
 class Manager {
 
@@ -137,13 +137,9 @@ class Manager {
      */
     public function update( array $datas ) {
         // Prepare setting data for database-insertion.
-        $setting_data = [];
         $updated = null;
         foreach($datas as $data) {
             $data = $this->setting->prepare_for_database( $data );
-            $setting_data[] = $data;
-
-            error_log(print_r($data, true));
 
             // Update setting.
             $updated = $this->setting->update(
@@ -155,7 +151,6 @@ class Manager {
                     '%s',
                     '%s',
                     '%s',
-                    '%s',
                 ],
                 [
                     '%s',
@@ -163,7 +158,7 @@ class Manager {
             );
     
             if ( ! $updated ) {
-                return new \WP_Error( 'article_gen_setting_update_failed', __( 'Failed to update setting.', 'article-gen' ), [$updated] );
+                return new \WP_Error( 'article_gen_setting_update_failed', __( 'Failed to update setting.', 'article-gen' ), ["datas"=>$datas,'d'=>$data] );
             }
         }
 
@@ -176,9 +171,9 @@ class Manager {
              *
              * @param array $setting_data
              */
-            do_action( 'article_gen_settings_updated', $setting_data );
+            do_action( 'article_gen_settings_updated', $datas );
 
-            return $setting_data;
+            return $datas;
         }
 
         return new \WP_Error( 'article_gen_setting_update_failed', __( 'Failed to update the setting.', 'article-gen' ) );

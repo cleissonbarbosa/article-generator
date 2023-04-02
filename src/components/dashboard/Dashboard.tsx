@@ -26,8 +26,8 @@ const Dashboard = () => {
                     <Button
                         type="primary"
                         style={{ backgroundColor: '#00a0d2' }}
-                        text={__('View Jobs', 'article-gen')}
-                        onClick={() => navigate('/jobs')}
+                        text={__('View Contexts', 'article-gen')}
+                        onClick={() => navigate('/contexts')}
                     />
                 </div>
             </div>

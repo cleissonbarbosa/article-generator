@@ -1,11 +1,11 @@
 <?php
 
-namespace ArticleGen\JobPlace\Settings;
+namespace ArticleGen\CBPlugin\Settings;
 
-use ArticleGen\JobPlace\Abstracts\BaseModel;
+use ArticleGen\CBPlugin\Abstracts\BaseModel;
 
 /**
- * Job class.
+ * Context class.
  *
  * @since 0.3.0
  */
@@ -32,7 +32,6 @@ class Setting extends BaseModel {
         $defaults = [
             'key'       => '',
             'value'        => '',
-            'created_at'  => current_datetime()->format( 'Y-m-d H:i:s' ),
             'updated_at'  => current_datetime()->format( 'Y-m-d H:i:s' ),
         ];
 
@@ -42,17 +41,16 @@ class Setting extends BaseModel {
         return [
             'key'       => $this->sanitize( $data['key'], 'text' ),
             'value'        => $this->sanitize( $data['value'], 'text' ),
-            'created_at'  => $this->sanitize( $data['created_at'], 'text' ),
             'updated_at'  => $this->sanitize( $data['updated_at'], 'text' ),
         ];
     }
 
     /**
-     * Jobs item to a formatted array.
+     * Contexts item to a formatted array.
      *
      * @since 0.3.0
      *
-     * @param object $job
+     * @param object $context
      *
      * @return array
      */

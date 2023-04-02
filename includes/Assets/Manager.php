@@ -1,6 +1,6 @@
 <?php
 
-namespace ArticleGen\JobPlace\Assets;
+namespace ArticleGen\CBPlugin\Assets;
 
 /**
  * Asset Manager class.
@@ -40,9 +40,9 @@ class Manager {
      */
     public function get_styles(): array {
         return [
-            'job-place-css' => [
-                'src'     => JOB_PLACE_BUILD . '/index.css',
-                'version' => JOB_PLACE_VERSION,
+            'article-generator-css' => [
+                'src'     => ARTICLE_GEN_BUILD . '/index.css',
+                'version' => ARTICLE_GEN_VERSION,
                 'deps'    => [],
             ],
         ];
@@ -56,11 +56,11 @@ class Manager {
      * @return array
      */
     public function get_scripts(): array {
-        $dependency = require_once JOB_PLACE_DIR . '/build/index.asset.php';
+        $dependency = require_once ARTICLE_GEN_DIR . '/build/index.asset.php';
 
         return [
-            'job-place-app' => [
-                'src'       => JOB_PLACE_BUILD . '/index.js',
+            'article-generator-app' => [
+                'src'       => ARTICLE_GEN_BUILD . '/index.js',
                 'version'   => $dependency['version'],
                 'deps'      => $dependency['dependencies'],
                 'in_footer' => true,
@@ -98,7 +98,7 @@ class Manager {
      * Enqueue admin styles and scripts.
      *
      * @since 0.2.0
-     * @since 0.3.0 Loads the JS and CSS only on the Job Place admin page.
+     * @since 0.3.0 Loads the JS and CSS only on the Context Place admin page.
      *
      * @return void
      */
@@ -108,7 +108,7 @@ class Manager {
             return;
         }
 
-        wp_enqueue_style( 'job-place-css' );
-        wp_enqueue_script( 'job-place-app' );
+        wp_enqueue_style( 'article-generator-css' );
+        wp_enqueue_script( 'article-generator-app' );
     }
 }

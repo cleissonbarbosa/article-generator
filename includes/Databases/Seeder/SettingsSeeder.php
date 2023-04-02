@@ -1,19 +1,19 @@
 <?php
 
-namespace ArticleGen\JobPlace\Databases\Seeder;
+namespace ArticleGen\CBPlugin\Databases\Seeder;
 
-use ArticleGen\JobPlace\Abstracts\DBSeeder;
-use ArticleGen\JobPlace\Common\Keys;
+use ArticleGen\CBPlugin\Abstracts\DBSeeder;
+use ArticleGen\CBPlugin\Common\Keys;
 
 /**
- * Jobs Seeder class.
+ * Settings Seeder class.
  *
  * Seed some fresh emails for initial startup.
  */
 class SettingsSeeder extends DBSeeder {
 
     /**
-     * Run Jobs seeder.
+     * Run Settings seeder.
      *
      * @since 0.3.0
      *
@@ -28,7 +28,7 @@ class SettingsSeeder extends DBSeeder {
             return;
         }
 
-        // Generator some jobs.
+        // Generator some contexts.
         $settings = [
             [
                 'key'       => 'openai-api-key',

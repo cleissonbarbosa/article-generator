@@ -1,8 +1,8 @@
 <?php
 
-namespace ArticleGen\JobPlace\REST;
+namespace ArticleGen\CBPlugin\REST;
 
-use ArticleGen\JobPlace\Abstracts\RESTController;
+use ArticleGen\CBPlugin\Abstracts\RESTController;
 use WP_User_Query;
 use WP_REST_Response;
 use WP_REST_Server;
@@ -20,7 +20,7 @@ class CompaniesController extends RESTController {
      *
      * @var string
      */
-    protected $namespace = 'job-place/v1';
+    protected $namespace = 'article-generator/v1';
 
     /**
      * Route base.

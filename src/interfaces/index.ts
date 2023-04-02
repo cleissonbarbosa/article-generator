@@ -14,6 +14,6 @@ export interface IResponseGenerator {
     statusText?: string;
 }
 
-// Job types
-export * from './jobs';
+// Context types
+export * from './contexts';
 export * from './settings';

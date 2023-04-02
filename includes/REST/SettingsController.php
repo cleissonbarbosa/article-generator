@@ -1,9 +1,9 @@
 <?php
 
-namespace ArticleGen\JobPlace\REST;
+namespace ArticleGen\CBPlugin\REST;
 
-use ArticleGen\JobPlace\Abstracts\RESTController;
-use ArticleGen\JobPlace\Settings\Setting;
+use ArticleGen\CBPlugin\Abstracts\RESTController;
+use ArticleGen\CBPlugin\Settings\Setting;
 use WP_REST_Request;
 use WP_REST_Response;
 use WP_REST_Server;
@@ -86,7 +86,7 @@ class SettingsController extends RESTController {
     }
 
     /**
-     * Retrieves a collection of job items.
+     * Retrieves a collection of context items.
      *
      * @since 0.3.0
      *
@@ -105,8 +105,8 @@ class SettingsController extends RESTController {
         }
 
         $settings = article_generator()->settings->all( $args );
-        foreach ( $settings as $job ) {
-            $response = $this->prepare_item_for_response( $job, $request );
+        foreach ( $settings as $context ) {
+            $response = $this->prepare_item_for_response( $context, $request );
             $data[]   = $this->prepare_response_for_collection( $response );
         }
 
@@ -116,7 +116,7 @@ class SettingsController extends RESTController {
     }
 
     /**
-     * Retrieves a collection of job items.
+     * Retrieves a collection of context items.
      *
      * @since 0.3.0
      *
@@ -372,8 +372,8 @@ class SettingsController extends RESTController {
      */
     protected function prepare_item_for_database( $request ) {
         $data = [];
-        $data['key']       =  $request->key;
-        $data['value']       =  $request->value;
+        $data['key']        =  $request->key;
+        $data['value']      =  $request->value;
         $data['updated_at'] = empty( $request->updated_at ) ? current_datetime()->format( 'Y-m-d H:i:s' ) : $request->updated_at;
 
         return $data;
@@ -450,7 +450,7 @@ class SettingsController extends RESTController {
     }
 
     /**
-     * Sanitize job slug for uniqueness.
+     * Sanitize context slug for uniqueness.
      *
      * @since 0.3.0
      *

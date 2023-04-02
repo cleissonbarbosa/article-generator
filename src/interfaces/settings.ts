@@ -6,7 +6,7 @@ import { ISelect2Input } from '../components/inputs/Select2Input';
 export interface ISetting {
 
     /**
-     * Job title.
+     * Context title.
      */
     key: string;
 
@@ -22,37 +22,37 @@ export interface ISettingFormData extends Array<ISetting> {
 
 export interface ISettings {
     /**
-     * All jobs as array of IJob.
+     * All contexts as array of IContext.
      */
     settings: Array<ISettings>;
 
     /**
-     * Job detail.
+     * Context detail.
      */
     setting: ISetting;
 
     /**
-     * Job saving or not.
+     * Context saving or not.
      */
     settingsSaving: boolean;
 
     /**
-     * Job deleting or not.
+     * Context deleting or not.
      */
     settingsDeleting: boolean;
 
     /**
-     * All job types as array of {label, value}.
+     * All context types as array of {label, value}.
      */
     settingTypes: Array<ISelect2Input>;
 
     /**
-     * Is jobs loading.
+     * Is contexts loading.
      */
     loadingSettings: boolean;
 
     /**
-     * Job Form data.
+     * Context Form data.
      */
     form: ISettingFormData;
 }

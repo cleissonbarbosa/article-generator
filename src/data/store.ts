@@ -6,11 +6,11 @@ import { register } from '@wordpress/data';
 /**
  * Internal dependencies.
  */
-import JobStore from './jobs';
+import ContextStore from './contexts';
 import SettingStore from './settings';
 
 /**
  * Register stores.
  */
-register(JobStore);
+register(ContextStore);
 register(SettingStore);

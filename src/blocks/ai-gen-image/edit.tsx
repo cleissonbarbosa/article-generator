@@ -2,14 +2,20 @@
  * External dependencies.
  */
 import { __ } from "@wordpress/i18n";
+import Swal, { SweetAlertResult } from "sweetalert2";
+import { CreateImageRequestSizeEnum } from "openai";
+import { useState, useEffect } from '@wordpress/element'
 import { InspectorControls, RichText, useBlockProps } from "@wordpress/block-editor";
 import { PanelBody, ColorPicker, __experimentalBoxControl as BoxControl } from '@wordpress/components';
-import * as OpenAi from '../../integrations/OpenAi'
 /**
  * Internal dependencies.
  */
 import "./editor.scss";
-import { CreateImageRequestSizeEnum } from "openai";
+import Button from "../../components/button/Button";
+import { createImage } from "../../integrations/openai/createImage";
+import { faImage } from "@fortawesome/free-solid-svg-icons";
+import SelectCheckBox from "../../components/contexts/SelectCheckBox";
+import Select2Input from "../../components/inputs/Select2Input";
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -19,54 +25,63 @@ import { CreateImageRequestSizeEnum } from "openai";
  * @return {WPElement} Element to render.
  */
 export default function Edit({ attributes, setAttributes }) {
-  const { title, description, bgColor, padding } = attributes;
-
+  const { prompt, sizesAvailable, sizeValue } = attributes;
+  const [loading, setLoading] = useState<boolean>(false);
+  useEffect(() => {
+    if(loading) {
+      Swal.fire({
+        title: __('Wait...', 'article-gen'),
+        text: `Creating your image`,
+        icon: 'info',
+        toast: true,
+        position: 'center',
+        showConfirmButton: false,
+        timer: 3000
+      })
+    }
+  })
   return (
     <div
         {...useBlockProps()}
         style={{
-            backgroundColor: bgColor,
-            padding: `${padding?.top} ${padding?.right} ${padding?.bottom} ${padding?.left}`
+            background: "#f5f5f5",
+            padding: `20px 20px 20px 20px`,
+            borderRadius: 10
         }}
     >
       <RichText
-        className="wp-block-article-generator-header_title"
-        tagName="h2"
-        placeholder={__("Header title", "article-gen")}
-        value={title}
-        onChange={(title: string) => setAttributes({ title })}
+        className="wp-block-article-generator-prompt"
+        tagName="h4"
+        placeholder={__("Describe the image you want to generate", "article-gen")}
+        value={prompt}
+        onChange={(prompt: string) => setAttributes({ prompt })}
+        required
       />
+      
+      <Select2Input 
+        options={[
+          ...sizesAvailable
+        ]} 
+        placeholder="Select image size"
+        defaultValue={sizeValue}
+        onChange={(input) => setAttributes({sizeValue : input.value})}
+        />
+      
 
-      <RichText
-        className="wp-block-article-generator-header_title"
-        tagName="div"
-        placeholder={__("Header description", "article-gen")}
-        value={description}
-        onChange={(description: string) => setAttributes({ description })}
-      />
+      <Button
+        text={loading ? " Generating image..." : " Generate image"}
+        buttonCustomClass="components-button is-primary img-gen-btn"
+        disabled={loading}
+        iconCustomClass="btn-icon"
+        icon={faImage}
+        onClick={() => GenerateIMG(prompt, sizeValue)}
+        />
 
         <InspectorControls>
             <PanelBody
-                title={__('Color Settings', 'article-gen')}
-                initialOpen={true}
-            >
-                <ColorPicker
-                    color={bgColor}
-                    onChange={(bgColor: string) => setAttributes({ bgColor })}
-                    enableAlpha
-                    defaultValue={bgColor}
-                    clearable={false}
-                />
-            </PanelBody>
-            <PanelBody
-                title={__('Padding/Margin Settings', 'cartpulse')}
+                title={__('Settings', 'article-gen')}
                 initialOpen={false}
             >
-                <BoxControl
-                    label={__('Inline Padding', 'cartpulse')}
-                    values={padding}
-                    onChange={(padding: object) => setAttributes({ padding })}
-                />
             </PanelBody>
         </InspectorControls>
     </div>
@@ -83,5 +98,5 @@ async function GenerateIMG(prompt : string, size: CreateImageRequestSizeEnum) : 
     throw new Error( "Bad request - size incorrect format" )
   }
 
-  try { return await OpenAi.createImage( prompt, size ) } catch(e) { throw new Error( "Bad request" ) }
+  try { return await createImage( prompt, size ) } catch(e) { throw new Error( "Bad request" ) }
 }

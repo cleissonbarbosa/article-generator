@@ -1,6 +1,6 @@
 <?php
 
-namespace ArticleGen\JobPlace\Tests;
+namespace ArticleGen\CBPlugin\Tests\Install;
 
 class RunnerTest extends \WP_UnitTestCase {
 

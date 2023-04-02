@@ -47,7 +47,7 @@ final class Article_Gen {
     private $container = [];
 
     /**
-     * Constructor for the JobPlace class.
+     * Constructor for the CBPlugin class.
      *
      * Sets up all the appropriate hooks and actions within our plugin.
      *
@@ -123,16 +123,16 @@ final class Article_Gen {
      * @return void
      */
     public function define_constants() {
-        define( 'JOB_PLACE_VERSION', self::VERSION );
-        define( 'JOB_PLACE_SLUG', self::SLUG );
-        define( 'JOB_PLACE_FILE', __FILE__ );
-        define( 'JOB_PLACE_DIR', __DIR__ );
-        define( 'JOB_PLACE_PATH', dirname( JOB_PLACE_FILE ) );
-        define( 'JOB_PLACE_INCLUDES', JOB_PLACE_PATH . '/includes' );
-        define( 'JOB_PLACE_TEMPLATE_PATH', JOB_PLACE_PATH . '/templates' );
-        define( 'JOB_PLACE_URL', plugins_url( '', JOB_PLACE_FILE ) );
-        define( 'JOB_PLACE_BUILD', JOB_PLACE_URL . '/build' );
-        define( 'JOB_PLACE_ASSETS', JOB_PLACE_URL . '/assets' );
+        define( 'ARTICLE_GEN_VERSION', self::VERSION );
+        define( 'ARTICLE_GEN_SLUG', self::SLUG );
+        define( 'ARTICLE_GEN_FILE', __FILE__ );
+        define( 'ARTICLE_GEN_DIR', __DIR__ );
+        define( 'ARTICLE_GEN_PATH', dirname( ARTICLE_GEN_FILE ) );
+        define( 'ARTICLE_GEN_INCLUDES', ARTICLE_GEN_PATH . '/includes' );
+        define( 'ARTICLE_GEN_TEMPLATE_PATH', ARTICLE_GEN_PATH . '/templates' );
+        define( 'ARTICLE_GEN_URL', plugins_url( '', ARTICLE_GEN_FILE ) );
+        define( 'ARTICLE_GEN_BUILD', ARTICLE_GEN_URL . '/build' );
+        define( 'ARTICLE_GEN_ASSETS', ARTICLE_GEN_URL . '/assets' );
     }
 
     /**
@@ -151,7 +151,7 @@ final class Article_Gen {
          *
          * @since 0.2.0
          */
-        do_action( 'job_place_loaded' );
+        do_action( 'article_gen_loaded' );
     }
 
     /**
@@ -196,7 +196,7 @@ final class Article_Gen {
      * @return void
      */
     private function install() {
-        $installer = new \ArticleGen\JobPlace\Setup\Installer();
+        $installer = new \ArticleGen\CBPlugin\Setup\Installer();
         $installer->run();
     }
 
@@ -209,15 +209,15 @@ final class Article_Gen {
      */
     public function includes() {
         if ( $this->is_request( 'admin' ) ) {
-            $this->container['admin_menu'] = new ArticleGen\JobPlace\Admin\Menu();
+            $this->container['admin_menu'] = new ArticleGen\CBPlugin\Admin\Menu();
         }
 
         // Common classes
-        $this->container['assets']   = new ArticleGen\JobPlace\Assets\Manager();
-        $this->container['blocks']   = new ArticleGen\JobPlace\Blocks\Manager();
-        $this->container['rest_api'] = new ArticleGen\JobPlace\REST\Api();
-        $this->container['jobs']     = new ArticleGen\JobPlace\Jobs\Manager();
-        $this->container['settings']     = new ArticleGen\JobPlace\Settings\Manager();
+        $this->container['assets']   = new ArticleGen\CBPlugin\Assets\Manager();
+        $this->container['blocks']   = new ArticleGen\CBPlugin\Blocks\Manager();
+        $this->container['rest_api'] = new ArticleGen\CBPlugin\REST\Api();
+        $this->container['contexts'] = new ArticleGen\CBPlugin\Contexts\Manager();
+        $this->container['settings'] = new ArticleGen\CBPlugin\Settings\Manager();
     }
 
     /**
@@ -247,7 +247,7 @@ final class Article_Gen {
      */
     public function init_classes() {
         // Init necessary hooks
-        new ArticleGen\JobPlace\User\Hooks();
+        new ArticleGen\CBPlugin\User\Hooks();
     }
 
     /**
@@ -264,8 +264,8 @@ final class Article_Gen {
 
         // Load the React-pages translations.
         if ( is_admin() ) {
-            // Load wp-script translation for job-place-app
-            wp_set_script_translations( 'job-place-app', 'article-gen', plugin_dir_path( __FILE__ ) . 'languages/' );
+            // Load wp-script translation for article-generatorenerator-app
+            wp_set_script_translations( 'article-generatorenerator-app', 'article-gen', plugin_dir_path( __FILE__ ) . 'languages/' );
         }
     }
 

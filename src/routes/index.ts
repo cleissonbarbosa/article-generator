@@ -2,9 +2,9 @@
  * Internal dependencies
  */
 import HomePage from '../pages/HomePage';
-import JobsPage from '../pages/jobs/JobsPage';
-import CreateJob from '../pages/jobs/CreateJob';
-import EditJob from '../pages/jobs/EditJob';
+import ContextsPage from '../pages/contexts/ContextsPage';
+import CreateContext from '../pages/contexts/CreateContext';
+import EditContext from '../pages/contexts/EditContext';
 import settings from '../pages/settings';
 
 const routes = [
@@ -13,16 +13,16 @@ const routes = [
         element: HomePage,
     },
     {
-        path: '/jobs',
-        element: JobsPage,
+        path: '/contexts',
+        element: ContextsPage,
     },
     {
-        path: '/jobs/new',
-        element: CreateJob,
+        path: '/contexts/new',
+        element: CreateContext,
     },
     {
-        path: '/jobs/edit/:id',
-        element: EditJob,
+        path: '/contexts/edit/:id',
+        element: EditContext,
     },
 
     {

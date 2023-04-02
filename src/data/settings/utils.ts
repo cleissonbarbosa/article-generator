@@ -1,7 +1,7 @@
 /**
  * Internal dependencies.
  */
-import { IJob, ISetting } from '../../interfaces';
+import { IContext, ISetting } from '../../interfaces';
 
 export const prepareSettingDataForDatabase = (setting: ISetting) => {
     const data = {

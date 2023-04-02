@@ -5,7 +5,7 @@ Details about the REST API documentation of the plugin.
 ---
 
 #### Company dropdown list API
-**URL** - http://localhost/wpex/wp-json/job-place/v1/companies/dropdown
+**URL** - http://localhost/wpex/wp-json/article-generator/v1/companies/dropdown
 **Method** - GET
 **Response** -
 ```json
@@ -25,8 +25,8 @@ Details about the REST API documentation of the plugin.
 ]
 ```
 
-#### Job Type List API
-**URL** - http://localhost/wpex/wp-json/job-place/v1/job-types
+#### Context Type List API
+**URL** - http://localhost/wpex/wp-json/article-generator/v1/context-types
 **Method** - GET
 **Response** -
 ```json
@@ -35,18 +35,18 @@ Details about the REST API documentation of the plugin.
         "id": 1,
         "name": "Full time",
         "slug": "full-time",
-        "description": "Full time job",
+        "description": "Full time context",
         "created_at": "2022-07-31 12:36:20",
         "updated_at": "2022-07-31 12:36:20",
         "_links": {
             "self": [
                 {
-                    "href": "http://localhost/wpex/wp-json/job-place/v1/job-types/1"
+                    "href": "http://localhost/wpex/wp-json/article-generator/v1/context-types/1"
                 }
             ],
             "collection": [
                 {
-                    "href": "http://localhost/wpex/wp-json/job-place/v1/job-types"
+                    "href": "http://localhost/wpex/wp-json/article-generator/v1/context-types"
                 }
             ]
         }
@@ -55,18 +55,18 @@ Details about the REST API documentation of the plugin.
         "id": 2,
         "name": "Part time",
         "slug": "part-time",
-        "description": "Part time job",
+        "description": "Part time context",
         "created_at": "2022-07-31 12:36:20",
         "updated_at": "2022-07-31 12:36:20",
         "_links": {
             "self": [
                 {
-                    "href": "http://localhost/wpex/wp-json/job-place/v1/job-types/2"
+                    "href": "http://localhost/wpex/wp-json/article-generator/v1/context-types/2"
                 }
             ],
             "collection": [
                 {
-                    "href": "http://localhost/wpex/wp-json/job-place/v1/job-types"
+                    "href": "http://localhost/wpex/wp-json/article-generator/v1/context-types"
                 }
             ]
         }
@@ -75,18 +75,18 @@ Details about the REST API documentation of the plugin.
         "id": 3,
         "name": "Remote",
         "slug": "remote",
-        "description": "Remote job",
+        "description": "Remote context",
         "created_at": "2022-07-31 12:36:20",
         "updated_at": "2022-07-31 12:36:20",
         "_links": {
             "self": [
                 {
-                    "href": "http://localhost/wpex/wp-json/job-place/v1/job-types/3"
+                    "href": "http://localhost/wpex/wp-json/article-generator/v1/context-types/3"
                 }
             ],
             "collection": [
                 {
-                    "href": "http://localhost/wpex/wp-json/job-place/v1/job-types"
+                    "href": "http://localhost/wpex/wp-json/article-generator/v1/context-types"
                 }
             ]
         }
@@ -95,8 +95,8 @@ Details about the REST API documentation of the plugin.
 ```
 
 
-#### Job Lists API
-**URL** - http://localhost/wpex/wp-json/job-place/v1/jobs
+#### Context Lists API
+**URL** - http://localhost/wpex/wp-json/article-generator/v1/contexts
 **Method** - `GET`
 **Middleware** - WordPress user logged in.
 **Parameters** -
@@ -108,16 +108,16 @@ orderby=id
 order=asc
 ```
 **Full Endpoint** with all of the supported params -
-http://localhost/wpex/wp-json/job-place/v1/jobs?page=1&per_page=10&search=first
+http://localhost/wpex/wp-json/article-generator/v1/contexts?page=1&per_page=10&search=first
 
 **API Response**
 ```json
 [
     {
         "id": 1,
-        "title": "First Job",
-        "slug": "first-job",
-        "job_type": {
+        "title": "First Context",
+        "slug": "first-context",
+        "context_type": {
             "id": "1",
             "name": "Full time",
             "slug": "full-time"
@@ -134,12 +134,12 @@ http://localhost/wpex/wp-json/job-place/v1/jobs?page=1&per_page=10&search=first
         "_links": {
             "self": [
                 {
-                    "href": "http://localhost/wpex/wp-json/job-place/v1/jobs/1"
+                    "href": "http://localhost/wpex/wp-json/article-generator/v1/contexts/1"
                 }
             ],
             "collection": [
                 {
-                    "href": "http://localhost/wpex/wp-json/job-place/v1/jobs"
+                    "href": "http://localhost/wpex/wp-json/article-generator/v1/contexts"
                 }
             ]
         }
@@ -147,17 +147,17 @@ http://localhost/wpex/wp-json/job-place/v1/jobs?page=1&per_page=10&search=first
 ]
 ```
 
-#### Job Detail API
-**URL** - http://localhost/wpex/wp-json/job-place/v1/jobs/2
+#### Context Detail API
+**URL** - http://localhost/wpex/wp-json/article-generator/v1/contexts/2
 **Method** - `GET`
 **Middleware** - WordPress user logged in.
 **Response** -
 ```json
 {
     "id": 2,
-    "title": "Second Job",
-    "slug": "second-job",
-    "job_type": {
+    "title": "Second Context",
+    "slug": "second-context",
+    "context_type": {
         "id": "2",
         "name": "Part time",
         "slug": "part-time"
@@ -174,41 +174,41 @@ http://localhost/wpex/wp-json/job-place/v1/jobs?page=1&per_page=10&search=first
     "_links": {
         "self": [
             {
-                "href": "http://localhost/wpex/wp-json/job-place/v1/jobs/2"
+                "href": "http://localhost/wpex/wp-json/article-generator/v1/contexts/2"
             }
         ],
         "collection": [
             {
-                "href": "http://localhost/wpex/wp-json/job-place/v1/jobs"
+                "href": "http://localhost/wpex/wp-json/article-generator/v1/contexts"
             }
         ]
     }
 }
 ```
 
-**Response when job not found** -
+**Response when context not found** -
 ```json
 {
-    "code": "job_place_rest_job_not_found",
-    "message": "Job not found. May be job has been deleted.",
+    "code": "article_gen_rest_context_not_found",
+    "message": "Context not found. May be context has been deleted.",
     "data": {
         "status": 404
     }
 }
 ```
 
-#### Job Create API
-**URL** - http://localhost/wpex/wp-json/job-place/v1/jobs
+#### Context Create API
+**URL** - http://localhost/wpex/wp-json/article-generator/v1/contexts
 **Method** - `POST`
 **Middleware** - WordPress user logged in.
 **Body** -
 ```json
 {
-    "title": "Simple Job Post Awesome",
-    "slug": "simple-job-post-awesome",
-    "description": "Simple job post description",
+    "title": "Simple Context Post Awesome",
+    "slug": "simple-context-post-awesome",
+    "description": "Simple context post description",
     "company_id": 1,
-    "job_type_id": 2,
+    "context_type_id": 2,
     "is_active": 1
 }
 ```
@@ -216,9 +216,9 @@ http://localhost/wpex/wp-json/job-place/v1/jobs?page=1&per_page=10&search=first
 ```json
 {
     "id": 49,
-    "title": "Simple Job Post Awesome",
-    "slug": "simple-job-post-awesome",
-    "job_type": {
+    "title": "Simple Context Post Awesome",
+    "slug": "simple-context-post-awesome",
+    "context_type": {
         "id": "2",
         "name": "Part time",
         "slug": "part-time"
@@ -229,35 +229,35 @@ http://localhost/wpex/wp-json/job-place/v1/jobs?page=1&per_page=10&search=first
         "name": "admin",
         "avatar_url": "http://1.gravatar.com/avatar/1c82531094a13dc2b339ab5decf5c446?s=96&d=mm&r=g"
     },
-    "description": "Simple job post description",
+    "description": "Simple context post description",
     "created_at": "2022-08-10 21:34:28",
     "updated_at": "2022-08-10 21:34:28",
     "_links": {
         "self": [
             {
-                "href": "http://localhost/wpex/wp-json/job-place/v1/jobs/49"
+                "href": "http://localhost/wpex/wp-json/article-generator/v1/contexts/49"
             }
         ],
         "collection": [
             {
-                "href": "http://localhost/wpex/wp-json/job-place/v1/jobs"
+                "href": "http://localhost/wpex/wp-json/article-generator/v1/contexts"
             }
         ]
     }
 }
 ```
-#### Job Update API
-**URL** - http://localhost/wpex/wp-json/job-place/v1/jobs/2
+#### Context Update API
+**URL** - http://localhost/wpex/wp-json/article-generator/v1/contexts/2
 **Method** - `PUT`
 **Middleware** - WordPress user logged in.
 **Body** -
 ```json
 {
-    "title": "Simple Job Post Awesome Updated",
-    "slug": "simple-job-post-awesome-updated",
-    "description": "Simple job post description",
+    "title": "Simple Context Post Awesome Updated",
+    "slug": "simple-context-post-awesome-updated",
+    "description": "Simple context post description",
     "company_id": 1,
-    "job_type_id": 2,
+    "context_type_id": 2,
     "is_active": 1
 }
 ```
@@ -266,9 +266,9 @@ http://localhost/wpex/wp-json/job-place/v1/jobs?page=1&per_page=10&search=first
 ```json
 {
     "id": 49,
-    "title": "Simple Job Post Awesome Updated",
-    "slug": "simple-job-post-awesome-updated",
-    "job_type": {
+    "title": "Simple Context Post Awesome Updated",
+    "slug": "simple-context-post-awesome-updated",
+    "context_type": {
         "id": "2",
         "name": "Part time",
         "slug": "part-time"
@@ -279,18 +279,18 @@ http://localhost/wpex/wp-json/job-place/v1/jobs?page=1&per_page=10&search=first
         "name": "admin",
         "avatar_url": "http://1.gravatar.com/avatar/1c82531094a13dc2b339ab5decf5c446?s=96&d=mm&r=g"
     },
-    "description": "Simple job post description",
+    "description": "Simple context post description",
     "created_at": "2022-08-10 21:36:09",
     "updated_at": "2022-08-10 21:36:09",
     "_links": {
         "self": [
             {
-                "href": "http://localhost/wpex/wp-json/job-place/v1/jobs/49"
+                "href": "http://localhost/wpex/wp-json/article-generator/v1/contexts/49"
             }
         ],
         "collection": [
             {
-                "href": "http://localhost/wpex/wp-json/job-place/v1/jobs"
+                "href": "http://localhost/wpex/wp-json/article-generator/v1/contexts"
             }
         ]
     }
@@ -298,8 +298,8 @@ http://localhost/wpex/wp-json/job-place/v1/jobs?page=1&per_page=10&search=first
 ```
 
 
-#### Jobs Delete API
-**URL** - http://localhost/wpex/wp-json/job-place/v1/jobs
+#### Contexts Delete API
+**URL** - http://localhost/wpex/wp-json/article-generator/v1/contexts
 **Method** - `DELETE`
 **Middleware** - WordPress user logged in.
 **Body** -
@@ -312,7 +312,7 @@ http://localhost/wpex/wp-json/job-place/v1/jobs?page=1&per_page=10&search=first
 **Response**
 ```json
 {
-    "message": "Jobs deleted successfully.",
+    "message": "Contexts deleted successfully.",
     "total": 1
 }
 ```

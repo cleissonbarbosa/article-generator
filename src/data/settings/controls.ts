@@ -9,7 +9,7 @@ import apiFetch from '@wordpress/api-fetch';
 import { settingsEndpoint } from './endpoint';
 
 const controls = {
-    FETCH_FROM_API(action) {
+    FETCH_FROM_API(action : {path: string}) {
         return apiFetch({ path: action.path });
     },
 

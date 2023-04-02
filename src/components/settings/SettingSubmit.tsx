@@ -12,7 +12,6 @@ import { __, sprintf } from '@wordpress/i18n';
 import settingStore from '../../data/settings';
 import Button from '../button/Button';
 import { ISettingFormData } from '../../interfaces';
-import { settingDefaultFormData } from '../../data/settings/default-state';
 
 export default function SettingSubmit() {
     const dispatch = useDispatch();
@@ -56,7 +55,20 @@ export default function SettingSubmit() {
         // Submit
         dispatch(settingStore)
             .saveSetting(form)
-            .then(() => {
+            .then((response: any) => {
+
+                if(response?.code) {
+                    return Swal.fire({
+                        title: __('Error', 'article-gen'),
+                        text: response.message,
+                        icon: 'error',
+                        toast: true,
+                        position: 'bottom',
+                        showConfirmButton: false,
+                        timer: 3000,
+                    });
+                }
+
                 Swal.fire({
                     title: __('Setting saved', 'article-gen'),
                     text: __('Setting has been saved successfully.', 'article-gen'),

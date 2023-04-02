@@ -1,6 +1,6 @@
 <?php
 
-namespace ArticleGen\JobPlace\Abstracts;
+namespace ArticleGen\CBPlugin\Abstracts;
 
 /**
  * Database migration class.

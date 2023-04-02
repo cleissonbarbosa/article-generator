@@ -1,6 +1,6 @@
 <?php
 
-namespace ArticleGen\JobPlace\REST;
+namespace ArticleGen\CBPlugin\REST;
 
 /**
  * API Manager class.
@@ -31,10 +31,10 @@ class Api {
         $this->class_map = apply_filters(
             'article_gen_rest_api_class_map',
             [
-                \ArticleGen\JobPlace\REST\JobTypesController::class,
-                \ArticleGen\JobPlace\REST\JobsController::class,
-                \ArticleGen\JobPlace\REST\CompaniesController::class,
-                \ArticleGen\JobPlace\REST\SettingsController::class,
+                \ArticleGen\CBPlugin\REST\ContextTypesController::class,
+                \ArticleGen\CBPlugin\REST\ContextsController::class,
+                \ArticleGen\CBPlugin\REST\CompaniesController::class,
+                \ArticleGen\CBPlugin\REST\SettingsController::class,
 
             ]
         );

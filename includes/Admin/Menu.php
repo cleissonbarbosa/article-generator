@@ -31,7 +31,7 @@ class Menu {
         $slug          = ARTICLE_GEN_SLUG;
         $menu_position = 50;
         $capability    = 'manage_options';
-        $logo_icon     = ARTICLE_GEN_ASSETS . '/images/article-generator-logo.png';
+        $logo_icon     = ARTICLE_GEN_ASSETS . '/images/article-gen-logo-icon.png';
 
         add_menu_page( esc_attr__( 'Article Generator', 'article-gen' ), esc_attr__( 'Article Generator', 'article-gen' ), $capability, $slug, [ $this, 'plugin_page' ], $logo_icon, $menu_position );
 

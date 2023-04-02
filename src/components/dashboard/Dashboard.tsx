@@ -15,11 +15,10 @@ const Dashboard = () => {
         <div className="dashboard mx-8 flex gap-5">
             <div className="card p-5">
                 <h3 className="font-medium text-lg">
-                    {__('Dashboard', 'article-gen')}
+                    {__('Contexts', 'article-gen')}
                 </h3>
                 <p>
-                    {__('Edit Dashboard component at ', 'article-gen')}
-                    <code>src/components/Dashboard.jsx</code>
+                    {__('Add/Edit/Delete Contexts for your prompts', 'article-gen')}
                 </p>
 
                 <div className="mt-4">

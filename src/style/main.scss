@@ -33,3 +33,14 @@ li > ol {
         margin: 0;
     }
 }
+
+#toplevel_page_article-gen {
+    a.wp-has-submenu {
+        background: theme('colors.primary') !important;
+        .wp-menu-image.dashicons-before{
+            img {
+                padding-left: 10px;
+            }
+        }
+    }
+}

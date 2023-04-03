@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .wp-block-article-generator-subject {
     --tw-shadow: 0 0 15px rgba(0,0,0,0.1);
     --tw-shadow-colored: 0 0 15px var(--tw-shadow-color);
@@ -15,7 +19,10 @@
 
 .article-gen-btn {
     margin-top: 20px;
-    .btn-icon {
-        margin-right: 10px;
-    }
+}
+
+.dashicons-gpt-create-text {
+    background-image: url("/assets/images/article-gen-logo.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 }

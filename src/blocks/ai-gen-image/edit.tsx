@@ -70,9 +70,10 @@ export default function Edit({ attributes, setAttributes }) {
 
       <Button
         text={loading ? " Generating image..." : " Generate image"}
-        buttonCustomClass="components-button is-primary img-gen-btn"
+        buttonCustomClass="img-gen-btn"
         disabled={loading}
         iconCustomClass="btn-icon"
+        type="primary"
         icon={faImage}
         onClick={() => GenerateIMG(prompt, sizeValue)}
         />

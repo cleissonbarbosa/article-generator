@@ -4,7 +4,7 @@
 	"title": "GPT Create Text",
 	"name": "ag/create-text",
 	"category": "formatting",
-	"icon": "reddit",
+	"icon": "gpt-create-text",
 	"attributes": {
 		"prompt": {
 			"type": "string",
@@ -13,6 +13,18 @@
 		"context": {
 			"type": "string",
 			"default": ""
+		},
+		"toggleContext": {
+			"type": "boolean",
+			"default": false
+		},
+		"toggleCustomContext": {
+			"type": "boolean",
+			"default": false
+		},
+		"dataContexts":{
+			"type":"array",
+			"default": []
 		}
 	},
 	"example": {

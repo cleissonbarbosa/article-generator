@@ -1,5 +1,5 @@
 import { CreateImageRequestSizeEnum } from "openai";
-import { generateImagePrompt, getOpenAi } from "./OpenAi";
+import { getOpenAi } from "./OpenAi";
 
 export async function createImage (prompt: string, size: CreateImageRequestSizeEnum | null = null): Promise<string> {
 
@@ -24,4 +24,10 @@ export async function createImage (prompt: string, size: CreateImageRequestSizeE
           throw new Error( 'An error occurred during your request.' );
       }
     }
+}
+
+export function generateImagePrompt(input: string) : string {
+  const capitalizedPrompt =
+  input[0].toUpperCase() + input.slice(1).toLowerCase();
+  return `${capitalizedPrompt}`;
 }

@@ -3,7 +3,7 @@
 
 # 🤖 Article Generator
 
-  <img width="400" src="assets/images/article-gen-logo.png" alt="logo">
+  <img width="200" src="assets/images/article-gen-logo.png" alt="logo">
 </div>
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/cleissonbarbosa/article-generator?style=for-the-badge)

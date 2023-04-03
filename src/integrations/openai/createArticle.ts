@@ -1,3 +1,4 @@
+import { CreateCompletionRequest } from "openai";
 import { getOpenAi } from "./OpenAi";
 
 export interface IArticlePopulate {
@@ -5,7 +6,11 @@ export interface IArticlePopulate {
     content: string,
 }
 
-export async function createArticle (subject: string, context?: string): Promise<IArticlePopulate> {
+export async function createArticle (
+  subject: string, 
+  context?: string, 
+  options?: Pick<CreateCompletionRequest, "temperature" | "max_tokens">
+): Promise<IArticlePopulate> {
 
     if (subject.trim().length === 0) {
       throw new Error( "Please enter a valid prompt" );
@@ -17,18 +22,19 @@ export async function createArticle (subject: string, context?: string): Promise
         model: 'text-davinci-003',
         prompt: generateArticlePrompt(subject, context),
         temperature: 0.6,
-        max_tokens:  3024,
+        max_tokens: 3024,
         n: 1,
-        stop: '\n',
+        stop: '[CONTENT_END]',
+        ...options
+
       });
-  
       // Retorna o texto do artigo gerado separado em titulo e conteúdo
       return extractTitleAndContent( response.data.choices[0].text as string );
-    } catch (error) {
-      return getFakeText()
+    } catch (error : Error | any ) {
       // Trata possíveis erros durante a geração do artigo
-      console.error(error);
-      throw new Error('Failed to generate article. Make sure you entered the API Key in the settings');
+      console.info({error});
+      const errorMessase = error.response.data.error.message || `Failed to generate article. Make sure you entered the API Key in the settings`
+      throw new Error(errorMessase);
     }
 }
 

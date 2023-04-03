@@ -105,6 +105,7 @@ class SettingsController extends RESTController {
         }
 
         $settings = article_generator()->settings->all( $args );
+        
         foreach ( $settings as $context ) {
             $response = $this->prepare_item_for_response( $context, $request );
             $data[]   = $this->prepare_response_for_collection( $response );

@@ -4,13 +4,16 @@ import { settingsEndpoint } from "../../data/settings/endpoint";
 import { ISetting } from "../../interfaces";
 
 export default async function openAiSettings(): Promise<Configuration> {
-    const settings = await controls.FETCH_FROM_API({ path: `${settingsEndpoint}/openai-api-key` }) as ISetting
+    const apiKey = await controls.FETCH_FROM_API({ path: `${settingsEndpoint}/openai-api-key` }) as ISetting
+    const organizationID = await controls.FETCH_FROM_API({ path: `${settingsEndpoint}/openai-organization-id` }) as ISetting
     
-    if(!settings?.value){
+    if(!apiKey?.value && !organizationID.value){
         throw new Error( "OpenAI API key not configured");
     }
+
     const configuration = new Configuration({
-        apiKey: settings.value,
+        apiKey: apiKey.value,
+        organization: organizationID.value
     });
     
     return configuration;

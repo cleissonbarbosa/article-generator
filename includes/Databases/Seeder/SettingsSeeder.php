@@ -36,6 +36,12 @@ class SettingsSeeder extends DBSeeder {
                 'created_at'  => current_datetime()->format( 'Y-m-d H:i:s' ),
                 'updated_at'  => current_datetime()->format( 'Y-m-d H:i:s' ),
             ],
+            [
+                'key'       => 'openai-organization-id',
+                'value'     => '',
+                'created_at'  => current_datetime()->format( 'Y-m-d H:i:s' ),
+                'updated_at'  => current_datetime()->format( 'Y-m-d H:i:s' ),
+            ],
         ];
 
         // Create each of the settings.

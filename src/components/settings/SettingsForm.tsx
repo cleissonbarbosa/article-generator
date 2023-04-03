@@ -30,7 +30,7 @@ export default function SettingsForm({ settings } : Props) {
         (select) => select(settingsStore).getLoadingSettings(),
         []
     );
-
+    //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
     const onChange = (input: IInputResponse) => {
         dispatch(settingsStore).setFormData([...new Map([
             ...form,
@@ -62,7 +62,7 @@ export default function SettingsForm({ settings } : Props) {
                     ) : (
                         <>
                             <div className="md:basis-4/5">
-                                <ContextCard className="setting-general-info">
+                                <ContextCard className="openai-setting">
                                     <Input
                                         type="password"
                                         label={__('OpenAi API Key', 'article-gen')}
@@ -72,7 +72,20 @@ export default function SettingsForm({ settings } : Props) {
                                             'Enter a openai api key',
                                             'article-gen'
                                         )}
-                                        value={form[0]?.value}
+                                        required={true}
+                                        value={ form.length > 0 ? form.filter((input) => input.key === 'openai-api-key').map((e) => e?.value) : '' }
+                                        onChange={onChange}
+                                    />
+                                    <Input
+                                        type="text"
+                                        label={__('OpenAi Organization ID', 'article-gen')}
+                                        id="openai-organization-id"
+                                        key={'openai-organization-id'}
+                                        placeholder={__(
+                                            'Enter a openai organization',
+                                            'article-gen'
+                                        )}
+                                        value={ form.length > 0 ? form?.filter((input) => input.key === 'openai-organization-id').map((e) => e?.value) : '' }
                                         onChange={onChange}
                                     />
                                 </ContextCard>

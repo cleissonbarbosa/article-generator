@@ -20,7 +20,7 @@ export default function SettingFormSidebar({ loading }: Props) {
 
     const menus = [
         {
-            slug: 'setting-general-info',
+            slug: 'openai-setting',
             label: __('OpenAi Settings', 'article-gen'),
         },
         {

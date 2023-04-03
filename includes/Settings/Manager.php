@@ -31,7 +31,7 @@ class Manager {
         $defaults = [
             'page'     => 1,
             'per_page' => 10,
-            'orderby'  => 'key',
+            'orderby'  => '`key`',
             'order'    => 'DESC',
             'search'   => '',
             'count'    => false,
@@ -43,7 +43,7 @@ class Manager {
         if ( ! empty( $args['search'] ) ) {
             global $wpdb;
             $like = '%' . $wpdb->esc_like( sanitize_text_field( wp_unslash( $args['search'] ) ) ) . '%';
-            $args['where'][] = $wpdb->prepare( ' key LIKE %s OR value LIKE %s ', $like, $like );
+            $args['where'][] = $wpdb->prepare( ' `key` LIKE %s OR `value` LIKE %s ', $like, $like );
         }
 
         if ( ! empty( $args['where'] ) ) {
@@ -137,12 +137,12 @@ class Manager {
      */
     public function update( array $datas ) {
         // Prepare setting data for database-insertion.
-        $updated = null;
+        $updated = 0;
         foreach($datas as $data) {
             $data = $this->setting->prepare_for_database( $data );
 
             // Update setting.
-            $updated = $this->setting->update(
+            $update_status = $this->setting->update(
                 $data,
                 [
                     'key' => $data['key'],
@@ -156,14 +156,14 @@ class Manager {
                     '%s',
                 ]
             );
-    
-            if ( ! $updated ) {
-                return new \WP_Error( 'article_gen_setting_update_failed', __( 'Failed to update setting.', 'article-gen' ), ["datas"=>$datas,'d'=>$data] );
+
+            if($update_status) {
+                $updated++;
             }
         }
 
 
-        if ( $updated >= 0 ) {
+        if ( $updated ) {
             /**
              * Fires after a setting is being updated.
              *

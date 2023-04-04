@@ -45,7 +45,6 @@ const actions = {
                 type: Types.UPDATE_SETTINGS,
                 payload,
             };
-            console.log('response', response)
 
             if (response) {
                 yield actions.setFormData({ ...settingDefaultFormData });

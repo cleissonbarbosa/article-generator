@@ -28,7 +28,7 @@ export default function SettingSubmit() {
 
     const validate = () => {
         for(const data of form){
-            if (!data.value.length) {
+            if (!data.value.length && data.key != 'openai-organization-id') {
                 return sprintf( __(`Please give a setting value to %s.`, 'article-gen'), data.key);
             }
         }

@@ -192,7 +192,7 @@ export default function Prompt({ attributes, setAttributes } ) {
 function handlePopulate({ prompt, context, options } : IHandlePopulate, setLoading: React.Dispatch<React.SetStateAction<boolean>>) {
   setLoading(true)
   createArticle(prompt, context, options).then(( response )=> {
-    console.log(response)
+    Swal.close() // close all popups
     const blocks = parse(response.content);
     dispatch('core/editor').editPost({title: response.title});
     dispatch('core/block-editor').removeBlock(

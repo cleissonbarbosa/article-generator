@@ -20,6 +20,7 @@ import './style.scss';
 import prompt from './prompt';
 import save from './save';
 import json from './block.json';
+import '../../data/store';
 
 const { name, ...settings } = json;
 

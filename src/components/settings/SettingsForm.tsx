@@ -30,7 +30,6 @@ export default function SettingsForm({ settings } : Props) {
         (select) => select(settingsStore).getLoadingSettings(),
         []
     );
-    //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
     const onChange = (input: IInputResponse) => {
         dispatch(settingsStore).setFormData([...new Map([
             ...form,

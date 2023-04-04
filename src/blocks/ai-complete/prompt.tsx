@@ -6,7 +6,7 @@ import { parse } from '@wordpress/blocks';
 import { dispatch, select, useSelect } from '@wordpress/data';
 import Swal, { SweetAlertResult } from "sweetalert2";
 import { useState, useEffect } from '@wordpress/element'
-import { faCog, faEdit, faMarker } from "@fortawesome/free-solid-svg-icons";
+import { faMarker } from "@fortawesome/free-solid-svg-icons";
 import { InspectorControls, RichText, useBlockProps } from "@wordpress/block-editor";
 import { PanelBody, __experimentalBoxControl as BoxControl } from '@wordpress/components';
 /**
@@ -16,25 +16,17 @@ import "./editor.scss";
 import Button from "../../components/button/Button";
 import { createArticle } from '../../integrations/openai/createArticle'
 import SwitchCheckbox from "../../components/inputs/SwitchCheckbox";
-import Select2Input, { Select2SingleRow } from "../../components/inputs/Select2Input";
-import apiFetch from '@wordpress/api-fetch';
-import { contextsEndpoint } from "../../data/contexts/endpoint";
+import Select2Input from "../../components/inputs/Select2Input";
 import { IContext } from "../../interfaces";
-import Layout from "../../components/layout/Layout";
-import Card from "../../components/card/Card";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { render } from "enzyme";
-import { IInputResponse, Input, InputProps } from "../../components/inputs/Input";
-import { Toast } from "react-toastify/dist/components";
-import Tooltip from "../../components/tooltip/Tooltip";
+import { IInputResponse, Input } from "../../components/inputs/Input";
 import { CreateCompletionRequest } from "openai";
+import contextStore from "../../data/contexts";
 
 interface IAttributesProps {
   prompt: string
   context: string
   toggleContext: boolean
   toggleCustomContext: boolean
-  dataContexts: Array<IContext>
 }
 
 interface IHandlePopulate {
@@ -54,12 +46,16 @@ export default function Prompt({ attributes, setAttributes } ) {
     prompt, 
     context, 
     toggleContext, 
-    toggleCustomContext,
-    dataContexts 
+    toggleCustomContext, 
   } = attributes as IAttributesProps;
   const [loading, setLoading] = useState<boolean>(false);
   const [temperature, setTemperature] = useState<number>(0.6);
   const [maxTokens, setMaxTokens] = useState<number>(2048);
+
+  const contexts: IContext[] = useSelect(
+    (select) => select(contextStore).getContexts(),
+    []
+  );
 
   useEffect(() => {
     if(loading) {
@@ -69,13 +65,7 @@ export default function Prompt({ attributes, setAttributes } ) {
         icon: 'info',
         toast: true,
         position: 'center',
-        showConfirmButton: false,
-        timer: 3000
-      })
-    }
-    if( toggleContext && dataContexts.length === 0 ) {
-      apiFetch({path: contextsEndpoint}).then((response) => {
-        setAttributes({ dataContexts: response })
+        showConfirmButton: false
       })
     }
   })
@@ -118,7 +108,7 @@ export default function Prompt({ attributes, setAttributes } ) {
             <Select2Input
               placeholder="Select context"
               defaultValue={context}
-              options={[...dataContexts.map((data) => { return {label: data.title, value: data.description}})]} 
+              options={[...contexts.map((data) => { return {label: data.title, value: data.description}})]} 
               onChange={(input) => {setAttributes({context: input.value})}}
               />
           </>

@@ -21,15 +21,6 @@ type Props = {
 
 export default function ContextForm({ context }: Props) {
     const dispatch = useDispatch();
-    const contextTypes: Array<Select2SingleRow> = useSelect(
-        (select) => select(contextStore).getContextTypes(),
-        []
-    );
-
-    const companyDropdowns: Array<Select2SingleRow> = useSelect(
-        (select) => select(contextStore).getCompaniesDropdown(),
-        []
-    );
 
     const form: IContextFormData = useSelect(
         (select) => select(contextStore).getForm(),
@@ -63,13 +54,9 @@ export default function ContextForm({ context }: Props) {
                         <div className="md:basis-4/5">
                             <ContextCard>
                                 <div className="animate-pulse h-4 bg-slate-100 w-full p-2.5 rounded-lg mt-5"></div>
-                                <div className="animate-pulse h-4 bg-slate-100 w-full p-2.5 rounded-lg mt-5"></div>
-                                <div className="animate-pulse h-4 bg-slate-100 w-full p-2.5 rounded-lg mt-5"></div>
                             </ContextCard>
                             <ContextCard>
-                                <div className="animate-pulse h-4 bg-slate-100 w-full p-2.5 rounded-lg mt-5"></div>
-                                <div className="animate-pulse h-4 bg-slate-100 w-full p-2.5 rounded-lg mt-5"></div>
-                                <div className="animate-pulse h-4 bg-slate-100 w-full p-2.5 rounded-lg mt-5"></div>
+                                <div className="animate-pulse h-[200px] bg-slate-100 w-full p-2.5 rounded-lg mt-5"></div>
                             </ContextCard>
                         </div>
                     ) : (
@@ -81,46 +68,28 @@ export default function ContextForm({ context }: Props) {
                                         label={__('Context title', 'article-gen')}
                                         id="title"
                                         placeholder={__(
-                                            'Enter Context title, eg: Software Engineer',
+                                            'Enter Context title, eg: Life Style',
                                             'article-gen'
                                         )}
                                         value={form.title}
                                         onChange={onChange}
                                     />
-                                    <Input
-                                        type="select"
-                                        label={__('Context type', 'article-gen')}
-                                        id="context_type_id"
-                                        value={form.context_type_id}
-                                        options={contextTypes}
-                                        onChange={onChange}
-                                    />
                                 </ContextCard>
-                                <ContextCard className="context-description-info">
+                                <ContextCard className="context-content-info">
                                     <Input
-                                        type="text-editor"
+                                        type="textarea"
                                         label={__('Context details', 'article-gen')}
-                                        id="description"
+                                        id="content"
+                                        rows={8}
                                         placeholder={__(
-                                            'Enter Context description and necessary requirements.',
+                                            'Enter Context content.',
                                             'article-gen'
                                         )}
                                         editorHeight="150px"
-                                        value={form.description}
+                                        value={form.content}
                                         onChange={onChange}
                                     />
                                 </ContextCard>
-                                <ContextCard className="context-company-info">
-                                    <Input
-                                        type="select"
-                                        label={__('Company Name', 'article-gen')}
-                                        id="company_id"
-                                        value={form.company_id}
-                                        options={companyDropdowns}
-                                        onChange={onChange}
-                                    />
-                                </ContextCard>
-
                                 <div className="flex justify-end md:hidden">
                                     <ContextSubmit />
                                 </div>

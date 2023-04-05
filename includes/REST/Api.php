@@ -31,9 +31,7 @@ class Api {
         $this->class_map = apply_filters(
             'article_gen_rest_api_class_map',
             [
-                \ArticleGen\CBPlugin\REST\ContextTypesController::class,
                 \ArticleGen\CBPlugin\REST\ContextsController::class,
-                \ArticleGen\CBPlugin\REST\CompaniesController::class,
                 \ArticleGen\CBPlugin\REST\SettingsController::class,
 
             ]

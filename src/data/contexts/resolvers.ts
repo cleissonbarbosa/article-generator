@@ -3,19 +3,13 @@
  */
 import actions from './actions';
 import {
-    companiesDropdownEndpoint,
     contextsEndpoint,
-    contextTypesEndpoint,
 } from './endpoint';
 import {
-    ICompanyDropdown,
     IContextFilter,
-    IContextTypes,
     IResponseGenerator,
 } from '../../interfaces';
-import { formatSelect2Data } from '../../utils/Select2Helper';
 import { prepareContextDataForDatabase } from './utils';
-import { Select2SingleRow } from '../../components/inputs/Select2Input';
 
 const resolvers = {
     *getContexts(filters: IContextFilter) {
@@ -56,26 +50,6 @@ const resolvers = {
         }
 
         return actions.setLoadingContexts(false);
-    },
-
-    *getContextTypes() {
-        const response: IResponseGenerator = yield actions.fetchFromAPIUnparsed(
-            contextTypesEndpoint
-        );
-
-        const contextTypes: Array<IContextTypes> = response.data;
-
-        yield actions.setContextTypes(formatSelect2Data(contextTypes) as Select2SingleRow[]);
-    },
-
-    *getCompaniesDropdown() {
-        const response: IResponseGenerator = yield actions.fetchFromAPIUnparsed(
-            companiesDropdownEndpoint
-        );
-
-        const companyDropdowns: Array<ICompanyDropdown> = response.data;
-
-        yield actions.setCompanyDropdowns(formatSelect2Data(companyDropdowns) as Select2SingleRow[]);
     },
 };
 

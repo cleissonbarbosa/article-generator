@@ -20,16 +20,6 @@ export interface IContext {
     description: string;
 
     /**
-     * Context Type ID.
-     */
-    context_type_id: number;
-
-    /**
-     * Company ID.
-     */
-    company_id: number;
-
-    /**
      * Status published or draft
      */
     is_active: boolean | number;
@@ -43,10 +33,6 @@ export interface IContext {
 export interface IContextFormData extends IContext {}
 
 export interface IContexts {
-    /**
-     * All company list dropdown as array of {label, value}.
-     */
-    companyDropdowns: Array<ISelect2Input>;
 
     /**
      * All contexts as array of IContext.
@@ -109,48 +95,4 @@ export interface IContextFilter {
      * Context search URL params.
      */
     search?: string;
-}
-
-export interface IContextTypes {
-    /**
-     * Context type id.
-     */
-    id: number;
-
-    /**
-     * Context type name.
-     */
-    name: string;
-
-    /**
-     * Context type slug.
-     */
-    slug: string;
-
-    /**
-     * Context type description.
-     */
-    description: string | null;
-}
-
-export interface ICompanyDropdown {
-    /**
-     * Company id.
-     */
-    id: number;
-
-    /**
-     * Company name.
-     */
-    name: string;
-
-    /**
-     * Company email.
-     */
-    email: string;
-
-    /**
-     * Username.
-     */
-    username: string;
 }

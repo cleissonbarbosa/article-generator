@@ -31,12 +31,10 @@ class ContextsSeeder extends DBSeeder {
         // Generator some contexts.
         $contexts = [
             [
-                'title'       => 'First Context Post',
-                'slug'        => 'first-context-post',
-                'description' => 'This is a simple context post.',
+                'title'       => __('First Context', 'article-gen'),
+                'slug'        => 'first-context',
+                'content' => 'Article generator is a plugin for wordpress that allows the generation of automated post using artificial intelligence',
                 'is_active'   => 1,
-                'company_id'  => 1,
-                'context_type_id' => 1,
                 'created_by'  => get_current_user_id(),
                 'created_at'  => current_datetime()->format( 'Y-m-d H:i:s' ),
                 'updated_at'  => current_datetime()->format( 'Y-m-d H:i:s' ),

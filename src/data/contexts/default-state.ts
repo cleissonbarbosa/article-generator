@@ -6,9 +6,7 @@ import { IContexts } from '../../interfaces';
 export const contextDefaultFormData = {
     id: 0,
     title: '',
-    description: '',
-    context_type_id: 0,
-    company_id: 0,
+    content: '',
     is_active: 1,
 };
 

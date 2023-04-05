@@ -31,6 +31,7 @@ const controls = {
     },
 
     CREATE_CONTEXTS(action: IAction) {
+        console.log(action)
         return apiFetch({
             path: contextsEndpoint,
             method: 'POST',

@@ -28,15 +28,6 @@ class Keys {
     const ARTICLE_GEN_VERSION = 'article_gen_version';
 
     /**
-     * Context type seeder ran key.
-     *
-     * @var string
-     *
-     * @since 0.5.0
-     */
-    const CONTEXT_TYPE_SEEDER_RAN = 'article_gen_context_type_seeder_ran';
-
-    /**
      * Context seeder ran key.
      *
      * @var string

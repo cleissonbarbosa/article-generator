@@ -1,14 +1,14 @@
 /**
  * External dependencies.
  */
-import { __ } from "@wordpress/i18n";
+import { __, sprintf } from "@wordpress/i18n";
 import { parse } from '@wordpress/blocks';
 import { dispatch, select, useSelect } from '@wordpress/data';
 import Swal, { SweetAlertResult } from "sweetalert2";
 import { useState, useEffect } from '@wordpress/element'
 import { faMarker } from "@fortawesome/free-solid-svg-icons";
 import { InspectorControls, RichText, useBlockProps } from "@wordpress/block-editor";
-import { PanelBody, __experimentalBoxControl as BoxControl } from '@wordpress/components';
+import { PanelBody } from '@wordpress/components';
 /**
  * Internal dependencies.
 */
@@ -61,7 +61,7 @@ export default function Prompt({ attributes, setAttributes } ) {
     if(loading) {
       Swal.fire({
         title: __('Wait...', 'article-gen'),
-        text: `Writing text about: ${prompt}`,
+        text: sprintf(__("Writing text about: %s", 'article-gen'), prompt),
         icon: 'info',
         toast: true,
         position: 'center',
@@ -153,7 +153,7 @@ export default function Prompt({ attributes, setAttributes } ) {
             >
               <div className="mb-6">
                 <label>
-                  Temperature: <strong> {temperature} </strong>
+                  {__("Temperature", 'article-gen')}: <strong> {temperature} </strong>
                   <div>
                     <input 
                       className="w-full h-2 mb-5 rounded-lg appearance-none cursor-pointer bg-gray" 
@@ -164,12 +164,12 @@ export default function Prompt({ attributes, setAttributes } ) {
                       value={temperature} 
                       onChange={(event) => {setTemperature(Number(event.target.value))}} />
                   </div>
-                  <small>What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.</small>
+                  <small>{__("What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.", 'article-gen')}</small>
                 </label>
               </div>
               <div>
                 <label>
-                  Max Tokens: <strong>{maxTokens}</strong>
+                  {__("Max Tokens", 'article-gen')}: <strong>{maxTokens}</strong>
                   <div>
                     <input 
                       className="w-full h-2 mb-5 rounded-lg appearance-none cursor-pointer bg-gray" 
@@ -180,7 +180,7 @@ export default function Prompt({ attributes, setAttributes } ) {
                       value={maxTokens} 
                       onChange={(event) => {setMaxTokens(Number(event.target.value))}} />
                   </div>
-                  <small>The token count of your prompt plus max_tokens cannot exceed the model's context length. Most models have a context length of 2048 tokens</small>
+                  <small>{__("The token count of your prompt plus max_tokens cannot exceed the model's context length. Most models have a context length of 2048 tokens", 'article-gen')}</small>
                 </label>
               </div>
             </PanelBody>
@@ -189,7 +189,10 @@ export default function Prompt({ attributes, setAttributes } ) {
   );
 }
 
-function handlePopulate({ prompt, context, options } : IHandlePopulate, setLoading: React.Dispatch<React.SetStateAction<boolean>>) {
+function handlePopulate(
+  { prompt, context, options } : IHandlePopulate, 
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>
+) {
   setLoading(true)
   createArticle(prompt, context, options).then(( response )=> {
     Swal.close() // close all popups

@@ -8,6 +8,6 @@ import { useBlockProps } from "@wordpress/block-editor";
  * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#save
  * @return {WPElement} Element to render.
  */
-export default function save( { attributes } : any ) {
+export default function save() {
 	return null;
 }

@@ -19,7 +19,6 @@ class Manager {
      */
     public function run() {
         $seeder_classes = [
-            \ArticleGen\CBPlugin\Databases\Seeder\ContextTypeSeeder::class,
             \ArticleGen\CBPlugin\Databases\Seeder\ContextsSeeder::class,
             \ArticleGen\CBPlugin\Databases\Seeder\SettingsSeeder::class,
         ];

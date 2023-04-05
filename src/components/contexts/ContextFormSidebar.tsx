@@ -24,12 +24,8 @@ export default function ContextFormSidebar({ loading }: Props) {
             label: __('General Information', 'article-gen'),
         },
         {
-            slug: 'context-description-info',
-            label: __('Context Description', 'article-gen'),
-        },
-        {
-            slug: 'context-company-info',
-            label: __('Company Information', 'article-gen'),
+            slug: 'context-content-info',
+            label: __('Context Content', 'article-gen'),
         },
     ];
 
@@ -41,7 +37,6 @@ export default function ContextFormSidebar({ loading }: Props) {
             <ul>
                 {loading ? (
                     <>
-                        <div className="animate-pulse h-4 bg-slate-100 w-full p-2.5 rounded-lg mt-5"></div>
                         <div className="animate-pulse h-4 bg-slate-100 w-full p-2.5 rounded-lg mt-5"></div>
                         <div className="animate-pulse h-4 bg-slate-100 w-full p-2.5 rounded-lg mt-5"></div>
                     </>

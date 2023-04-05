@@ -25,9 +25,7 @@ class ContextsMigration extends DBMigrator {
             `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
             `title` varchar(255) NOT NULL,
             `slug` varchar(255) NOT NULL,
-            `company_id` bigint(20) unsigned NOT NULL,
-            `context_type_id` int(10) unsigned NOT NULL,
-            `description` mediumtext NOT NULL,
+            `content` mediumtext NOT NULL,
             `is_active` tinyint(1) NOT NULL DEFAULT 1,
             `created_by` bigint(20) unsigned NOT NULL,
             `updated_by` bigint(20) unsigned NULL,
@@ -36,10 +34,8 @@ class ContextsMigration extends DBMigrator {
             `updated_at` datetime NOT NULL,
             `deleted_at` datetime NULL,
             PRIMARY KEY (`id`),
-            KEY `company_id` (`company_id`),
             UNIQUE KEY `slug` (`slug`),
             KEY `is_active` (`is_active`),
-            KEY `context_type_id` (`context_type_id`),
             KEY `created_by` (`created_by`),
             KEY `updated_by` (`updated_by`)
         ) $charset_collate";

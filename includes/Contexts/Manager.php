@@ -43,7 +43,7 @@ class Manager {
         if ( ! empty( $args['search'] ) ) {
             global $wpdb;
             $like = '%' . $wpdb->esc_like( sanitize_text_field( wp_unslash( $args['search'] ) ) ) . '%';
-            $args['where'][] = $wpdb->prepare( ' title LIKE %s OR description LIKE %s ', $like, $like );
+            $args['where'][] = $wpdb->prepare( ' title LIKE %s OR content LIKE %s ', $like, $like );
         }
 
         if ( ! empty( $args['where'] ) ) {
@@ -96,7 +96,7 @@ class Manager {
     public function create( $data ) {
         // Prepare context data for database-insertion.
         $context_data = $this->context->prepare_for_database( $data );
-
+        error_log(print_r($context_data, true));
         // Create context now.
         $context_id = $this->context->create(
             $context_data,
@@ -104,8 +104,6 @@ class Manager {
                 '%s',
                 '%s',
                 '%s',
-                '%d',
-                '%d',
                 '%d',
                 '%d',
                 '%s',
@@ -154,8 +152,6 @@ class Manager {
                 '%s',
                 '%s',
                 '%s',
-                '%d',
-                '%d',
                 '%d',
                 '%d',
                 '%s',

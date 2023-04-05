@@ -17,12 +17,6 @@ const selectors = {
         return context;
     },
 
-    getContextTypes(state: IContexts) {
-        const { contextTypes } = state;
-
-        return contextTypes;
-    },
-
     getContextsSaving(state: IContexts) {
         const { contextsSaving } = state;
 
@@ -63,12 +57,6 @@ const selectors = {
         const { form } = state;
 
         return form;
-    },
-
-    getCompaniesDropdown(state: IContexts) {
-        const { companyDropdowns } = state;
-
-        return companyDropdowns;
     },
 };
 

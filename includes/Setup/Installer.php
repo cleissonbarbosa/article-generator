@@ -92,7 +92,6 @@ class Installer {
         }
 
         // Run the database table migrations.
-        \ArticleGen\CBPlugin\Databases\Migrations\ContextTypeMigration::migrate();
         \ArticleGen\CBPlugin\Databases\Migrations\ContextsMigration::migrate();
         \ArticleGen\CBPlugin\Databases\Migrations\SettingsMigration::migrate();
     }

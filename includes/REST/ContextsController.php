@@ -158,10 +158,11 @@ class ContextsController extends RESTController {
      * @return WP_REST_Response|WP_Error
      */
     public function create_item( $request ) {
+        error_log( print_r( $request, false ) );
         if ( ! empty( $request['id'] ) ) {
             return new WP_Error(
                 'article_gen_rest_email_template_exists',
-                __( 'Cannot create existing email template.', 'article-gen' ),
+                __( 'Cannot create existing context.', 'article-gen' ),
                 array( 'status' => 400 )
             );
         }
@@ -317,30 +318,12 @@ class ContextsController extends RESTController {
                         'sanitize_callback' => [ $this, 'sanitize_context_slug' ],
                     ],
                 ],
-                'description' => [
+                'content' => [
                     'description' => __( 'Context description', 'article-gen' ),
                     'type'        => 'string',
                     'context'     => [ 'view', 'edit' ],
                     'required'    => true,
                     'minLength'   => 1,
-                ],
-                'context_type_id' => [
-                    'description' => __( 'Context type', 'article-gen' ),
-                    'type'        => 'integer',
-                    'context'     => [ 'view', 'edit' ],
-                    'required'    => true,
-                    'arg_options' => [
-                        'sanitize_callback' => 'absint',
-                    ],
-                ],
-                'company_id' => [
-                    'description' => __( 'Company', 'article-gen' ),
-                    'type'        => 'integer',
-                    'context'     => [ 'view', 'edit' ],
-                    'required'    => true,
-                    'arg_options' => [
-                        'sanitize_callback' => 'absint',
-                    ],
                 ],
                 'is_active' => [
                     'description' => __( 'Context status', 'article-gen' ),
@@ -409,10 +392,8 @@ class ContextsController extends RESTController {
         $data = [];
         $data['title']       = $request['title'];
         $data['slug']        = $this->generate_unique_slug( $request );
-        $data['description'] = $request['description'];
-        $data['company_id']  = $request['company_id'];
+        $data['content']     = $request['content'];
         $data['is_active']   = $request['is_active'];
-        $data['context_type_id'] = $request['context_type_id'];
 
         if ( empty( $request['id'] ) ) {
             $data['created_by'] = empty( $request['created_by'] ) ? get_current_user_id() : absint( $request['created_by'] );

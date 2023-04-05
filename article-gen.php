@@ -247,7 +247,6 @@ final class Article_Gen {
      */
     public function init_classes() {
         // Init necessary hooks
-        new ArticleGen\CBPlugin\User\Hooks();
     }
 
     /**

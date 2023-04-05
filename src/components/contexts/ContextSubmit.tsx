@@ -38,16 +38,8 @@ export default function ContextSubmit() {
             return __('Please give a context title.', 'article-gen');
         }
 
-        if (form.context_type_id === 0) {
-            return __('Please select context type.', 'article-gen');
-        }
-
-        if (!form.description.length) {
-            return __('Please give context description.', 'article-gen');
-        }
-
-        if (form.company_id === 0) {
-            return __('Please select a company.', 'article-gen');
+        if (!form.content.length) {
+            return __('Please give context content.', 'article-gen');
         }
 
         return '';

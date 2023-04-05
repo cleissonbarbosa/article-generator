@@ -1,7 +1,6 @@
 /**
  * Internal dependencies.
  */
-import { Select2SingleRow } from '../../components/inputs/Select2Input';
 import { IContext, IContextFormData, IResponseGenerator } from '../../interfaces';
 import { contextsEndpoint } from './endpoint';
 import * as Types from './types';
@@ -19,20 +18,6 @@ const actions = {
         return {
             type: Types.GET_CONTEXT_DETAIL,
             context,
-        };
-    },
-
-    setCompanyDropdowns(companyDropdowns: Array<Select2SingleRow>) {
-        return {
-            type: Types.GET_COMPANIES_DROPDOWN,
-            companyDropdowns,
-        };
-    },
-
-    setContextTypes(contextTypes: Array<Select2SingleRow>) {
-        return {
-            type: Types.GET_CONTEXT_TYPES,
-            contextTypes,
         };
     },
 

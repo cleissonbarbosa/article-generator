@@ -1,6 +1,6 @@
 <?php
 /**
- * Example block markup
+ * Block markup
  *
  * @var array    $attributes         Block attributes.
  * @var string   $content            Block content.
@@ -8,19 +8,5 @@
  * @var array    $context            Block context.
  */
 
-$padding = $attributes['padding'];
-$padding_string = $padding['top'] . ' ' . $padding['right'] . ' ' . $padding['bottom'] . ' ' . $padding['left'];
-
 ?>
-<div 
-    <?php echo wp_kses_data( get_block_wrapper_attributes() ); ?>
-    style="background-color: <?php echo esc_attr( $attributes['bgColor'] ); ?>; padding: <?php echo esc_attr( $padding_string ); ?>; "
->
-    <h2 class="wp-block-article-generator-header_title">
-        <?php echo esc_html( $attributes['prompt'] ); ?>
-    </h2>
-
-    <div class="wp-block-article-generator-header_description">
-        <?php echo wp_kses_post( $attributes['context'] ); ?>
-    </div>
-</div>
+<div></div>

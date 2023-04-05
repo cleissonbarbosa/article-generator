@@ -18,18 +18,6 @@ const reducer = (state = contextDefaultState, action: any) => {
                 context: action.context,
             };
 
-        case Types.GET_CONTEXT_TYPES:
-            return {
-                ...state,
-                contextTypes: action.contextTypes,
-            };
-
-        case Types.GET_COMPANIES_DROPDOWN:
-            return {
-                ...state,
-                companyDropdowns: action.companyDropdowns,
-            };
-
         case Types.SET_LOADING_CONTEXTS:
             return {
                 ...state,

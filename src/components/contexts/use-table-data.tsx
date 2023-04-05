@@ -25,16 +25,6 @@ export const useTableHeaderData = (): ITableHeader[] => {
             className: '',
         },
         {
-            key: 'context_type',
-            title: __('Context type', 'article-gen'),
-            className: '',
-        },
-        {
-            key: 'company',
-            title: __('Company', 'article-gen'),
-            className: '',
-        },
-        {
             key: 'status',
             title: __('Status', 'article-gen'),
             className: '',
@@ -71,27 +61,6 @@ export const useTableRowData = (contexts = [], checked: number[]): ITableRow[] =
                 {
                     key: 'title',
                     value: row.title,
-                    className: '',
-                },
-                {
-                    key: 'context_type',
-                    value: row.context_type?.name,
-                    className: '',
-                },
-                {
-                    key: 'company',
-                    value: (
-                        <div className="flex">
-                            <div className="flex-6">
-                                <img
-                                    src={row.company?.avatar_url}
-                                    alt=""
-                                    className="mr-3 w-7 rounded-full"
-                                />
-                            </div>
-                            <div className="flex-6">{row.company?.name}</div>
-                        </div>
-                    ),
                     className: '',
                 },
                 {

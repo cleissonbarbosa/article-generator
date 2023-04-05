@@ -1,26 +1,25 @@
 <?php
 /**
- * Example block markup
+ * Block markup
  *
  * @var array    $attributes         Block attributes.
  * @var string   $content            Block content.
  * @var WP_Block $block              Block instance.
  * @var array    $context            Block context.
  */
-
-$padding = $attributes['padding'];
-$padding_string = $padding['top'] . ' ' . $padding['right'] . ' ' . $padding['bottom'] . ' ' . $padding['left'];
-
 ?>
-<div 
-    <?php echo wp_kses_data( get_block_wrapper_attributes() ); ?>
-    style="background-color: <?php echo esc_attr( $attributes['bgColor'] ); ?>; padding: <?php echo esc_attr( $padding_string ); ?>; "
->
-    <h2 class="wp-block-article-generator-header_title">
-        <?php echo esc_html( $attributes['prompt'] ); ?>
-    </h2>
-
-    <div class="wp-block-article-generator-header_description">
-        <?php echo wp_kses_post( $attributes['context'] ); ?>
-    </div>
-</div>
+    <?php if( is_user_logged_in() && current_user_can( 'edit_posts' )) : ?>
+        <div class="wp-block-article-generator-subject">
+            <div class="flex justify-between mb-8">
+                <small><?php _e('Article Generator', 'article-gen'); ?></small>
+                <small><?php _e('Don\'t worry, only you are seeing this.', 'article-gen')?></small>
+            </div>
+            <p><?php _e('You have not generated the post content with the article generator block, click on edit and click on generate for the text to be added to the post', 'article-gen'); ?></p>
+            <?php if($attributes['prompt'] || $attributes['context']): ?>
+                <ul class="mt-5 text-sm">
+                    <li><?php printf(__('Your prompt: %s', 'article-gen'), $attributes['prompt'] ?? 'empty');?></li>
+                    <li><?php printf(__('Your context: %s', 'article-gen'), $attributes['context']) ?? 'empty';?></li>
+                </ul>
+            <?php endif; ?>
+        </div>
+    <?php endif;?>

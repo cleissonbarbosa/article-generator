@@ -1,0 +1,517 @@
+# Copyright (c) 2023 Cleisson Barbosa. All Rights Reserved.
+msgid ""
+msgstr ""
+"Project-Id-Version: Article Generator 0.7.0\n"
+"Report-Msgid-Bugs-To: https://github.com/CleissonBarbosa/article-generator/issues\n"
+"Last-Translator: cleissonbarbosa68@gmail.com\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2023-04-06T03:53:09+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.7.1\n"
+"X-Domain: article-gen\n"
+
+#. Plugin Name of the plugin
+#: includes/Admin/Menu.php:36
+#: templates/blocks/ai-complete/markup.php:14
+msgid "Article Generator"
+msgstr ""
+
+#. Description of the plugin
+msgid "test"
+msgstr ""
+
+#. Author of the plugin
+msgid "Cleisson Barbosa<cleissonbarbosa68@gmail.com>"
+msgstr ""
+
+#: article-gen.php:309
+#: includes/Admin/Menu.php:41
+#: build/blocks/ai-complete/index.js:4995
+#: build/blocks/ai-complete/index.js:5060
+#: build/blocks/ai-gen-image/index.js:4842
+#: build/index.js:7794
+#: build/index.js:8462
+#: build/index.js:10906
+msgid "Settings"
+msgstr ""
+
+#: article-gen.php:310
+msgid "Documentation"
+msgstr ""
+
+#: includes/Admin/Menu.php:39
+#: build/index.js:8444
+msgid "Home"
+msgstr ""
+
+#: includes/Admin/Menu.php:40
+#: build/blocks/ai-complete/index.js:4993
+#: build/index.js:7781
+#: build/index.js:8453
+#: build/index.js:10638
+msgid "Contexts"
+msgstr ""
+
+#: includes/Contexts/Manager.php:115
+msgid "Failed to create context."
+msgstr ""
+
+#: includes/Contexts/Manager.php:166
+msgid "Failed to update context."
+msgstr ""
+
+#: includes/Contexts/Manager.php:183
+msgid "Failed to update the context."
+msgstr ""
+
+#: includes/Databases/Seeder/ContextsSeeder.php:34
+msgid "First Context"
+msgstr ""
+
+#: includes/REST/ContextsController.php:56
+#: includes/REST/SettingsController.php:62
+msgid "Post IDs which will be deleted."
+msgstr ""
+
+#: includes/REST/ContextsController.php:142
+msgid "Context not found. May be context has been deleted or you don't have access to that."
+msgstr ""
+
+#: includes/REST/ContextsController.php:165
+msgid "Cannot create existing context."
+msgstr ""
+
+#: includes/REST/ContextsController.php:213
+msgid "Invalid Context ID."
+msgstr ""
+
+#: includes/REST/ContextsController.php:260
+msgid "No context ids found."
+msgstr ""
+
+#: includes/REST/ContextsController.php:266
+msgid "Contexts deleted successfully."
+msgstr ""
+
+#: includes/REST/ContextsController.php:276
+msgid "No context deleted. Context has already been deleted. Please try again."
+msgstr ""
+
+#: includes/REST/ContextsController.php:297
+msgid "ID of the context"
+msgstr ""
+
+#: includes/REST/ContextsController.php:303
+#: build/index.js:7248
+msgid "Context title"
+msgstr ""
+
+#: includes/REST/ContextsController.php:313
+msgid "Context slug"
+msgstr ""
+
+#: includes/REST/ContextsController.php:322
+msgid "Context description"
+msgstr ""
+
+#: includes/REST/ContextsController.php:329
+msgid "Context status"
+msgstr ""
+
+#: includes/REST/ContextsController.php:338
+msgid "Created by user"
+msgstr ""
+
+#: includes/REST/ContextsController.php:346
+msgid "Updated by user"
+msgstr ""
+
+#: includes/REST/ContextsController.php:354
+#: includes/REST/SettingsController.php:337
+msgid "Created at time"
+msgstr ""
+
+#: includes/REST/ContextsController.php:361
+#: includes/REST/SettingsController.php:344
+msgid "Updated at time"
+msgstr ""
+
+#: includes/REST/ContextsController.php:368
+#: includes/REST/SettingsController.php:351
+msgid "Deleted at time"
+msgstr ""
+
+#: includes/REST/ContextsController.php:488
+msgid "Context slug already exists."
+msgstr ""
+
+#: includes/REST/SettingsController.php:136
+msgid "Setting not found. May be setting has been deleted or you don't have access to that."
+msgstr ""
+
+#: includes/REST/SettingsController.php:158
+msgid "Cannot create existing email template."
+msgstr ""
+
+#: includes/REST/SettingsController.php:206
+msgid "Invalid Setting KEY."
+msgstr ""
+
+#: includes/REST/SettingsController.php:284
+msgid "No setting keys found."
+msgstr ""
+
+#: includes/REST/SettingsController.php:290
+msgid "Settings deleted successfully."
+msgstr ""
+
+#: includes/REST/SettingsController.php:300
+msgid "No setting deleted. Setting has already been deleted. Please try again."
+msgstr ""
+
+#: includes/REST/SettingsController.php:321
+msgid "Key of the setting"
+msgstr ""
+
+#: includes/REST/SettingsController.php:327
+msgid "Setting title"
+msgstr ""
+
+#: includes/REST/SettingsController.php:475
+msgid "Setting key already exists."
+msgstr ""
+
+#: includes/Settings/Manager.php:112
+msgid "Failed to create setting."
+msgstr ""
+
+#: includes/Settings/Manager.php:179
+msgid "Failed to update the setting."
+msgstr ""
+
+#: templates/app.php:3
+msgid "Loading"
+msgstr ""
+
+#: templates/blocks/ai-complete/markup.php:15
+msgid "Don't worry, only you are seeing this."
+msgstr ""
+
+#: templates/blocks/ai-complete/markup.php:17
+msgid "You have not generated the post content with the article generator block, click on edit and click on generate for the text to be added to the post"
+msgstr ""
+
+#. translators: %s is equals prompt
+#: templates/blocks/ai-complete/markup.php:23
+msgid "Your prompt: %s"
+msgstr ""
+
+#. translators: %s is equals context
+#: templates/blocks/ai-complete/markup.php:29
+msgid "Your context: %s"
+msgstr ""
+
+#: build/blocks/ai-complete/index.js:4919
+#: build/blocks/ai-gen-image/index.js:4801
+msgid "Wait..."
+msgstr ""
+
+#: build/blocks/ai-complete/index.js:4920
+msgid "Writing text about: %s"
+msgstr ""
+
+#: build/blocks/ai-complete/index.js:4974
+#: build/index.js:7393
+#: build/index.js:7421
+#: build/index.js:8806
+#: build/index.js:8821
+#: build/index.js:8842
+msgid "Error"
+msgstr ""
+
+#: build/blocks/ai-complete/index.js:5006
+msgid "Write the subject of the article"
+msgstr ""
+
+#: build/blocks/ai-complete/index.js:5014
+msgid "Enable pre written context"
+msgstr ""
+
+#: build/blocks/ai-complete/index.js:5017
+msgid "Enable custom context"
+msgstr ""
+
+#: build/blocks/ai-complete/index.js:5039
+msgid "Enter the context of this article (optional)"
+msgstr ""
+
+#: build/blocks/ai-complete/index.js:5066
+msgid "Temperature"
+msgstr ""
+
+#: build/blocks/ai-complete/index.js:5076
+msgid "What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic."
+msgstr ""
+
+#: build/blocks/ai-complete/index.js:5076
+msgid "Max Tokens"
+msgstr ""
+
+#: build/blocks/ai-complete/index.js:5086
+msgid "The token count of your prompt plus max_tokens cannot exceed the model's context length. Most models have a context length of 2048 tokens"
+msgstr ""
+
+#: build/blocks/ai-complete/index.js:5598
+#: build/blocks/ai-gen-image/index.js:5186
+#: build/index.js:8149
+msgid "-- Select --"
+msgstr ""
+
+#: build/blocks/ai-complete/index.js:7081
+#: build/index.js:11184
+msgid "Minute"
+msgstr ""
+
+#: build/blocks/ai-complete/index.js:7084
+#: build/index.js:11187
+msgid "Hour"
+msgstr ""
+
+#: build/blocks/ai-complete/index.js:7087
+#: build/index.js:11190
+msgid "Day"
+msgstr ""
+
+#: build/blocks/ai-gen-image/index.js:4820
+msgid "Describe the image you want to generate"
+msgstr ""
+
+#: build/index.js:7250
+msgid "Enter Context title, eg: Life Style"
+msgstr ""
+
+#: build/index.js:7257
+msgid "Context details"
+msgstr ""
+
+#: build/index.js:7260
+msgid "Enter Context content."
+msgstr ""
+
+#: build/index.js:7306
+msgid "General Information"
+msgstr ""
+
+#: build/index.js:7309
+msgid "Context Content"
+msgstr ""
+
+#: build/index.js:7315
+#: build/index.js:9004
+msgid "Quick Jump"
+msgstr ""
+
+#: build/index.js:7382
+msgid "Please give a context title."
+msgstr ""
+
+#: build/index.js:7385
+msgid "Please give context content."
+msgstr ""
+
+#: build/index.js:7407
+msgid "Context saved"
+msgstr ""
+
+#: build/index.js:7408
+msgid "Context has been saved successfully."
+msgstr ""
+
+#: build/index.js:7432
+msgid "Cancel"
+msgstr ""
+
+#: build/index.js:7437
+#: build/index.js:8853
+msgid "Saving…"
+msgstr ""
+
+#: build/index.js:7437
+#: build/index.js:8853
+msgid "Save"
+msgstr ""
+
+#: build/index.js:7501
+msgid "Are you sure?"
+msgstr ""
+
+#: build/index.js:7502
+msgid "Are you sure to delete the context?"
+msgstr ""
+
+#: build/index.js:7519
+msgid "Deleted!"
+msgstr ""
+
+#: build/index.js:7529
+msgid "Context status updated"
+msgstr ""
+
+#: build/index.js:7530
+msgid "Context has been updated successfully."
+msgstr ""
+
+#: build/index.js:7568
+msgid "Edit"
+msgstr ""
+
+#: build/index.js:7575
+#: build/index.js:8622
+msgid "Delete"
+msgstr ""
+
+#: build/index.js:7582
+msgid "Make Draft"
+msgstr ""
+
+#: build/index.js:7586
+msgid "Make Publish"
+msgstr ""
+
+#: build/index.js:7629
+msgid "Please select an action."
+msgstr ""
+
+#: build/index.js:7692
+msgid "Context"
+msgstr ""
+
+#: build/index.js:7696
+msgid "Status"
+msgstr ""
+
+#: build/index.js:7700
+msgid "Action"
+msgstr ""
+
+#: build/index.js:7781
+msgid "Add/Edit/Delete Contexts for your prompts"
+msgstr ""
+
+#: build/index.js:7788
+msgid "View Contexts"
+msgstr ""
+
+#: build/index.js:7794
+msgid "add openai settings and edit plugin settings"
+msgstr ""
+
+#: build/index.js:7801
+msgid "View Settings"
+msgstr ""
+
+#: build/index.js:8620
+msgid "Select Action"
+msgstr ""
+
+#: build/index.js:8626
+msgid "Applying…"
+msgstr ""
+
+#: build/index.js:8626
+msgid "Apply"
+msgstr ""
+
+#: build/index.js:8661
+msgid "items"
+msgstr ""
+
+#: build/index.js:8661
+msgid "item"
+msgstr ""
+
+#: build/index.js:8661
+msgid "selected"
+msgstr ""
+
+#: build/index.js:8797
+msgid "Please give a setting value to %s."
+msgstr ""
+
+#: build/index.js:8831
+msgid "Setting saved"
+msgstr ""
+
+#: build/index.js:8832
+msgid "Setting has been saved successfully."
+msgstr ""
+
+#: build/index.js:8935
+msgid "OpenAi API Key"
+msgstr ""
+
+#: build/index.js:8938
+msgid "Enter a openai api key"
+msgstr ""
+
+#: build/index.js:8944
+msgid "OpenAi Organization ID"
+msgstr ""
+
+#: build/index.js:8947
+msgid "Enter a openai organization"
+msgstr ""
+
+#: build/index.js:8992
+msgid "OpenAi Settings"
+msgstr ""
+
+#: build/index.js:8995
+msgid "Plugin Settings"
+msgstr ""
+
+#: build/index.js:8998
+msgid "Information"
+msgstr ""
+
+#: build/index.js:9185
+msgid "Sorry ! No data found."
+msgstr ""
+
+#: build/index.js:10642
+msgid "New"
+msgstr ""
+
+#: build/index.js:10655
+msgid "Search Contexts…"
+msgstr ""
+
+#: build/index.js:10690
+msgid "Sorry !! No contexts found…"
+msgstr ""
+
+#: build/index.js:10763
+#: build/index.js:10846
+msgid "Back to contexts"
+msgstr ""
+
+#: build/index.js:10766
+msgid "Create New Context"
+msgstr ""
+
+#: build/index.js:10849
+msgid "Edit Context"
+msgstr ""
+
+#: build/blocks/ai-complete/block.json
+msgctxt "block title"
+msgid "GPT Create Text"
+msgstr ""
+
+#: build/blocks/ai-gen-image/block.json
+msgctxt "block title"
+msgid "GPT Image Generator"
+msgstr ""

@@ -17,8 +17,18 @@
             <p><?php _e('You have not generated the post content with the article generator block, click on edit and click on generate for the text to be added to the post', 'article-gen'); ?></p>
             <?php if($attributes['prompt'] || $attributes['context']): ?>
                 <ul class="mt-5 text-sm">
-                    <li><?php printf(__('Your prompt: %s', 'article-gen'), $attributes['prompt'] ?? 'empty');?></li>
-                    <li><?php printf(__('Your context: %s', 'article-gen'), $attributes['context']) ?? 'empty';?></li>
+                    <li>
+                        <?php 
+                            // translators: %s is equals prompt
+                            printf(__('Your prompt: %s', 'article-gen'), $attributes['prompt'] ?? 'empty');
+                        ?>
+                    </li>
+                    <li>
+                        <?php
+                            // translators: %s is equals context 
+                            printf(__('Your context: %s', 'article-gen'), $attributes['context']) ?? 'empty';
+                        ?>
+                    </li>
                 </ul>
             <?php endif; ?>
         </div>

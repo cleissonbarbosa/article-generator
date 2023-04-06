@@ -12,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x]
+        node-version: [18.x]
 
     steps:
     - uses: actions/checkout@v3
@@ -47,3 +47,17 @@ jobs:
       run: |
         yarn --ignore-engines
         yarn release
+        
+    - name: Archive production artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: article-generator
+        path: |
+          dist/*.zip
+          !dist/**/*.md
+          
+    - name: upload release
+      uses: ncipollo/release-action@v1
+      with:
+        artifacts: "article-generator.zip"
+        prerelease: true

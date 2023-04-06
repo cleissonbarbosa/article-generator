@@ -58,7 +58,7 @@ exec(
         console.log(`Finished copying files.`);
 
         asyncExec(
-            'composer install --optimize-autoloader --no-dev',
+            'composer install -o --no-dev',
             {
                 cwd: dest,
             },
@@ -68,7 +68,7 @@ exec(
                 );
 
                 removeFiles.forEach((file) => {
-                    fs.removeSync(`${dest}/${file}`);
+                    fs.removeSync(`${dest}${file}`);
                 });
 
                 // Put vendor files.

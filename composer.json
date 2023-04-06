@@ -1,11 +1,11 @@
 {
     "name": "cleissonbarbosa/article-generator",
-    "description": "A simple starter kit to work in WordPress plugin development using WordPress Rest API, WP-script and many more...",
+    "description": "",
     "type": "wordpress-plugin",
     "license": "GPL-2.0-or-later",
     "authors": [
         {
-            "name": "CleissonBarbosa",
+            "name": "Cleisson Barbosa",
             "email": "cleissonbarbosa68@gmail.com"
         }
     ],
@@ -15,8 +15,7 @@
         }
     },
     "require": {
-        "php": ">=7.0.0|8.0",
-        "ramsey/uuid": "^4.7"
+        "php": ">=7.0.0|8.0"
     },
     "require-dev": {
         "wp-coding-standards/wpcs": "dev-master",

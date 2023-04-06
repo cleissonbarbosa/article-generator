@@ -61,3 +61,4 @@ jobs:
       with:
         artifacts: "article-generator.zip"
         prerelease: true
+        tag: "latest"

@@ -1,27 +1,33 @@
 /**
  * External dependencies.
  */
-import { __, sprintf } from "@wordpress/i18n";
 import { parse } from '@wordpress/blocks';
-import { dispatch, select, useSelect } from '@wordpress/data';
-import Swal, { SweetAlertResult } from "sweetalert2";
-import { useState, useEffect } from '@wordpress/element'
-import { faMarker } from "@fortawesome/free-solid-svg-icons";
-import { InspectorControls, RichText, useBlockProps } from "@wordpress/block-editor";
+import { __, sprintf } from "@wordpress/i18n";
+import { CreateCompletionRequest } from "openai";
 import { PanelBody } from '@wordpress/components';
+import Swal from "sweetalert2";
+import { useState, useEffect } from '@wordpress/element';
+import { faMarker } from "@fortawesome/free-solid-svg-icons";
+import { dispatch, select, useSelect } from '@wordpress/data';
+import { InspectorControls, RichText, useBlockProps } from "@wordpress/block-editor";
 /**
  * Internal dependencies.
 */
 import "./editor.scss";
-import Button from "../../components/button/Button";
-import { createArticle } from '../../integrations/openai/createArticle'
-import SwitchCheckbox from "../../components/inputs/SwitchCheckbox";
-import Select2Input from "../../components/inputs/Select2Input";
 import { IContext } from "../../interfaces";
-import { IInputResponse, Input } from "../../components/inputs/Input";
-import { CreateCompletionRequest } from "openai";
 import contextStore from "../../data/contexts";
+import Button from "../../components/button/Button";
+import Select2Input from "../../components/inputs/Select2Input";
+import SwitchCheckbox from "../../components/inputs/SwitchCheckbox";
+import { IInputResponse, Input } from "../../components/inputs/Input";
+import { createArticle } from '../../integrations/openai/createArticle';
 
+/**
+ * Interface attributes props
+ *
+ * @interface IAttributesProps
+ * @typedef {IAttributesProps}
+ */
 interface IAttributesProps {
   prompt: string
   context: string
@@ -29,11 +35,19 @@ interface IAttributesProps {
   toggleCustomContext: boolean
 }
 
+/**
+ * Interface handle populate
+ * @date 4/5/2023 - 4:06:14 PM
+ *
+ * @interface IHandlePopulate
+ * @typedef {IHandlePopulate}
+ */
 interface IHandlePopulate {
   prompt: string
   context: string
   options?: Pick<CreateCompletionRequest, "temperature" | "max_tokens">
 }
+
 /**
  * The edit function describes the structure of your block in the context of the
  * editor. This represents what the editor will render when the block is used.
@@ -69,11 +83,69 @@ export default function Prompt({ attributes, setAttributes } ) {
       })
     }
   })
+  /**
+   * toggle contexts
+   *
+   * @param {boolean} action
+   */
   const toggleContexts = ( action : boolean ) => {
     setAttributes( { toggleContext: action, toggleCustomContext: !action } )
   }
+
+  /**
+   * toggle custom context
+   *
+   * @param {boolean} action
+   */
   const toggleCustomContexts = ( action : boolean ) => {
     setAttributes( { toggleCustomContext: action, toggleContext: !action } )
+  }
+
+  /**
+   * Handle populate post
+   *
+   * @param {IHandlePopulate} { prompt, context, options }
+   * @param {React.Dispatch<React.SetStateAction<boolean>>} setLoading
+   */
+  function handlePopulate(
+    { prompt, context, options } : IHandlePopulate, 
+    setLoading: React.Dispatch<React.SetStateAction<boolean>>
+  ) {
+    setLoading(true)
+    createArticle(prompt, context, options).then(( response )=> {
+      Swal.close() // close all popups
+      const blocks = parse(response.content);
+      dispatch('core/editor').editPost({title: response.title});
+      dispatch('core/block-editor').removeBlock(
+        select('core/block-editor').getSelectedBlockClientId() ?? ''
+      )
+      dispatch('core/block-editor').insertBlocks(blocks)
+
+    }).catch((e) => {
+      Swal.fire({
+        title: __('Error', 'article-gen'),
+        text: e.message,
+        icon: 'error',
+        toast: true,
+        position: 'bottom',
+        showConfirmButton: false,
+        showCloseButton: true,
+        footer: getAlertCustomFooter()
+      })
+    }).finally( () => setLoading(false) )
+  }
+
+  /**
+   * Alert custom footer
+   *
+   * @returns {string}
+   */
+  function getAlertCustomFooter(): string {
+    return `
+      <a href="/wp-admin/admin.php?page=article-gen#/contexts">${__('Contexts', 'article-gen')}</a>
+      &nbsp;-&nbsp;
+      <a href="/wp-admin/admin.php?page=article-gen#/settings">${__('Settings', 'article-gen')}</a>
+    `
   }
 
   return (
@@ -108,7 +180,7 @@ export default function Prompt({ attributes, setAttributes } ) {
             <Select2Input
               placeholder="Select context"
               defaultValue={context}
-              options={[...contexts.map((data) => { return {label: data.title, value: data.description}})]} 
+              options={[...contexts.map((data) => { return {label: data.title, value: data.content}})]} 
               onChange={(input) => {setAttributes({context: input.value})}}
               />
           </>
@@ -187,41 +259,5 @@ export default function Prompt({ attributes, setAttributes } ) {
         </InspectorControls>
     </div>
   );
-}
-
-function handlePopulate(
-  { prompt, context, options } : IHandlePopulate, 
-  setLoading: React.Dispatch<React.SetStateAction<boolean>>
-) {
-  setLoading(true)
-  createArticle(prompt, context, options).then(( response )=> {
-    Swal.close() // close all popups
-    const blocks = parse(response.content);
-    dispatch('core/editor').editPost({title: response.title});
-    dispatch('core/block-editor').removeBlock(
-      select('core/block-editor').getSelectedBlockClientId() ?? ''
-    )
-    dispatch('core/block-editor').insertBlocks(blocks)
-
-  }).catch((e) => {
-    Swal.fire({
-      title: __('Error', 'article-gen'),
-      text: e.message,
-      icon: 'error',
-      toast: true,
-      position: 'bottom',
-      showConfirmButton: false,
-      showCloseButton: true,
-      footer: getAlertCustomFooter()
-    })
-  }).finally( () => setLoading(false) )
-}
-
-function getAlertCustomFooter(): string {
-  return `
-    <a href="/wp-admin/admin.php?page=article-gen#/contexts">${__('Contexts', 'article-gen')}</a>
-    &nbsp;-&nbsp;
-    <a href="/wp-admin/admin.php?page=article-gen#/settings">${__('Settings', 'article-gen')}</a>
-  `
 }
 

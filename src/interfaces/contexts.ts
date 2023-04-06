@@ -15,9 +15,9 @@ export interface IContext {
     title: string;
 
     /**
-     * Context description.
+     * Context content.
      */
-    description: string;
+    content: string;
 
     /**
      * Status published or draft

@@ -28,10 +28,7 @@ jobs:
         php-version: '8.2'
         
     - name: Install composer dependencies
-      uses: php-actions/composer@v4
-      with:
-        composer_version: 1
-        php_version: 8.2
+      run: composer i
           
     - name: install yarn
       run: npm install -g yarn

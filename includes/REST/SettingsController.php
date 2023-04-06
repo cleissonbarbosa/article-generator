@@ -84,6 +84,15 @@ class SettingsController extends RESTController {
             ]
         );
     }
+    
+    /**
+     * check permission
+     *
+     * @return bool
+     */
+    public function check_permission(): bool {
+        return current_user_can( 'edit_posts' );
+    }
 
     /**
      * Retrieves a collection of context items.

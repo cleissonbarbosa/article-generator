@@ -26,8 +26,8 @@ npm i && composer i && npm run start
 ```
 
 ## 👀 Demo
-[![article-gen-wp-plugin-demo.gif](https://s2.gifyu.com/images/article-gen-wp-plugin-demo.gif)](https://gifyu.com/image/SIo3e)
-<a href="https://s2.gifyu.com/images/article-gen-wp-plugin-demo.gif" target="_blank">Open Gif in new tab ↗️</a>
+### Gutenberg block
+https://user-images.githubusercontent.com/32576001/230542799-91808ec8-5350-45a2-96f0-7e057df4c665.mp4
 
 ## 📫 Contributing to the project
 

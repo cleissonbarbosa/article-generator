@@ -1,18 +1,22 @@
 /**
  * External dependencies.
  */
-import { useSelect, useDispatch } from '@wordpress/data';
 import { __ } from '@wordpress/i18n';
+import { Link } from 'react-router-dom';
+import { useSelect, useDispatch } from '@wordpress/data';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faExternalLink } from '@fortawesome/free-solid-svg-icons';
 
 /**
  * Internal dependencies.
  */
-import ContextCard from '../contexts/ContextCard';
+import SettingSubmit from './SettingSubmit';
 import settingsStore from '../../data/settings';
+import ContextCard from '../contexts/ContextCard';
 import SettingFormSidebar from './SettingsFormSidebar';
 import { IInputResponse, Input } from '../inputs/Input';
 import { ISettingFormData, ISettings } from '../../interfaces';
-import SettingSubmit from './SettingSubmit';
+
 
 interface Props {
     settings?: ISettings
@@ -62,11 +66,25 @@ export default function SettingsForm({ settings } : Props) {
                         <>
                             <div className="md:basis-4/5">
                                 <ContextCard className="openai-setting">
+                                    <label htmlFor='openai-api-key' className='block mb-[13px]'>
+                                        <strong>
+                                            {__('OpenAi API Key', 'article-gen')}
+                                        </strong>
+                                        <Link 
+                                            className='ml-[10px] underline hover:decoration-2' 
+                                            to="https://platform.openai.com/account/api-keys"
+                                            target="_blank"
+                                        >
+                                            { __('I don\'t have a key', 'article-gen') + ' ' }
+                                            <FontAwesomeIcon icon={faExternalLink} />
+                                        </Link>
+                                    </label>
                                     <Input
                                         type="password"
-                                        label={__('OpenAi API Key', 'article-gen')}
+                                        //label={__('OpenAi API Key', 'article-gen')}
                                         id="openai-api-key"
                                         key={'openai-api-key'}
+                                        labelTooltip={2}
                                         placeholder={__(
                                             'Enter a openai api key',
                                             'article-gen'
@@ -75,6 +93,7 @@ export default function SettingsForm({ settings } : Props) {
                                         value={ form.length > 0 ? form.filter((input) => input.key === 'openai-api-key').map((e) => e?.value) : '' }
                                         onChange={onChange}
                                     />
+                                    
                                     <Input
                                         type="text"
                                         label={__('OpenAi Organization ID', 'article-gen')}

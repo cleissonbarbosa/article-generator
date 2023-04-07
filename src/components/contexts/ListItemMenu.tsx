@@ -1,11 +1,9 @@
 /**
  * External dependencies.
  */
-import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import { Fragment } from '@wordpress/element';
-import { Menu, Transition } from '@headlessui/react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { __ } from '@wordpress/i18n';
+import { Link } from 'react-router-dom';
 import {
     faEdit,
     faEllipsisV,
@@ -13,14 +11,16 @@ import {
     faTrash,
     faCheckCircle,
 } from '@fortawesome/free-solid-svg-icons';
-import { __ } from '@wordpress/i18n';
+import { Fragment } from '@wordpress/element';
+import { Menu, Transition } from '@headlessui/react';
 import { dispatch, useSelect } from '@wordpress/data';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 /**
  * Internal dependencies.
  */
-import contextStore from '../../data/contexts/index';
 import { IContext } from '../../interfaces';
+import contextStore from '../../data/contexts/index';
 import { prepareContextDataForDatabase } from '../../data/contexts/utils';
 
 export default function ListItemMenu({ context }: IContext) {
@@ -66,7 +66,7 @@ export default function ListItemMenu({ context }: IContext) {
             .saveContext(
                 prepareContextDataForDatabase({
                     ...context,
-                    is_active: 'published' === status ? 0 : 1,
+                    is_active: 'available' === status ? 0 : 1,
                 })
             )
             .then(() => {
@@ -134,7 +134,7 @@ export default function ListItemMenu({ context }: IContext) {
                                 className="text-left hover:opacity-80 block text-slate-600 hover:text-slate-700 group items-center w-full px-3 text-sm bg-white outline-none hover:outline-none focus:outline-none focus:shadow-none mb-2"
                             >
                                 <span>
-                                    {'published' === status ? (
+                                    {'available' === status ? (
                                         <>
                                             <FontAwesomeIcon icon={faEdit} />{' '}
                                             <span className="ml-2">

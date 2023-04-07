@@ -9,8 +9,8 @@ import { __ } from '@wordpress/i18n';
 // import { Input } from '../inputs/Input';
 import Badge from '../badge/Badge';
 import ListItemMenu from './ListItemMenu';
-import { ITableHeader, ITableRow } from '../table/TableInterface';
 import { capitalize } from '../../utils/StringHelper';
+import { ITableHeader, ITableRow } from '../table/TableInterface';
 
 export const useTableHeaderData = (): ITableHeader[] => {
     return [
@@ -69,7 +69,7 @@ export const useTableRowData = (contexts = [], checked: number[]): ITableRow[] =
                         <Badge
                             text={capitalize(row.status)}
                             type={
-                                row.status === 'published'
+                                row.status === 'available'
                                     ? 'success'
                                     : 'default'
                             }

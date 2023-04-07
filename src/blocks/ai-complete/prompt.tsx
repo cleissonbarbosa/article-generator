@@ -20,7 +20,7 @@ import Button from "../../components/button/Button";
 import Select2Input from "../../components/inputs/Select2Input";
 import SwitchCheckbox from "../../components/inputs/SwitchCheckbox";
 import { IInputResponse, Input } from "../../components/inputs/Input";
-import { createArticle } from '../../integrations/openai/createArticle';
+import { IArticlePopulate, createArticle } from '../../integrations/openai/createArticle';
 
 /**
  * Interface attributes props
@@ -113,13 +113,17 @@ export default function Prompt({ attributes, setAttributes } ) {
   ) {
     setLoading(true)
     createArticle(prompt, context, options).then(( response )=> {
+
       Swal.close() // close all popups
+
       const blocks = parse(response.content);
-      dispatch('core/editor').editPost({title: response.title});
       dispatch('core/block-editor').removeBlock(
         select('core/block-editor').getSelectedBlockClientId() ?? ''
       )
       dispatch('core/block-editor').insertBlocks(blocks)
+
+      // set title
+      writeEffectTitle(response.title)
 
     }).catch((e) => {
       Swal.fire({
@@ -133,6 +137,23 @@ export default function Prompt({ attributes, setAttributes } ) {
         footer: getAlertCustomFooter()
       })
     }).finally( () => setLoading(false) )
+  }
+
+  function writeEffectTitle(title: string) {
+    let current = 0
+    const titleEnd = title.length - 1
+    const titleSpeed = 10000 / title.length
+
+    let titleAppend = ''
+
+    const titleInterval = setInterval(function() {
+      if (current > titleEnd) {
+        clearInterval(titleInterval);
+      } else {
+        titleAppend += title[current++]
+        dispatch('core/editor').editPost({title: titleAppend});
+      }
+    }, titleSpeed);
   }
 
   /**

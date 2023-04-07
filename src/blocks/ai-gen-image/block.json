@@ -4,7 +4,7 @@
 	"title": "GPT Image Generator",
 	"name": "ag/img-generator",
 	"category": "media",
-	"icon": "image",
+	"icon": "gpt-create-img",
 	"attributes": {
 		"prompt": {
 			"type": "string",

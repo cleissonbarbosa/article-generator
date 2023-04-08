@@ -1,0 +1,537 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Article Generator 0.7.0\n"
+"Report-Msgid-Bugs-To: https://github.com/CleissonBarbosa/article-"
+"generator/issues\n"
+"Last-Translator: cleisson barbosa\n"
+"Language-Team: Português do Brasil\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2023-04-08T03:30:31+00:00\n"
+"PO-Revision-Date: 2023-04-08 04:32+0000\n"
+"Language: pt_BR\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Domain: article-gen\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Loco-Version: 2.6.4; wp-6.2\n"
+
+#: build/blocks/ai-complete/index.js:1 build/blocks/ai-gen-image/index.js:1
+#: build/index.js:1
+msgid "-- Select --"
+msgstr "-- Selecione --"
+
+#: build/index.js:1
+msgid "Action"
+msgstr "Ação"
+
+#: build/index.js:1
+msgid "add openai settings and edit plugin settings"
+msgstr "Adicionar configurações da OpenAi e Plugin"
+
+#: build/index.js:1
+msgid "Add/Edit/Delete Contexts for your prompts"
+msgstr "Adicionar/Editar/Deletar contextos para o seu prompts"
+
+#: build/index.js:1
+msgid "Apply"
+msgstr "Aplicar"
+
+#: build/index.js:1
+msgid "Applying…"
+msgstr "Aplicando..."
+
+#: build/index.js:1
+msgid "Are you sure to delete the context?"
+msgstr "Tem certeza de que deseja excluir o contexto?"
+
+#: build/index.js:1
+msgid "Are you sure?"
+msgstr "Tem certeza?"
+
+#. Plugin Name of the plugin
+#: includes/Admin/Menu.php:36 templates/blocks/ai-complete/markup.php:14
+msgid "Article Generator"
+msgstr "Gerador de artigos"
+
+#: build/index.js:1
+msgid "Back to contexts"
+msgstr "Voltar para contextos"
+
+#: build/blocks/ai-complete/block.json
+msgctxt "block title"
+msgid "GPT Create Text"
+msgstr "Gerador de texto GPT"
+
+#: build/blocks/ai-gen-image/block.json
+msgctxt "block title"
+msgid "GPT Image Generator"
+msgstr "Gerador de imagens GPT"
+
+#: build/index.js:1
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: includes/REST/ContextsController.php:165
+msgid "Cannot create existing context."
+msgstr "Esse contexto já existe. "
+
+#: includes/REST/SettingsController.php:167
+msgid "Cannot create existing email template."
+msgstr "Não é possível criar um modelo de e-mail existente."
+
+#. Author of the plugin
+msgid "Cleisson Barbosa<cleissonbarbosa68@gmail.com>"
+msgstr "Cleisson Barbosa<cleissonbarbosa68@gmail.com>"
+
+#: build/index.js:1
+msgid "Context"
+msgstr "Contexto"
+
+#: build/index.js:1
+msgid "Context Content"
+msgstr "Conteúdo do Contexto"
+
+#: includes/REST/ContextsController.php:322
+msgid "Context description"
+msgstr "Descrição do contexto"
+
+#: build/index.js:1
+msgid "Context details"
+msgstr "Detalhes do contexto"
+
+#: build/index.js:1
+msgid "Context has been saved successfully."
+msgstr "O contexto foi salvo com sucesso."
+
+#: build/index.js:1
+msgid "Context has been updated successfully."
+msgstr "O contexto foi atualizado com sucesso."
+
+#: includes/REST/ContextsController.php:142
+msgid ""
+"Context not found. May be context has been deleted or you don't have access "
+"to that."
+msgstr ""
+"Contexto não encontrado. Pode ser que o contexto tenha sido excluído ou você "
+"não tenha acesso a ele."
+
+#: build/index.js:1
+msgid "Context saved"
+msgstr "Contexto salvo"
+
+#: includes/REST/ContextsController.php:313
+msgid "Context slug"
+msgstr "slug do contexto"
+
+#: includes/REST/ContextsController.php:488
+msgid "Context slug already exists."
+msgstr "O slug do contexto já existe."
+
+#: includes/REST/ContextsController.php:329
+msgid "Context status"
+msgstr "status do contexto"
+
+#: build/index.js:1
+msgid "Context status updated"
+msgstr "Status do contexto atualizado"
+
+#: includes/REST/ContextsController.php:303 build/index.js:1
+msgid "Context title"
+msgstr "Título do contexto"
+
+#: includes/Admin/Menu.php:40 build/blocks/ai-complete/index.js:1
+#: build/index.js:1
+msgid "Contexts"
+msgstr "Contextos"
+
+#: includes/REST/ContextsController.php:266
+msgid "Contexts deleted successfully."
+msgstr "Contextos excluídos com sucesso."
+
+#: build/index.js:1
+msgid "Create New Context"
+msgstr "Criar novo contexto"
+
+#: includes/REST/ContextsController.php:354
+#: includes/REST/SettingsController.php:346
+msgid "Created at time"
+msgstr "Criado na hora"
+
+#: includes/REST/ContextsController.php:338
+msgid "Created by user"
+msgstr "Criado pelo usuário"
+
+#: build/blocks/ai-gen-image/index.js:1
+msgid "Creating your image"
+msgstr "Criando sua imagem"
+
+#: build/blocks/ai-complete/index.js:1 build/index.js:1
+msgid "Day"
+msgstr "Dia"
+
+#: build/index.js:1
+msgid "Delete"
+msgstr "Excluir"
+
+#: includes/REST/ContextsController.php:368
+#: includes/REST/SettingsController.php:360
+msgid "Deleted at time"
+msgstr "Excluído na hora"
+
+#: build/index.js:1
+msgid "Deleted!"
+msgstr "Excluído!"
+
+#: build/blocks/ai-gen-image/index.js:1
+msgid "Describe the image you want to generate"
+msgstr "Descreva a imagem que deseja gerar"
+
+#: article-gen.php:310
+msgid "Documentation"
+msgstr "Documentação"
+
+#: templates/blocks/ai-complete/markup.php:15
+msgid "Don't worry, only you are seeing this."
+msgstr "Não se preocupe, só você está vendo isso."
+
+#: build/index.js:1
+msgid "Edit"
+msgstr "Editar"
+
+#: build/index.js:1
+msgid "Edit Context"
+msgstr "Editar Contexto"
+
+#: build/blocks/ai-complete/index.js:1
+msgid "Enable custom context"
+msgstr "Ativar contexto personalizado"
+
+#: build/blocks/ai-complete/index.js:1
+msgid "Enable pre written context"
+msgstr "Ativar contexto pré-escrito"
+
+#: build/index.js:1
+msgid "Enter a openai api key"
+msgstr "Insira uma chave de API OpenAI"
+
+#: build/index.js:1
+msgid "Enter a openai organization"
+msgstr "Entrar em uma organização OpenAI"
+
+#: build/index.js:1
+msgid "Enter Context content."
+msgstr "Digite o conteúdo do Contexto."
+
+#: build/index.js:1
+msgid "Enter Context title, eg: Life Style"
+msgstr "Digite o título do Contexto, por exemplo: Estilo de Vida"
+
+#: build/blocks/ai-complete/index.js:1
+msgid "Enter the context of this article (optional)"
+msgstr "Insira o contexto deste artigo (opcional)"
+
+#: build/blocks/ai-complete/index.js:1 build/index.js:1
+msgid "Error"
+msgstr "Erro"
+
+#: includes/Contexts/Manager.php:115
+msgid "Failed to create context."
+msgstr "Falha ao criar contexto."
+
+#: includes/Settings/Manager.php:112
+msgid "Failed to create setting."
+msgstr "Falha ao criar configuração."
+
+#: includes/Contexts/Manager.php:166
+msgid "Failed to update context."
+msgstr "Falha ao atualizar o contexto."
+
+#: includes/Contexts/Manager.php:183
+msgid "Failed to update the context."
+msgstr "Falha ao atualizar o contexto."
+
+#: includes/Settings/Manager.php:179
+msgid "Failed to update the setting."
+msgstr "Falha ao atualizar a configuração."
+
+#: build/blocks/ai-gen-image/index.js:1
+msgid "Feature under development, will be available soon"
+msgstr "Recurso em desenvolvimento, estará disponível em breve"
+
+#: includes/Databases/Seeder/ContextsSeeder.php:34
+msgid "First Context"
+msgstr "Primeiro Contexto"
+
+#: build/index.js:1
+msgid "General Information"
+msgstr "Informações gerais"
+
+#: includes/Admin/Menu.php:39 build/index.js:1
+msgid "Home"
+msgstr "Home"
+
+#: build/blocks/ai-complete/index.js:1 build/index.js:1
+msgid "Hour"
+msgstr "Hora"
+
+#: build/index.js:1
+msgid "I don't have a key"
+msgstr "eu não tenho uma chave"
+
+#: includes/REST/ContextsController.php:297
+msgid "ID of the context"
+msgstr "ID do contexto"
+
+#: build/index.js:1
+msgid "Information"
+msgstr "Informação"
+
+#: includes/REST/ContextsController.php:213
+msgid "Invalid Context ID."
+msgstr "ID do contexto inválido."
+
+#: includes/REST/SettingsController.php:215
+msgid "Invalid Setting KEY."
+msgstr "Configuração inválida."
+
+#: build/index.js:1
+msgid "item"
+msgstr "item"
+
+#: build/index.js:1
+msgid "items"
+msgstr "itens"
+
+#: includes/REST/SettingsController.php:330
+msgid "Key of the setting"
+msgstr "Chave de configuração"
+
+#: templates/app.php:3
+msgid "Loading"
+msgstr "Carregando"
+
+#: build/index.js:1
+msgid "Make Draft"
+msgstr "Fazer Rascunho"
+
+#: build/index.js:1
+msgid "Make Publish"
+msgstr "Publicar"
+
+#: build/blocks/ai-complete/index.js:1
+msgid "Max Tokens"
+msgstr "Máximo de tokens"
+
+#: build/blocks/ai-complete/index.js:1 build/index.js:1
+msgid "Minute"
+msgstr "Minuto"
+
+#: build/index.js:1
+msgid "New"
+msgstr "Novo"
+
+#: includes/REST/ContextsController.php:276
+msgid "No context deleted. Context has already been deleted. Please try again."
+msgstr ""
+"Nenhum contexto excluído. O contexto já foi excluído. Por favor, tente "
+"novamente."
+
+#: includes/REST/ContextsController.php:260
+msgid "No context ids found."
+msgstr "Nenhum ID de contexto encontrado."
+
+#: includes/REST/SettingsController.php:309
+msgid "No setting deleted. Setting has already been deleted. Please try again."
+msgstr ""
+"Nenhuma configuração excluída. A configuração já foi excluída. Por favor, "
+"tente novamente."
+
+#: includes/REST/SettingsController.php:293
+msgid "No setting keys found."
+msgstr "Nenhuma chave de configuração encontrada."
+
+#: build/index.js:1
+msgid "OpenAi API Key"
+msgstr "Chave da API OpenAi"
+
+#: build/index.js:1
+msgid "OpenAi Organization ID"
+msgstr "ID da Organização OpenAi"
+
+#: build/index.js:1
+msgid "OpenAi Settings"
+msgstr "Configurações OpenAi"
+
+#: build/index.js:1
+msgid "Please give a context title."
+msgstr "Por favor, dê um título ao contexto."
+
+#: build/index.js:1
+msgid "Please give a setting value to %s."
+msgstr "Forneça um valor de configuração para %s."
+
+#: build/index.js:1
+msgid "Please give context content."
+msgstr "Forneça o conteúdo do contexto."
+
+#: build/index.js:1
+msgid "Please select an action."
+msgstr "Selecione uma ação."
+
+#: build/index.js:1
+msgid "Plugin Settings"
+msgstr "Configurações do plugin"
+
+#. Description of the plugin
+msgid "Post generator using artificial intelligence (GPT)"
+msgstr "Gerador de posts usando inteligência artificial (GPT)"
+
+#: includes/REST/ContextsController.php:56
+#: includes/REST/SettingsController.php:62
+msgid "Post IDs which will be deleted."
+msgstr "Post IDs que serão excluídos."
+
+#: build/index.js:1
+msgid "Quick Jump"
+msgstr "Ir para"
+
+#: build/index.js:1
+msgid "Save"
+msgstr "Salvar"
+
+#: build/index.js:1
+msgid "Saving…"
+msgstr "Salvando…"
+
+#: build/index.js:1
+msgid "Search Contexts…"
+msgstr "Contextos de pesquisa…"
+
+#: build/index.js:1
+msgid "Select Action"
+msgstr "Selecionar ação"
+
+#: build/index.js:1
+msgid "selected"
+msgstr "selecionado"
+
+#: build/index.js:1
+msgid "Setting has been saved successfully."
+msgstr "A configuração foi salva com sucesso."
+
+#: includes/REST/SettingsController.php:484
+msgid "Setting key already exists."
+msgstr "A chave de configuração já existe."
+
+#: includes/REST/SettingsController.php:145
+msgid ""
+"Setting not found. May be setting has been deleted or you don't have access "
+"to that."
+msgstr ""
+"Configuração não encontrada. Pode ser que a configuração tenha sido excluída "
+"ou você não tenha acesso a ela."
+
+#: build/index.js:1
+msgid "Setting saved"
+msgstr "Configuração salva"
+
+#: includes/REST/SettingsController.php:336
+msgid "Setting title"
+msgstr "Definir título"
+
+#: article-gen.php:309 includes/Admin/Menu.php:41
+#: build/blocks/ai-complete/index.js:1 build/blocks/ai-gen-image/index.js:1
+#: build/index.js:1
+msgid "Settings"
+msgstr "Configurações"
+
+#: includes/REST/SettingsController.php:299
+msgid "Settings deleted successfully."
+msgstr "Configurações excluídas com sucesso."
+
+#: build/index.js:1
+msgid "Sorry ! No data found."
+msgstr "Desculpe ! Nenhum dado encontrado."
+
+#: build/index.js:1
+msgid "Sorry !! No contexts found…"
+msgstr "Desculpe !! Nenhum contexto encontrado..."
+
+#: build/index.js:1
+msgid "Status"
+msgstr "Status"
+
+#: build/blocks/ai-complete/index.js:1
+msgid "Temperature"
+msgstr "Temperatura"
+
+#: build/blocks/ai-complete/index.js:1
+msgid ""
+"The token count of your prompt plus max_tokens cannot exceed the model's "
+"context length. Most models have a context length of 2048 tokens"
+msgstr ""
+"A contagem de token de seu prompt não pode exceder o comprimento do contexto "
+"do modelo. A maioria dos modelos tem um comprimento de contexto de 2048 "
+"tokens"
+
+#: build/blocks/ai-gen-image/index.js:1
+msgid "Under development"
+msgstr "Em desenvolvimento"
+
+#: includes/REST/ContextsController.php:361
+#: includes/REST/SettingsController.php:353
+msgid "Updated at time"
+msgstr "Atualizado na hora"
+
+#: includes/REST/ContextsController.php:346
+msgid "Updated by user"
+msgstr "Atualizado pelo usuário"
+
+#: build/index.js:1
+msgid "View Contexts"
+msgstr "Exibir contextos"
+
+#: build/index.js:1
+msgid "View Settings"
+msgstr "Ver Configurações"
+
+#: build/blocks/ai-complete/index.js:1 build/blocks/ai-gen-image/index.js:1
+msgid "Wait..."
+msgstr "Aguarde..."
+
+#: build/blocks/ai-complete/index.js:1
+msgid ""
+"What sampling temperature to use, between 0 and 2. Higher values like 0.8 "
+"will make the output more random, while lower values like 0.2 will make it "
+"more focused and deterministic."
+msgstr ""
+"Qual temperatura de amostragem usar, entre 0 e 2. Valores mais altos, como 0."
+"8, tornarão a saída mais aleatória, enquanto valores mais baixos, como 0.2, "
+"a tornarão mais focada e determinística."
+
+#: build/blocks/ai-complete/index.js:1
+msgid "Write the subject of the article"
+msgstr "Escreva o assunto do artigo"
+
+#: build/blocks/ai-complete/index.js:1
+msgid "Writing text about: %s"
+msgstr "Escrevendo texto sobre: ​​%s"
+
+#: templates/blocks/ai-complete/markup.php:17
+msgid ""
+"You have not generated the post content with the article generator block, "
+"click on edit and click on generate for the text to be added to the post"
+msgstr ""
+"Você não gerou o conteúdo do post com o bloco do gerador de artigo, clique "
+"em editar e clique em gerar para o texto ser adicionado ao post"
+
+#. translators: %s is equals context
+#: templates/blocks/ai-complete/markup.php:29
+msgid "Your context: %s"
+msgstr "Seu contexto: %s"
+
+#. translators: %s is equals prompt
+#: templates/blocks/ai-complete/markup.php:23
+msgid "Your prompt: %s"
+msgstr "Seu prompt: %s"

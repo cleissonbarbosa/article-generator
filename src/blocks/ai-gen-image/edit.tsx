@@ -39,7 +39,7 @@ export default function Edit( { attributes, setAttributes } ) {
 		if ( loading ) {
 			Swal.fire( {
 				title: __( 'Wait...', 'article-gen' ),
-				text: `Creating your image`,
+				text: __(`Creating your image`, 'article-gen' ),
 				icon: 'info',
 				toast: true,
 				position: 'center',
@@ -48,6 +48,37 @@ export default function Edit( { attributes, setAttributes } ) {
 			} );
 		}
 	} );
+	
+	async function GenerateIMG(
+		prompt: string,
+		size: CreateImageRequestSizeEnum
+	): Promise< string > {
+		Swal.fire( {
+			title: __( 'Under development', 'article-gen' ),
+			text:  __( 'Feature under development, will be available soon', 'article-gen' ),
+			icon: 'warning',
+			toast: true,
+			position: 'center',
+			showConfirmButton: false,
+			timer: 3000,
+		} );
+		return ''
+
+		// Todo: implement this later.
+		if ( ! prompt ) {
+			throw new Error( 'Bad request - prompt empty' );
+		}
+	
+		if ( size && ! /^\d{3,4}x\d{3,4}$/.test( size ) ) {
+			throw new Error( 'Bad request - size incorrect format' );
+		}
+	
+		try {
+			return await createImage( prompt, size );
+		} catch ( e ) {
+			throw new Error( 'Bad request' );
+		}
+	}
 	return (
 		<div
 			{ ...useBlockProps() }
@@ -96,23 +127,4 @@ export default function Edit( { attributes, setAttributes } ) {
 			</InspectorControls>
 		</div>
 	);
-}
-
-async function GenerateIMG(
-	prompt: string,
-	size: CreateImageRequestSizeEnum
-): Promise< string > {
-	if ( ! prompt ) {
-		throw new Error( 'Bad request - prompt empty' );
-	}
-
-	if ( size && ! /^\d{3,4}x\d{3,4}$/.test( size ) ) {
-		throw new Error( 'Bad request - size incorrect format' );
-	}
-
-	try {
-		return await createImage( prompt, size );
-	} catch ( e ) {
-		throw new Error( 'Bad request' );
-	}
 }

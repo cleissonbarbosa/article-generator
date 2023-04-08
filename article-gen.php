@@ -2,7 +2,7 @@
 
 /**
  * Plugin Name:       Article Generator
- * Description:       test
+ * Description:       Post generator using artificial intelligence (GPT)
  * Requires at least: 5.8
  * Requires PHP:      7.4
  * Version:           0.7.0
@@ -263,8 +263,8 @@ final class Article_Gen {
 
         // Load the React-pages translations.
         if ( is_admin() ) {
-            // Load wp-script translation for article-generatorenerator-app
-            wp_set_script_translations( 'article-generatorenerator-app', 'article-gen', plugin_dir_path( __FILE__ ) . 'languages/' );
+            // Load wp-script translation for article-generator-app
+            wp_set_script_translations( 'article-generator-app', 'article-gen', plugin_dir_path( __FILE__ ) . 'languages/' );
         }
     }
 
@@ -307,7 +307,7 @@ final class Article_Gen {
      */
     public function plugin_action_links( $links ) {
         $links[] = '<a href="' . admin_url( 'admin.php?page=article-gen#/settings' ) . '">' . __( 'Settings', 'article-gen' ) . '</a>';
-        $links[] = '<a href="https://github.com/CleissonBarbosa/article-generator#quick-start" target="_blank">' . __( 'Documentation', 'article-gen' ) . '</a>';
+        $links[] = '<a href="https://github.com/cleissonbarbosa/article-generator#quick-start" target="_blank">' . __( 'Documentation', 'article-gen' ) . '</a>';
 
         return $links;
     }

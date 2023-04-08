@@ -8,7 +8,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-04-06T14:13:58+00:00\n"
+"POT-Creation-Date: 2023-04-08T04:14:34+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: article-gen\n"
@@ -20,7 +20,7 @@ msgid "Article Generator"
 msgstr ""
 
 #. Description of the plugin
-msgid "test"
+msgid "Post generator using artificial intelligence (GPT)"
 msgstr ""
 
 #. Author of the plugin
@@ -277,7 +277,19 @@ msgid "The token count of your prompt plus max_tokens cannot exceed the model's 
 msgstr ""
 
 #: build/blocks/ai-gen-image/index.js:1
+msgid "Creating your image"
+msgstr ""
+
+#: build/blocks/ai-gen-image/index.js:1
 msgid "Describe the image you want to generate"
+msgstr ""
+
+#: build/blocks/ai-gen-image/index.js:1
+msgid "Under development"
+msgstr ""
+
+#: build/blocks/ai-gen-image/index.js:1
+msgid "Feature under development, will be available soon"
 msgstr ""
 
 #: build/index.js:1
@@ -417,18 +429,6 @@ msgid "Enter Context content."
 msgstr ""
 
 #: build/index.js:1
-msgid "OpenAi Settings"
-msgstr ""
-
-#: build/index.js:1
-msgid "Plugin Settings"
-msgstr ""
-
-#: build/index.js:1
-msgid "Information"
-msgstr ""
-
-#: build/index.js:1
 msgid "Please give a setting value to %s."
 msgstr ""
 
@@ -441,7 +441,23 @@ msgid "Setting has been saved successfully."
 msgstr ""
 
 #: build/index.js:1
+msgid "OpenAi Settings"
+msgstr ""
+
+#: build/index.js:1
+msgid "Plugin Settings"
+msgstr ""
+
+#: build/index.js:1
+msgid "Information"
+msgstr ""
+
+#: build/index.js:1
 msgid "OpenAi API Key"
+msgstr ""
+
+#: build/index.js:1
+msgid "I don't have a key"
 msgstr ""
 
 #: build/index.js:1

@@ -28,16 +28,16 @@ const { name, ...settings } = json;
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
-registerBlockType(name, {
-    ...settings,
+registerBlockType( name, {
+	...settings,
 
-    /**
-     * @see ./edit.js
-     */
-    edit,
+	/**
+	 * @see ./edit.js
+	 */
+	edit,
 
-    /**
-     * @see ./save.js
-     */
-    save,
-});
+	/**
+	 * @see ./save.js
+	 */
+	save,
+} );

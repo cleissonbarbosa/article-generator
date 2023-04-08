@@ -12,12 +12,12 @@ import selectors from './selectors';
 import controls from './controls';
 import resolvers from './resolvers';
 
-const contextStore = createReduxStore('wp-react/contexts', {
-    reducer,
-    actions,
-    selectors,
-    controls,
-    resolvers,
-});
+const contextStore = createReduxStore( 'wp-react/contexts', {
+	reducer,
+	actions,
+	selectors,
+	controls,
+	resolvers,
+} );
 
 export default contextStore;

@@ -12,12 +12,12 @@ import selectors from './selectors';
 import controls from './controls';
 import resolvers from './resolvers';
 
-const settingsStore = createReduxStore('article-gen/settings', {
-    reducer,
-    actions,
-    selectors,
-    controls,
-    resolvers,
-});
+const settingsStore = createReduxStore( 'article-gen/settings', {
+	reducer,
+	actions,
+	selectors,
+	controls,
+	resolvers,
+} );
 
 export default settingsStore;

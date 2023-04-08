@@ -3,72 +3,76 @@
  */
 import * as Types from './types';
 import { settingDefaultFormData } from './default-state';
-import { ISetting, ISettingFormData, ISettings } from '../../interfaces/settings';
+import {
+	ISetting,
+	ISettingFormData,
+	ISettings,
+} from '../../interfaces/settings';
 import { IResponseGenerator } from '../../interfaces';
 
 const actions = {
-    setSettings(settings: Array<ISetting>) {
-        return {
-            type: Types.GET_SETTINGS,
-            settings,
-        };
-    },
+	setSettings( settings: Array< ISetting > ) {
+		return {
+			type: Types.GET_SETTINGS,
+			settings,
+		};
+	},
 
-    setFormData(form: ISettingFormData) {
-        return {
-            type: Types.SET_SETTING_FORM_DATA,
-            form,
-        };
-    },
+	setFormData( form: ISettingFormData ) {
+		return {
+			type: Types.SET_SETTING_FORM_DATA,
+			form,
+		};
+	},
 
-    setLoadingSettings(loadingSettings: boolean) {
-        return {
-            type: Types.SET_LOADING_SETTINGS,
-            loadingSettings,
-        };
-    },
+	setLoadingSettings( loadingSettings: boolean ) {
+		return {
+			type: Types.SET_LOADING_SETTINGS,
+			loadingSettings,
+		};
+	},
 
-    setSavingSettings(settingsSaving: boolean) {
-        return {
-            type: Types.SET_SETTINGS_SAVING,
-            settingsSaving,
-        };
-    },
+	setSavingSettings( settingsSaving: boolean ) {
+		return {
+			type: Types.SET_SETTINGS_SAVING,
+			settingsSaving,
+		};
+	},
 
-    *saveSetting(payload: ISettingFormData) {
-        yield actions.setSavingSettings(true);
+	*saveSetting( payload: ISettingFormData ) {
+		yield actions.setSavingSettings( true );
 
-        try {
-            let response: IResponseGenerator = {};
-            console.log(payload)
-            response = yield {
-                type: Types.UPDATE_SETTINGS,
-                payload,
-            };
+		try {
+			let response: IResponseGenerator = {};
+			console.log( payload );
+			response = yield {
+				type: Types.UPDATE_SETTINGS,
+				payload,
+			};
 
-            if (response) {
-                yield actions.setFormData({ ...settingDefaultFormData });
-                yield actions.setSavingSettings(false);
-            }
-        } catch (error) {
-            yield actions.setSavingSettings(false);
-            return error
-        }
-    },
+			if ( response ) {
+				yield actions.setFormData( { ...settingDefaultFormData } );
+				yield actions.setSavingSettings( false );
+			}
+		} catch ( error ) {
+			yield actions.setSavingSettings( false );
+			return error;
+		}
+	},
 
-    fetchFromAPI(path: string) {
-        return {
-            type: Types.FETCH_FROM_API,
-            path,
-        };
-    },
+	fetchFromAPI( path: string ) {
+		return {
+			type: Types.FETCH_FROM_API,
+			path,
+		};
+	},
 
-    fetchFromAPIUnparsed(path: string) {
-        return {
-            type: Types.FETCH_FROM_API_UNPARSED,
-            path,
-        };
-    },
+	fetchFromAPIUnparsed( path: string ) {
+		return {
+			type: Types.FETCH_FROM_API_UNPARSED,
+			path,
+		};
+	},
 };
 
 export default actions;

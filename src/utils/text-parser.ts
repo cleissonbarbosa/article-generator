@@ -9,6 +9,6 @@ import parse from 'html-react-parser';
  * @param  html html string to parse.
  * @return string
  */
-export function parseHtml(html: string) {
-    return parse(html);
+export function parseHtml( html: string ) {
+	return parse( html );
 }

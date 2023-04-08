@@ -18,8 +18,8 @@
 					"label": "Big (1024x1024)"
 				},
 				{
-					"value":"512x512",
-					"label":"Medium (512x512)"
+					"value": "512x512",
+					"label": "Medium (512x512)"
 				},
 				{
 					"value": "256x256",

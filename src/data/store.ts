@@ -12,5 +12,5 @@ import SettingStore from './settings';
 /**
  * Register stores.
  */
-register(ContextStore);
-register(SettingStore);
+register( ContextStore );
+register( SettingStore );

@@ -1,49 +1,49 @@
 {
-    "name": "cleissonbarbosa/article-generator",
-    "description": "",
-    "type": "wordpress-plugin",
-    "license": "GPL-2.0-or-later",
-    "authors": [
-        {
-            "name": "Cleisson Barbosa",
-            "email": "cleissonbarbosa68@gmail.com"
-        }
-    ],
-    "config": {
-        "allow-plugins": {
-            "dealerdirect/phpcodesniffer-composer-installer": true
-        }
-    },
-    "require": {
-        "php": ">=7.0.0|8.0"
-    },
-    "require-dev": {
-        "wp-coding-standards/wpcs": "dev-master",
-        "dealerdirect/phpcodesniffer-composer-installer": "dev-master",
-        "tareq1988/wp-php-cs-fixer": "dev-master",
-        "phpcompatibility/phpcompatibility-wp": "dev-master",
-        "wp-phpunit/wp-phpunit": "^6.0",
-        "yoast/phpunit-polyfills": "^1.0",
-        "phpunit/phpunit": "^9.5"
-    },
-    "autoload": {
-        "psr-4": {
-            "ArticleGen\\CBPlugin\\": "includes/",
-            "ArticleGen\\CBPlugin\\Tests\\": "tests/phpunit/"
-        }
-    },
-    "scripts": {
-        "phpcs": [
-            "phpcs -p -s"
-        ],
-        "phpcbf": [
-            "phpcbf -p"
-        ],
-        "test": [
-            "vendor/bin/phpunit"
-        ],
-        "test:all": [
-            "phpcs -p -s & vendor/bin/phpunit"
-        ]
-    }
+	"name": "cleissonbarbosa/article-generator",
+	"description": "",
+	"type": "wordpress-plugin",
+	"license": "GPL-2.0-or-later",
+	"authors": [
+		{
+			"name": "Cleisson Barbosa",
+			"email": "cleissonbarbosa68@gmail.com"
+		}
+	],
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	},
+	"require": {
+		"php": ">=7.0.0|8.0"
+	},
+	"require-dev": {
+		"wp-coding-standards/wpcs": "dev-master",
+		"dealerdirect/phpcodesniffer-composer-installer": "dev-master",
+		"tareq1988/wp-php-cs-fixer": "dev-master",
+		"phpcompatibility/phpcompatibility-wp": "dev-master",
+		"wp-phpunit/wp-phpunit": "^6.0",
+		"yoast/phpunit-polyfills": "^1.0",
+		"phpunit/phpunit": "^9.5"
+	},
+	"autoload": {
+		"psr-4": {
+			"ArticleGen\\CBPlugin\\": "includes/",
+			"ArticleGen\\CBPlugin\\Tests\\": "tests/phpunit/"
+		}
+	},
+	"scripts": {
+		"phpcs": [
+			"phpcs -p -s"
+		],
+		"phpcbf": [
+			"phpcbf -p"
+		],
+		"test": [
+			"vendor/bin/phpunit"
+		],
+		"test:all": [
+			"phpcs -p -s & vendor/bin/phpunit"
+		]
+	}
 }

@@ -14,6 +14,7 @@ const pluginFiles = [
 	'languages/',
 	'templates/',
 	'changelog.txt',
+	'readme.txt',
 	'article-gen.php',
 ];
 

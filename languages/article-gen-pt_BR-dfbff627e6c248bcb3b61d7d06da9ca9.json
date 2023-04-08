@@ -1,5 +1,5 @@
 {
-    "translation-revision-date": "2023-04-08 04:53+0000",
+    "translation-revision-date": "2023-04-08 15:44+0000",
     "generator": "Loco https://localise.biz/",
     "source": "build/index.js",
     "domain": "article-gen",
@@ -33,6 +33,9 @@
             ],
             "Are you sure?": [
                 "Tem certeza?"
+            ],
+            "Article Generator": [
+                "Gerador de artigos"
             ],
             "Back to contexts": [
                 "Voltar para contextos"

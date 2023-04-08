@@ -1,12 +1,13 @@
 import { CreateImageRequestSizeEnum } from 'openai';
 import { getOpenAi } from './OpenAi';
+import { __ } from '@wordpress/i18n';
 
 export async function createImage(
 	prompt: string,
 	size: CreateImageRequestSizeEnum | null = null
 ): Promise< string > {
 	if ( prompt.trim().length === 0 ) {
-		throw new Error( 'Please enter a valid prompt' );
+		throw new Error( __('Please enter a valid prompt', 'article-gen') );
 	}
 
 	try {
@@ -29,7 +30,7 @@ export async function createImage(
 			console.error(
 				`Error with OpenAI API request: ${ error.message }`
 			);
-			throw new Error( 'An error occurred during your request.' );
+			throw new Error( __('An error occurred during your request.', 'article-gen') );
 		}
 	}
 }

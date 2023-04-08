@@ -1,5 +1,6 @@
 import { CreateCompletionRequest } from 'openai';
 import { getOpenAi } from './OpenAi';
+import { __ } from '@wordpress/i18n';
 
 export interface IArticlePopulate {
 	title: string;
@@ -12,7 +13,7 @@ export async function createArticle(
 	options?: Pick< CreateCompletionRequest, 'temperature' | 'max_tokens' >
 ): Promise< IArticlePopulate > {
 	if ( subject.trim().length === 0 ) {
-		throw new Error( 'Please enter a valid prompt' );
+		throw new Error( __('Please enter a valid prompt', 'article-gen') );
 	}
 
 	try {
@@ -38,7 +39,7 @@ export async function createArticle(
 		console.info( { error } );
 		const errorMessase =
 			error.response.data.error.message ||
-			`Failed to generate article. Make sure you entered the API Key in the settings`;
+			__(`Failed to generate article. Make sure you entered the API Key in the settings`, 'article-gen');
 		throw new Error( errorMessase );
 	}
 }

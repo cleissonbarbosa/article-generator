@@ -1,5 +1,5 @@
 {
-    "translation-revision-date": "2023-04-08 04:53+0000",
+    "translation-revision-date": "2023-04-08 15:44+0000",
     "generator": "Loco https://localise.biz/",
     "source": "build/blocks/ai-complete/index.js",
     "domain": "article-gen",
@@ -31,6 +31,18 @@
             "Error": [
                 "Erro"
             ],
+            "Failed to generate article. Make sure you entered the API Key in the settings": [
+                "Falha ao gerar o artigo. Certifique-se de inserir a chave API nas configura\u00e7\u00f5es"
+            ],
+            "Generate": [
+                "Gerar"
+            ],
+            "Generating...": [
+                "Gerando..."
+            ],
+            "GPT Text Generator": [
+                "Gerador de Texto (GPT)"
+            ],
             "Hour": [
                 "Hora"
             ],
@@ -39,6 +51,15 @@
             ],
             "Minute": [
                 "Minuto"
+            ],
+            "OpenAI API key not configured": [
+                "Chave de API OpenAI n\u00e3o configurada"
+            ],
+            "Please enter a valid prompt": [
+                "Insira um prompt v\u00e1lido"
+            ],
+            "Select context": [
+                "Selecione o contexto"
             ],
             "Settings": [
                 "Configura\u00e7\u00f5es"

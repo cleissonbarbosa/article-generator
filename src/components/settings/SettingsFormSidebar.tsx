@@ -3,6 +3,12 @@
  */
 import { scroller } from 'react-scroll';
 import { __ } from '@wordpress/i18n';
+import Modal from '../modal/Modal';
+import Card from '../card/Card';
+import Table from '../table/Table';
+import Swal from 'sweetalert2';
+import resolveConfig from 'tailwindcss/resolveConfig'
+import tailwindConfig from '../../../tailwind.config';
 
 type Props = {
 	loading?: boolean;
@@ -16,6 +22,15 @@ export default function SettingFormSidebar( { loading }: Props ) {
 			offset: -90,
 			smooth: 'easeInOutQuart',
 		} );
+	};
+
+	const showInfoModal = () => {
+		const fullConfig = resolveConfig(tailwindConfig)
+		Swal.fire({
+			title: __('Article Generator', 'article-gen'),
+			text: `Version: ${(window as any)?.article_gen?.version || '1.0.0'}`,
+			confirmButtonColor: fullConfig.theme?.colors.primary as string,
+		})
 	};
 
 	const menus = [
@@ -47,18 +62,31 @@ export default function SettingFormSidebar( { loading }: Props ) {
 					</>
 				) : (
 					<>
-						{ menus.map( ( menu, index ) => (
-							<li
-								key={ index }
-								className="cursor-pointer text-center transition bg-slate-100 hover:bg-slate-200 p-2.5 rounded-lg mt-5"
-								onClick={ () => goToSection( menu.slug ) }
-								onKeyDown={ () => goToSection( menu.slug ) }
-								// eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role
-								role="button"
-							>
-								{ menu.label }
-							</li>
-						) ) }
+						{ menus.map( ( menu, index ) =>
+							menu.slug != "setting-info" ? (
+								<li
+									key={ index }
+									className="cursor-pointer text-center transition bg-slate-100 hover:bg-slate-200 p-2.5 rounded-lg mt-5"
+									onClick={ () => goToSection( menu.slug ) }
+									onKeyDown={ () => goToSection( menu.slug ) }
+									// eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role
+									role="button"
+								>
+									{ menu.label }
+								</li>
+							) : (
+								<li
+									key={ index }
+									className="cursor-pointer text-center transition bg-slate-100 hover:bg-slate-200 p-2.5 rounded-lg mt-5"
+									onClick={ () => showInfoModal() }
+									onKeyDown={ () => showInfoModal() }
+									// eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role
+									role="button"
+								>
+									{ menu.label }
+								</li>
+							)
+						) }
 					</>
 				) }
 			</ul>

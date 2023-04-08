@@ -2,7 +2,7 @@
  * External dependencies.
  */
 import { __ } from '@wordpress/i18n';
-import Swal, { SweetAlertResult } from 'sweetalert2';
+import Swal from 'sweetalert2';
 import { CreateImageRequestSizeEnum } from 'openai';
 import { useState, useEffect } from '@wordpress/element';
 import {
@@ -12,17 +12,14 @@ import {
 } from '@wordpress/block-editor';
 import {
 	PanelBody,
-	ColorPicker,
-	__experimentalBoxControl as BoxControl,
 } from '@wordpress/components';
+import { faImage } from '@fortawesome/free-solid-svg-icons';
 /**
  * Internal dependencies.
  */
 import './editor.scss';
 import Button from '../../components/button/Button';
 import { createImage } from '../../integrations/openai/createImage';
-import { faImage } from '@fortawesome/free-solid-svg-icons';
-import SelectCheckBox from '../../components/contexts/SelectCheckBox';
 import Select2Input from '../../components/inputs/Select2Input';
 
 /**
@@ -102,7 +99,7 @@ export default function Edit( { attributes, setAttributes } ) {
 
 			<Select2Input
 				options={ [ ...sizesAvailable ] }
-				placeholder="Select image size"
+				placeholder={__('Select image size', 'article-gen')}
 				defaultValue={ sizeValue }
 				onChange={ ( input ) =>
 					setAttributes( { sizeValue: input.value } )
@@ -110,7 +107,7 @@ export default function Edit( { attributes, setAttributes } ) {
 			/>
 
 			<Button
-				text={ loading ? ' Generating image...' : ' Generate image' }
+				text={ loading ? __('Generating image...', 'article-gen') : __('Generate image', 'article-gen') }
 				buttonCustomClass="img-gen-btn"
 				disabled={ loading }
 				iconCustomClass="btn-icon"

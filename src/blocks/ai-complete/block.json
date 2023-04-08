@@ -26,8 +26,7 @@
 	"example": {
 		"attributes": {
 			"prompt": "Subject: Health and wellness",
-			"context": "The COVID-19 pandemic has brought many challenges to people's physical and mental health. Many are looking for ways to stay healthy and reduce stress during this difficult time. As a result, there is a growing demand for health and wellness content.",
-			"toggleContext": true
+			"context": "The COVID-19 pandemic has brought many challenges to people's physical and mental health. Many are looking for ways to stay healthy and reduce stress during this difficult time. As a result, there is a growing demand for health and wellness content."
 		}
 	},
 	"supports": {

@@ -110,5 +110,10 @@ class Manager {
 
         wp_enqueue_style( 'article-generator-css' );
         wp_enqueue_script( 'article-generator-app' );
+        wp_localize_script( 'article-generator-app', 'article_gen',
+            array( 
+                'version' => ARTICLE_GEN_VERSION
+            )
+        );
     }
 }

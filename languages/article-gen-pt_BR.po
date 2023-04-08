@@ -9,52 +9,57 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2023-04-08T03:30:31+00:00\n"
-"PO-Revision-Date: 2023-04-08 04:53+0000\n"
+"PO-Revision-Date: 2023-04-08 15:44+0000\n"
 "Language: pt_BR\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: article-gen\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Loco-Version: 2.6.4; wp-6.2"
 
-#: build/blocks/ai-complete/index.js:1 build/blocks/ai-gen-image/index.js:1
-#: build/index.js:1
+#: build/blocks/ai-complete/index.js:5622
+#: build/blocks/ai-gen-image/index.js:5204 build/index.js:8150
 msgid "-- Select --"
 msgstr "-- Selecione --"
 
-#: build/index.js:1
+#: build/index.js:7701
 msgid "Action"
 msgstr "Ação"
 
-#: build/index.js:1
+#: build/index.js:7795
 msgid "add openai settings and edit plugin settings"
 msgstr "Adicionar configurações da OpenAi e Plugin"
 
-#: build/index.js:1
+#: build/index.js:7782
 msgid "Add/Edit/Delete Contexts for your prompts"
 msgstr "Adicionar/Editar/Deletar contextos para o seu prompts"
 
-#: build/index.js:1
+#: build/blocks/ai-gen-image/index.js:5391
+msgid "An error occurred during your request."
+msgstr "Ocorreu um erro durante sua solicitação."
+
+#: build/index.js:8631
 msgid "Apply"
 msgstr "Aplicar"
 
-#: build/index.js:1
+#: build/index.js:8631
 msgid "Applying…"
 msgstr "Aplicando..."
 
-#: build/index.js:1
+#: build/index.js:7503
 msgid "Are you sure to delete the context?"
 msgstr "Tem certeza de que deseja excluir o contexto?"
 
-#: build/index.js:1
+#: build/index.js:7502
 msgid "Are you sure?"
 msgstr "Tem certeza?"
 
 #. Plugin Name of the plugin
 #: includes/Admin/Menu.php:36 templates/blocks/ai-complete/markup.php:14
+#: build/index.js:8312
 msgid "Article Generator"
 msgstr "Gerador de artigos"
 
-#: build/index.js:1
+#: build/index.js:10785 build/index.js:10868
 msgid "Back to contexts"
 msgstr "Voltar para contextos"
 
@@ -68,7 +73,7 @@ msgctxt "block title"
 msgid "GPT Image Generator"
 msgstr "Gerador de imagens GPT"
 
-#: build/index.js:1
+#: build/index.js:7432
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -84,11 +89,11 @@ msgstr "Não é possível criar um modelo de e-mail existente."
 msgid "Cleisson Barbosa<cleissonbarbosa68@gmail.com>"
 msgstr "Cleisson Barbosa<cleissonbarbosa68@gmail.com>"
 
-#: build/index.js:1
+#: build/index.js:7693
 msgid "Context"
 msgstr "Contexto"
 
-#: build/index.js:1
+#: build/index.js:7309
 msgid "Context Content"
 msgstr "Conteúdo do Contexto"
 
@@ -96,15 +101,15 @@ msgstr "Conteúdo do Contexto"
 msgid "Context description"
 msgstr "Descrição do contexto"
 
-#: build/index.js:1
+#: build/index.js:7257
 msgid "Context details"
 msgstr "Detalhes do contexto"
 
-#: build/index.js:1
+#: build/index.js:7408
 msgid "Context has been saved successfully."
 msgstr "O contexto foi salvo com sucesso."
 
-#: build/index.js:1
+#: build/index.js:7531
 msgid "Context has been updated successfully."
 msgstr "O contexto foi atualizado com sucesso."
 
@@ -116,7 +121,7 @@ msgstr ""
 "Contexto não encontrado. Pode ser que o contexto tenha sido excluído ou você "
 "não tenha acesso a ele."
 
-#: build/index.js:1
+#: build/index.js:7407
 msgid "Context saved"
 msgstr "Contexto salvo"
 
@@ -132,16 +137,16 @@ msgstr "O slug do contexto já existe."
 msgid "Context status"
 msgstr "status do contexto"
 
-#: build/index.js:1
+#: build/index.js:7530
 msgid "Context status updated"
 msgstr "Status do contexto atualizado"
 
-#: includes/REST/ContextsController.php:303 build/index.js:1
+#: includes/REST/ContextsController.php:303 build/index.js:7248
 msgid "Context title"
 msgstr "Título do contexto"
 
-#: includes/Admin/Menu.php:40 build/blocks/ai-complete/index.js:1
-#: build/index.js:1
+#: includes/Admin/Menu.php:40 build/blocks/ai-complete/index.js:5017
+#: build/index.js:7782 build/index.js:8458 build/index.js:10660
 msgid "Contexts"
 msgstr "Contextos"
 
@@ -149,7 +154,7 @@ msgstr "Contextos"
 msgid "Contexts deleted successfully."
 msgstr "Contextos excluídos com sucesso."
 
-#: build/index.js:1
+#: build/index.js:10788
 msgid "Create New Context"
 msgstr "Criar novo contexto"
 
@@ -162,15 +167,15 @@ msgstr "Criado na hora"
 msgid "Created by user"
 msgstr "Criado pelo usuário"
 
-#: build/blocks/ai-gen-image/index.js:1
+#: build/blocks/ai-gen-image/index.js:4802
 msgid "Creating your image"
 msgstr "Criando sua imagem"
 
-#: build/blocks/ai-complete/index.js:1 build/index.js:1
+#: build/blocks/ai-complete/index.js:7101 build/index.js:11212
 msgid "Day"
 msgstr "Dia"
 
-#: build/index.js:1
+#: build/index.js:7576 build/index.js:8627
 msgid "Delete"
 msgstr "Excluir"
 
@@ -179,15 +184,15 @@ msgstr "Excluir"
 msgid "Deleted at time"
 msgstr "Excluído na hora"
 
-#: build/index.js:1
+#: build/index.js:7520
 msgid "Deleted!"
 msgstr "Excluído!"
 
-#: build/blocks/ai-gen-image/index.js:1
+#: build/blocks/ai-gen-image/index.js:4845
 msgid "Describe the image you want to generate"
 msgstr "Descreva a imagem que deseja gerar"
 
-#: article-gen.php:310
+#: article-gen.php:312
 msgid "Documentation"
 msgstr "Documentação"
 
@@ -195,43 +200,45 @@ msgstr "Documentação"
 msgid "Don't worry, only you are seeing this."
 msgstr "Não se preocupe, só você está vendo isso."
 
-#: build/index.js:1
+#: build/index.js:7569
 msgid "Edit"
 msgstr "Editar"
 
-#: build/index.js:1
+#: build/index.js:10871
 msgid "Edit Context"
 msgstr "Editar Contexto"
 
-#: build/blocks/ai-complete/index.js:1
+#: build/blocks/ai-complete/index.js:5041
 msgid "Enable custom context"
 msgstr "Ativar contexto personalizado"
 
-#: build/blocks/ai-complete/index.js:1
+#: build/blocks/ai-complete/index.js:5038
 msgid "Enable pre written context"
 msgstr "Ativar contexto pré-escrito"
 
-#: build/index.js:1
+#: build/index.js:8960
 msgid "Enter a openai api key"
 msgstr "Insira uma chave de API OpenAI"
 
-#: build/index.js:1
+#: build/index.js:8969
 msgid "Enter a openai organization"
 msgstr "Inserir organização na OpenAI"
 
-#: build/index.js:1
+#: build/index.js:7260
 msgid "Enter Context content."
 msgstr "Digite o conteúdo do Contexto."
 
-#: build/index.js:1
+#: build/index.js:7250
 msgid "Enter Context title, eg: Life Style"
 msgstr "Digite o título do Contexto, por exemplo: Estilo de Vida"
 
-#: build/blocks/ai-complete/index.js:1
+#: build/blocks/ai-complete/index.js:5063
 msgid "Enter the context of this article (optional)"
 msgstr "Insira o contexto deste artigo (opcional)"
 
-#: build/blocks/ai-complete/index.js:1 build/index.js:1
+#: build/blocks/ai-complete/index.js:4982 build/index.js:7393
+#: build/index.js:7421 build/index.js:8811 build/index.js:8826
+#: build/index.js:8847
 msgid "Error"
 msgstr "Erro"
 
@@ -242,6 +249,13 @@ msgstr "Falha ao criar contexto."
 #: includes/Settings/Manager.php:112
 msgid "Failed to create setting."
 msgstr "Falha ao criar configuração."
+
+#: build/blocks/ai-complete/index.js:6927
+msgid ""
+"Failed to generate article. Make sure you entered the API Key in the settings"
+msgstr ""
+"Falha ao gerar o artigo. Certifique-se de inserir a chave API nas "
+"configurações"
 
 #: includes/Contexts/Manager.php:166
 msgid "Failed to update context."
@@ -255,7 +269,7 @@ msgstr "Falha ao atualizar o contexto."
 msgid "Failed to update the setting."
 msgstr "Falha ao atualizar a configuração."
 
-#: build/blocks/ai-gen-image/index.js:1
+#: build/blocks/ai-gen-image/index.js:4814
 msgid "Feature under development, will be available soon"
 msgstr "Recurso em desenvolvimento, estará disponível em breve"
 
@@ -263,19 +277,43 @@ msgstr "Recurso em desenvolvimento, estará disponível em breve"
 msgid "First Context"
 msgstr "Primeiro Contexto"
 
-#: build/index.js:1
+#: build/index.js:7306
 msgid "General Information"
 msgstr "Informações gerais"
 
-#: includes/Admin/Menu.php:39 build/index.js:1
+#: build/blocks/ai-complete/index.js:5069
+msgid "Generate"
+msgstr "Gerar"
+
+#: build/blocks/ai-gen-image/index.js:4859
+msgid "Generate image"
+msgstr "Gerar imagem"
+
+#: build/blocks/ai-gen-image/index.js:4859
+msgid "Generating image..."
+msgstr "Gerando imagem..."
+
+#: build/blocks/ai-complete/index.js:5069
+msgid "Generating..."
+msgstr "Gerando..."
+
+#: build/blocks/ai-gen-image/index.js:4918
+msgid "GPT Image Generator"
+msgstr "Gerador de imagens (GPT)"
+
+#: build/blocks/ai-complete/index.js:4815
+msgid "GPT Text Generator"
+msgstr "Gerador de Texto (GPT)"
+
+#: includes/Admin/Menu.php:39 build/index.js:8449
 msgid "Home"
 msgstr "Home"
 
-#: build/blocks/ai-complete/index.js:1 build/index.js:1
+#: build/blocks/ai-complete/index.js:7098 build/index.js:11209
 msgid "Hour"
 msgstr "Hora"
 
-#: build/index.js:1
+#: build/index.js:8951
 msgid "I don't have a key"
 msgstr "eu não tenho uma chave"
 
@@ -283,7 +321,7 @@ msgstr "eu não tenho uma chave"
 msgid "ID of the context"
 msgstr "ID do contexto"
 
-#: build/index.js:1
+#: build/index.js:9020
 msgid "Information"
 msgstr "Informação"
 
@@ -295,11 +333,11 @@ msgstr "ID do contexto inválido."
 msgid "Invalid Setting KEY."
 msgstr "Configuração inválida."
 
-#: build/index.js:1
+#: build/index.js:8666
 msgid "item"
 msgstr "item"
 
-#: build/index.js:1
+#: build/index.js:8666
 msgid "items"
 msgstr "itens"
 
@@ -311,23 +349,23 @@ msgstr "Chave de configuração"
 msgid "Loading"
 msgstr "Carregando"
 
-#: build/index.js:1
+#: build/index.js:7583
 msgid "Make Draft"
 msgstr "Fazer Rascunho"
 
-#: build/index.js:1
+#: build/index.js:7587
 msgid "Make Publish"
 msgstr "Publicar"
 
-#: build/blocks/ai-complete/index.js:1
+#: build/blocks/ai-complete/index.js:5100
 msgid "Max Tokens"
 msgstr "Máximo de tokens"
 
-#: build/blocks/ai-complete/index.js:1 build/index.js:1
+#: build/blocks/ai-complete/index.js:7095 build/index.js:11206
 msgid "Minute"
 msgstr "Minuto"
 
-#: build/index.js:1
+#: build/index.js:10664
 msgid "New"
 msgstr "Novo"
 
@@ -351,35 +389,45 @@ msgstr ""
 msgid "No setting keys found."
 msgstr "Nenhuma chave de configuração encontrada."
 
-#: build/index.js:1
+#: build/index.js:8947
 msgid "OpenAi API Key"
 msgstr "Chave da API OpenAi"
 
-#: build/index.js:1
+#: build/blocks/ai-complete/index.js:6878
+#: build/blocks/ai-gen-image/index.js:5346
+msgid "OpenAI API key not configured"
+msgstr "Chave de API OpenAI não configurada"
+
+#: build/index.js:8966
 msgid "OpenAi Organization ID"
 msgstr "ID da Organização OpenAi"
 
-#: build/index.js:1
+#: build/index.js:9014
 msgid "OpenAi Settings"
 msgstr "Configurações OpenAi"
 
-#: build/index.js:1
+#: build/blocks/ai-complete/index.js:6906
+#: build/blocks/ai-gen-image/index.js:5375
+msgid "Please enter a valid prompt"
+msgstr "Insira um prompt válido"
+
+#: build/index.js:7382
 msgid "Please give a context title."
 msgstr "Por favor, dê um título ao contexto."
 
-#: build/index.js:1
+#: build/index.js:8802
 msgid "Please give a setting value to %s."
 msgstr "Forneça um valor de configuração para %s."
 
-#: build/index.js:1
+#: build/index.js:7385
 msgid "Please give context content."
 msgstr "Forneça o conteúdo do contexto."
 
-#: build/index.js:1
+#: build/index.js:7630
 msgid "Please select an action."
 msgstr "Selecione uma ação."
 
-#: build/index.js:1
+#: build/index.js:9017
 msgid "Plugin Settings"
 msgstr "Configurações do plugin"
 
@@ -392,31 +440,39 @@ msgstr "Gerador de posts usando inteligência artificial (GPT)"
 msgid "Post IDs which will be deleted."
 msgstr "Post IDs que serão excluídos."
 
-#: build/index.js:1
+#: build/index.js:7315 build/index.js:9026
 msgid "Quick Jump"
 msgstr "Ir para"
 
-#: build/index.js:1
+#: build/index.js:7437 build/index.js:8858
 msgid "Save"
 msgstr "Salvar"
 
-#: build/index.js:1
+#: build/index.js:7437 build/index.js:8858
 msgid "Saving…"
 msgstr "Salvando…"
 
-#: build/index.js:1
+#: build/index.js:10677
 msgid "Search Contexts…"
 msgstr "Contextos de pesquisa…"
 
-#: build/index.js:1
+#: build/index.js:8625
 msgid "Select Action"
 msgstr "Selecionar ação"
 
-#: build/index.js:1
+#: build/blocks/ai-complete/index.js:5045
+msgid "Select context"
+msgstr "Selecione o contexto"
+
+#: build/blocks/ai-gen-image/index.js:4853
+msgid "Select image size"
+msgstr "Selecione o tamanho da imagem"
+
+#: build/index.js:8666
 msgid "selected"
 msgstr "selecionado"
 
-#: build/index.js:1
+#: build/index.js:8837
 msgid "Setting has been saved successfully."
 msgstr "A configuração foi salva com sucesso."
 
@@ -432,7 +488,7 @@ msgstr ""
 "Configuração não encontrada. Pode ser que a configuração tenha sido excluída "
 "ou você não tenha acesso a ela."
 
-#: build/index.js:1
+#: build/index.js:8836
 msgid "Setting saved"
 msgstr "Configuração salva"
 
@@ -440,9 +496,11 @@ msgstr "Configuração salva"
 msgid "Setting title"
 msgstr "Definir título"
 
-#: article-gen.php:309 includes/Admin/Menu.php:41
-#: build/blocks/ai-complete/index.js:1 build/blocks/ai-gen-image/index.js:1
-#: build/index.js:1
+#: article-gen.php:311 includes/Admin/Menu.php:41
+#: build/blocks/ai-complete/index.js:5019
+#: build/blocks/ai-complete/index.js:5084
+#: build/blocks/ai-gen-image/index.js:4867 build/index.js:7795
+#: build/index.js:8467 build/index.js:10928
 msgid "Settings"
 msgstr "Configurações"
 
@@ -450,23 +508,23 @@ msgstr "Configurações"
 msgid "Settings deleted successfully."
 msgstr "Configurações excluídas com sucesso."
 
-#: build/index.js:1
+#: build/index.js:9207
 msgid "Sorry ! No data found."
 msgstr "Desculpe ! Nenhum dado encontrado."
 
-#: build/index.js:1
+#: build/index.js:10712
 msgid "Sorry !! No contexts found…"
 msgstr "Desculpe !! Nenhum contexto encontrado..."
 
-#: build/index.js:1
+#: build/index.js:7697
 msgid "Status"
 msgstr "Status"
 
-#: build/blocks/ai-complete/index.js:1
+#: build/blocks/ai-complete/index.js:5090
 msgid "Temperature"
 msgstr "Temperatura"
 
-#: build/blocks/ai-complete/index.js:1
+#: build/blocks/ai-complete/index.js:5110
 msgid ""
 "The token count of your prompt plus max_tokens cannot exceed the model's "
 "context length. Most models have a context length of 2048 tokens"
@@ -475,7 +533,7 @@ msgstr ""
 "do modelo. A maioria dos modelos tem um comprimento de contexto de 2048 "
 "tokens"
 
-#: build/blocks/ai-gen-image/index.js:1
+#: build/blocks/ai-gen-image/index.js:4813
 msgid "Under development"
 msgstr "Em desenvolvimento"
 
@@ -488,19 +546,20 @@ msgstr "Atualizado na hora"
 msgid "Updated by user"
 msgstr "Atualizado pelo usuário"
 
-#: build/index.js:1
+#: build/index.js:7789
 msgid "View Contexts"
 msgstr "Ver contextos"
 
-#: build/index.js:1
+#: build/index.js:7802
 msgid "View Settings"
 msgstr "Ver Configurações"
 
-#: build/blocks/ai-complete/index.js:1 build/blocks/ai-gen-image/index.js:1
+#: build/blocks/ai-complete/index.js:4926
+#: build/blocks/ai-gen-image/index.js:4801
 msgid "Wait..."
 msgstr "Aguarde..."
 
-#: build/blocks/ai-complete/index.js:1
+#: build/blocks/ai-complete/index.js:5100
 msgid ""
 "What sampling temperature to use, between 0 and 2. Higher values like 0.8 "
 "will make the output more random, while lower values like 0.2 will make it "
@@ -510,11 +569,11 @@ msgstr ""
 "8, tornarão a saída mais aleatória, enquanto valores mais baixos, como 0.2, "
 "a tornarão mais focada e determinística."
 
-#: build/blocks/ai-complete/index.js:1
+#: build/blocks/ai-complete/index.js:5030
 msgid "Write the subject of the article"
 msgstr "Escreva o assunto do artigo"
 
-#: build/blocks/ai-complete/index.js:1
+#: build/blocks/ai-complete/index.js:4927
 msgid "Writing text about: %s"
 msgstr "Escrevendo texto sobre: ​​%s"
 

@@ -2,6 +2,7 @@ import { Configuration } from 'openai';
 import controls from '../../data/settings/controls';
 import { settingsEndpoint } from '../../data/settings/endpoint';
 import { ISetting } from '../../interfaces';
+import { __ } from '@wordpress/i18n';
 
 export default async function openAiSettings(): Promise< Configuration > {
 	const settings = ( await controls.FETCH_FROM_API( {
@@ -14,7 +15,7 @@ export default async function openAiSettings(): Promise< Configuration > {
 		{};
 
 	if ( ! apiKey?.value && ! organizationID?.value ) {
-		throw new Error( 'OpenAI API key not configured' );
+		throw new Error( __('OpenAI API key not configured', 'article-gen') );
 	}
 
 	return new Configuration( {

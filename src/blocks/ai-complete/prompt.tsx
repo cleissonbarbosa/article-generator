@@ -228,7 +228,7 @@ export default function Prompt( { attributes, setAttributes } ) {
 			{ toggleContext && ! toggleCustomContext ? (
 				<>
 					<Select2Input
-						placeholder="Select context"
+						placeholder={__('Select context', 'article-gen')}
 						defaultValue={ context }
 						options={ [
 							...contexts.map( ( data ) => {
@@ -266,7 +266,7 @@ export default function Prompt( { attributes, setAttributes } ) {
 				''
 			) }
 			<Button
-				text={ loading ? ' Generating...' : ' Generate' }
+				text={ loading ? __('Generating...', 'article-gen') : __('Generate', 'article-gen') }
 				buttonCustomClass="article-gen-btn"
 				disabled={ loading }
 				iconCustomClass="btn-icon"

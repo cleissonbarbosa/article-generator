@@ -263,8 +263,10 @@ final class Article_Gen {
 
         // Load the React-pages translations.
         if ( is_admin() ) {
-            // Load wp-script translation for article-generator-app
+            // Load wp-script translation
             wp_set_script_translations( 'article-generator-app', 'article-gen', plugin_dir_path( __FILE__ ) . 'languages/' );
+            wp_set_script_translations( 'ag-create-text-editor-script', 'article-gen', plugin_dir_path( __FILE__ ) . 'languages/' );
+            wp_set_script_translations( 'ag-img-generator-editor-script', 'article-gen', plugin_dir_path( __FILE__ ) . 'languages/' );
         }
     }
 

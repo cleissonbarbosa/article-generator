@@ -41,6 +41,7 @@
 	"supports": {
 		"html": false
 	},
+	"textdomain": "article-gen",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

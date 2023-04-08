@@ -28,6 +28,7 @@ export async function createArticle(
 			stop: '[CONTENT_END]',
 			...options,
 		} );
+		console.log(response)
 		// Retorna o texto do artigo gerado separado em titulo e conteúdo
 		return extractTitleAndContent(
 			response.data.choices[ 0 ].text as string
@@ -50,7 +51,7 @@ function generateArticlePrompt( subject: string, context?: string ): string {
 	}
 
 	prompt += `
-	
+      
     Title: 
     - Make the title catchy and interesting.
     - Insert a [TITLE_START] tag at the beginning of the title and a [TITLE_END] tag at the end of the title
@@ -75,9 +76,10 @@ function extractTitleAndContent( response: string ): IArticlePopulate {
 	const contentStartIndex =
 		response.indexOf( '[CONTENT_START]' ) + '[CONTENT_START]'.length
 	const contentEndIndex = response.indexOf( '[CONTENT_END]' )
-	const content = response
+	const content = `<!-- wp:paragraph -->${response
 		.slice( contentStartIndex, contentEndIndex )
 		.trim()
+		.replace( /[\r\n\v\f\u2028\u2029]+/g, '<!-- /wp:paragraph --><!-- wp:paragraph -->' )}<!-- /wp:paragraph -->`;
 
-	return { title, content }
+	return { title, content };
 }

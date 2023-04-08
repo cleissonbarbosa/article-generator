@@ -9,12 +9,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2023-04-08T03:30:31+00:00\n"
-"PO-Revision-Date: 2023-04-08 04:32+0000\n"
+"PO-Revision-Date: 2023-04-08 04:53+0000\n"
 "Language: pt_BR\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: article-gen\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Loco-Version: 2.6.4; wp-6.2\n"
+"X-Loco-Version: 2.6.4; wp-6.2"
 
 #: build/blocks/ai-complete/index.js:1 build/blocks/ai-gen-image/index.js:1
 #: build/index.js:1
@@ -217,7 +217,7 @@ msgstr "Insira uma chave de API OpenAI"
 
 #: build/index.js:1
 msgid "Enter a openai organization"
-msgstr "Entrar em uma organização OpenAI"
+msgstr "Inserir organização na OpenAI"
 
 #: build/index.js:1
 msgid "Enter Context content."
@@ -490,7 +490,7 @@ msgstr "Atualizado pelo usuário"
 
 #: build/index.js:1
 msgid "View Contexts"
-msgstr "Exibir contextos"
+msgstr "Ver contextos"
 
 #: build/index.js:1
 msgid "View Settings"

@@ -1,5 +1,5 @@
 {
-    "translation-revision-date": "2023-04-08 04:32+0000",
+    "translation-revision-date": "2023-04-08 04:53+0000",
     "generator": "Loco https://localise.biz/",
     "source": "build/index.js",
     "domain": "article-gen",
@@ -89,7 +89,7 @@
                 "Insira uma chave de API OpenAI"
             ],
             "Enter a openai organization": [
-                "Entrar em uma organiza\u00e7\u00e3o OpenAI"
+                "Inserir organiza\u00e7\u00e3o na OpenAI"
             ],
             "Enter Context content.": [
                 "Digite o conte\u00fado do Contexto."
@@ -194,7 +194,7 @@
                 "Status"
             ],
             "View Contexts": [
-                "Exibir contextos"
+                "Ver contextos"
             ],
             "View Settings": [
                 "Ver Configura\u00e7\u00f5es"

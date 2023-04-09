@@ -60,6 +60,10 @@ Alternatively, see the GitHub documentation on [how to create a pull request](ht
 
 ## 📝 License
 
-This project is under license. See the [LICENSE](LICENSE.md) file for more details.
+This project is under license. See the [LICENSE](LICENSE.txt) file for more details.
+
+## Credits
+
+- [WP React Kit](https://github.com/ManiruzzamanAkash/wp-react-kit)
 
 [⬆ back to the top](#-article-generator)<br>

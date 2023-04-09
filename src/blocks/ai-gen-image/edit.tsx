@@ -10,9 +10,7 @@ import {
 	RichText,
 	useBlockProps,
 } from '@wordpress/block-editor';
-import {
-	PanelBody,
-} from '@wordpress/components';
+import { PanelBody } from '@wordpress/components';
 import { faImage } from '@fortawesome/free-solid-svg-icons';
 /**
  * Internal dependencies.
@@ -36,7 +34,7 @@ export default function Edit( { attributes, setAttributes } ) {
 		if ( loading ) {
 			Swal.fire( {
 				title: __( 'Wait...', 'article-gen' ),
-				text: __(`Creating your image`, 'article-gen' ),
+				text: __( `Creating your image`, 'article-gen' ),
 				icon: 'info',
 				toast: true,
 				position: 'center',
@@ -45,31 +43,34 @@ export default function Edit( { attributes, setAttributes } ) {
 			} );
 		}
 	} );
-	
+
 	async function GenerateIMG(
 		prompt: string,
 		size: CreateImageRequestSizeEnum
 	): Promise< string > {
 		Swal.fire( {
 			title: __( 'Under development', 'article-gen' ),
-			text:  __( 'Feature under development, will be available soon', 'article-gen' ),
+			text: __(
+				'Feature under development, will be available soon',
+				'article-gen'
+			),
 			icon: 'warning',
 			toast: true,
 			position: 'center',
 			showConfirmButton: false,
 			timer: 3000,
 		} );
-		return ''
+		return '';
 
 		// Todo: implement this later.
 		if ( ! prompt ) {
 			throw new Error( 'Bad request - prompt empty' );
 		}
-	
+
 		if ( size && ! /^\d{3,4}x\d{3,4}$/.test( size ) ) {
 			throw new Error( 'Bad request - size incorrect format' );
 		}
-	
+
 		try {
 			return await createImage( prompt, size );
 		} catch ( e ) {
@@ -99,7 +100,7 @@ export default function Edit( { attributes, setAttributes } ) {
 
 			<Select2Input
 				options={ [ ...sizesAvailable ] }
-				placeholder={__('Select image size', 'article-gen')}
+				placeholder={ __( 'Select image size', 'article-gen' ) }
 				defaultValue={ sizeValue }
 				onChange={ ( input ) =>
 					setAttributes( { sizeValue: input.value } )
@@ -107,7 +108,11 @@ export default function Edit( { attributes, setAttributes } ) {
 			/>
 
 			<Button
-				text={ loading ? __('Generating image...', 'article-gen') : __('Generate image', 'article-gen') }
+				text={
+					loading
+						? __( 'Generating image...', 'article-gen' )
+						: __( 'Generate image', 'article-gen' )
+				}
 				buttonCustomClass="img-gen-btn"
 				disabled={ loading }
 				iconCustomClass="btn-icon"

@@ -22,7 +22,7 @@ function Header() {
 							className="text-gray-900 font-medium text-lg focus:outline-none focus:shadow-none"
 						>
 							<span className="text-primary">
-								{__('Article Generator', 'article-gen')}
+								{ __( 'Article Generator', 'article-gen' ) }
 							</span>
 						</Link>
 					</div>

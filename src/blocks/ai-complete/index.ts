@@ -25,8 +25,8 @@ import { __ } from '@wordpress/i18n';
 
 const { name, ...settings } = json;
 const customSettings = {
-	title: __('GPT Text Generator', 'article-gen')
-}
+	title: __( 'GPT Text Generator', 'article-gen' ),
+};
 
 /**
  * Every block starts by registering a new block type definition.

@@ -15,7 +15,7 @@ export default async function openAiSettings(): Promise< Configuration > {
 		{};
 
 	if ( ! apiKey?.value && ! organizationID?.value ) {
-		throw new Error( __('OpenAI API key not configured', 'article-gen') );
+		throw new Error( __( 'OpenAI API key not configured', 'article-gen' ) );
 	}
 
 	return new Configuration( {

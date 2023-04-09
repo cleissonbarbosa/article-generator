@@ -7,7 +7,7 @@ export async function createImage(
 	size: CreateImageRequestSizeEnum | null = null
 ): Promise< string > {
 	if ( prompt.trim().length === 0 ) {
-		throw new Error( __('Please enter a valid prompt', 'article-gen') );
+		throw new Error( __( 'Please enter a valid prompt', 'article-gen' ) );
 	}
 
 	try {
@@ -30,7 +30,9 @@ export async function createImage(
 			console.error(
 				`Error with OpenAI API request: ${ error.message }`
 			);
-			throw new Error( __('An error occurred during your request.', 'article-gen') );
+			throw new Error(
+				__( 'An error occurred during your request.', 'article-gen' )
+			);
 		}
 	}
 }

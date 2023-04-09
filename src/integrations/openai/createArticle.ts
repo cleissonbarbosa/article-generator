@@ -13,7 +13,7 @@ export async function createArticle(
 	options?: Pick< CreateCompletionRequest, 'temperature' | 'max_tokens' >
 ): Promise< IArticlePopulate > {
 	if ( subject.trim().length === 0 ) {
-		throw new Error( __('Please enter a valid prompt', 'article-gen') );
+		throw new Error( __( 'Please enter a valid prompt', 'article-gen' ) );
 	}
 
 	try {
@@ -29,7 +29,6 @@ export async function createArticle(
 			stop: '[CONTENT_END]',
 			...options,
 		} );
-		console.log(response)
 		// Retorna o texto do artigo gerado separado em titulo e conteúdo
 		return extractTitleAndContent(
 			response.data.choices[ 0 ].text as string
@@ -39,7 +38,10 @@ export async function createArticle(
 		console.info( { error } );
 		const errorMessase =
 			error.response.data.error.message ||
-			__(`Failed to generate article. Make sure you entered the API Key in the settings`, 'article-gen');
+			__(
+				`Failed to generate article. Make sure you entered the API Key in the settings`,
+				'article-gen'
+			);
 		throw new Error( errorMessase );
 	}
 }
@@ -70,17 +72,20 @@ function generateArticlePrompt( subject: string, context?: string ): string {
 
 function extractTitleAndContent( response: string ): IArticlePopulate {
 	const titleStartIndex =
-		response.indexOf( '[TITLE_START]' ) + '[TITLE_START]'.length
-	const titleEndIndex = response.indexOf( '[TITLE_END]' )
-	const title = response.slice( titleStartIndex, titleEndIndex ).trim()
+		response.indexOf( '[TITLE_START]' ) + '[TITLE_START]'.length;
+	const titleEndIndex = response.indexOf( '[TITLE_END]' );
+	const title = response.slice( titleStartIndex, titleEndIndex ).trim();
 
 	const contentStartIndex =
-		response.indexOf( '[CONTENT_START]' ) + '[CONTENT_START]'.length
-	const contentEndIndex = response.indexOf( '[CONTENT_END]' )
-	const content = `<!-- wp:paragraph -->${response
+		response.indexOf( '[CONTENT_START]' ) + '[CONTENT_START]'.length;
+	const contentEndIndex = response.indexOf( '[CONTENT_END]' );
+	const content = `<!-- wp:paragraph -->${ response
 		.slice( contentStartIndex, contentEndIndex )
 		.trim()
-		.replace( /[\r\n\v\f\u2028\u2029]+/g, '<!-- /wp:paragraph --><!-- wp:paragraph -->' )}<!-- /wp:paragraph -->`;
+		.replace(
+			/[\r\n\v\f\u2028\u2029]+/g,
+			'<!-- /wp:paragraph --><!-- wp:paragraph -->'
+		) }<!-- /wp:paragraph -->`;
 
 	return { title, content };
 }

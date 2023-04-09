@@ -4,19 +4,25 @@
 # 🤖 Article Generator
 
   <img width="200" src="assets/images/article-gen-logo.png" alt="logo">
-</div>
-
+  
 ![GitHub repo size](https://img.shields.io/github/repo-size/cleissonbarbosa/article-generator?style=for-the-badge)
 ![GitHub language count](https://img.shields.io/github/languages/count/cleissonbarbosa/article-generator?style=for-the-badge)
 ![GitHub forks](https://img.shields.io/github/forks/cleissonbarbosa/article-generator?style=for-the-badge)
-![Bitbucket open issues](https://img.shields.io/bitbucket/issues/cleissonbarbosa/article-generator?style=for-the-badge)
-![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/cleissonbarbosa/article-generator?style=for-the-badge)
+![Github open issues](https://img.shields.io/github/issues/cleissonbarbosa/article-generator?style=for-the-badge)
+  
+</div>
 
-## 💾 installation
+## 🔌 Plugin install
+1. [Download the latest version of the plugin](https://github.com/cleissonbarbosa/article-generator/releases/latest)
+2. In your wordpress dashboard go to:
+    - `Plugins > Add new > Upload plugin` Select `article-generator.zip` from your computer
+    - Click “Install Now”
+    - Activate the plugin in the Plugin dashboard
 
-To install follow these steps:
 
-Install dependencies with yarn or npm:
+## 💾 Dev install and run
+
+Install dependencies and run webpack:
 ```sh
 yarn && composer i && yarn start
 ```
@@ -45,4 +51,4 @@ Alternatively, see the GitHub documentation on [how to create a pull request](ht
 
 This project is under license. See the [LICENSE](LICENSE.md) file for more details.
 
-[⬆ back to the top](#)<br>
+[⬆ back to the top](#-article-generator)<br>

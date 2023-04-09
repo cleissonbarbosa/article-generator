@@ -101,7 +101,7 @@ export default function Prompt( { attributes, setAttributes } ) {
 	const toggleContexts = ( action: boolean ) => {
 		setAttributes( {
 			toggleContext: action,
-			toggleCustomContext: ! action,
+			toggleCustomContext: toggleCustomContext ? ! action : toggleCustomContext,
 		} );
 	};
 
@@ -113,7 +113,7 @@ export default function Prompt( { attributes, setAttributes } ) {
 	const toggleCustomContexts = ( action: boolean ) => {
 		setAttributes( {
 			toggleCustomContext: action,
-			toggleContext: ! action,
+			toggleContext: toggleContext ? ! action : toggleContext,
 		} );
 	};
 

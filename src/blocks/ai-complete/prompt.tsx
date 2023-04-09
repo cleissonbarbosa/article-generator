@@ -7,7 +7,7 @@ import { CreateCompletionRequest } from 'openai';
 import { PanelBody } from '@wordpress/components';
 import Swal from 'sweetalert2';
 import { useState, useEffect } from '@wordpress/element';
-import { faMarker } from '@fortawesome/free-solid-svg-icons';
+import { faMarker, faMicrophone, faMicrophoneAlt, faMicrophoneSlash } from '@fortawesome/free-solid-svg-icons';
 import { dispatch, select, useSelect } from '@wordpress/data';
 import {
 	InspectorControls,
@@ -28,6 +28,7 @@ import {
 	IArticlePopulate,
 	createArticle,
 } from '../../integrations/openai/createArticle';
+import speech from '../../integrations/speechRecognition/speech';
 
 /**
  * Interface attributes props
@@ -66,6 +67,8 @@ export default function Prompt( { attributes, setAttributes } ) {
 	const { prompt, context, toggleContext, toggleCustomContext } =
 		attributes as IAttributesProps;
 	const [ loading, setLoading ] = useState< boolean >( false );
+	const [ speechStatus, setSpeechStatus ] = useState< boolean >( false );
+	const [ speechResponse, setSpeechResponse ] = useState< SpeechRecognition | null >( null );
 	const [ temperature, setTemperature ] = useState< number >( 0.6 );
 	const [ maxTokens, setMaxTokens ] = useState< number >( 2048 );
 
@@ -89,6 +92,7 @@ export default function Prompt( { attributes, setAttributes } ) {
 			} );
 		}
 	} );
+
 	/**
 	 * toggle contexts
 	 *
@@ -189,6 +193,36 @@ export default function Prompt( { attributes, setAttributes } ) {
     `;
 	}
 
+	function speechHandle(attr: string){
+		if(!speechStatus){
+			setSpeechStatus(true)
+		} else {
+			setSpeechStatus(false)
+			if(speechResponse) {
+				speechResponse.abort()
+				return
+			}
+		}
+
+		if(attr === 'prompt') {
+			document.getElementById('text-generator-prompt')?.focus()
+		} else if (attr === 'context') {
+			document.getElementById('text-generator-context')?.focus()
+		}
+
+		const speechResult = speech({
+			resultCallback: (t) => {
+				if(attr === 'prompt') {
+					setAttributes({prompt: t})
+				} else if (attr === 'context') {
+					setAttributes({context: t})
+				}
+			},
+			endCallback: () => setSpeechStatus(false)
+		})
+		setSpeechResponse(speechResult ?? null)
+	}
+
 	return (
 		<div
 			{ ...useBlockProps() }
@@ -197,17 +231,26 @@ export default function Prompt( { attributes, setAttributes } ) {
 				padding: `20px 20px 20px 20px`,
 			} }
 		>
-			<RichText
-				className="wp-block-article-generator-prompt"
-				tagName="h4"
-				placeholder={ __(
-					'Write the subject of the article',
-					'article-gen'
-				) }
-				value={ prompt }
-				onChange={ ( prompt: string ) => setAttributes( { prompt } ) }
-				required
-			/>
+			<div className='block items-center relative'>
+				<RichText
+					className="wp-block-article-generator-prompt flex-none focus:outline-none focus:ring focus:ring-primary"
+					tagName="h4"
+					placeholder={ __(
+						'Write the subject of the article',
+						'article-gen'
+					) }
+					id='text-generator-prompt'
+					value={ prompt }
+					onChange={ ( prompt: string ) => setAttributes( { prompt } ) }
+				/>
+				<Button 
+					icon={speechStatus ? faMicrophoneSlash : faMicrophone}
+					buttonCustomClass={`w-[43px] h-10 absolute right-2 top-[20%] border-none flex justify-center items-center`}
+					type={speechStatus ? 'success' : 'primary'}
+					iconCustomClass='block !px-0'
+					onClick={() => speechHandle('prompt')}
+				/>
+			</div>
 
 			<div className="justify-between flex gap-5">
 				<label>
@@ -248,20 +291,29 @@ export default function Prompt( { attributes, setAttributes } ) {
 			) }
 
 			{ ! toggleContext && toggleCustomContext ? (
-				<>
+				<div className='relative'>
 					<Input
-						className="wp-block-article-generator-header_title"
+						className="wp-block-article-generator-context focus:outline-none focus:ring focus:ring-primary"
 						style={ { marginTop: '10px' } }
 						placeholder={ __(
 							'Enter the context of this article (optional)',
 							'article-gen'
 						) }
 						value={ context }
+						id='text-generator-context'
+						autoFocus
 						onChange={ ( context: IInputResponse ) =>
 							setAttributes( { context: context.value } )
 						}
 					/>
-				</>
+					<Button 
+						icon={speechStatus ? faMicrophoneSlash : faMicrophone}
+						buttonCustomClass={`w-7 h-7 absolute right-2 top-[34%] border-none flex justify-center items-center`}
+						type={speechStatus ? 'success' : 'primary'}
+						iconCustomClass={`block !px-0 absolute top-[20%] right-[30%] ${speechStatus ? 'text-primary' : ''}`}
+						onClick={() => speechHandle('context')}
+					/>
+				</div>
 			) : (
 				''
 			) }

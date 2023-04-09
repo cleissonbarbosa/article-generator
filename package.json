@@ -28,6 +28,7 @@
 		"@types/ckeditor__ckeditor5-build-classic": "^29.0.1",
 		"@types/enzyme": "^3.10.12",
 		"@types/jest": "^28.1.7",
+		"@types/webspeechapi": "^0.0.29",
 		"@types/wordpress__block-editor": "^7.0.0",
 		"@types/wordpress__data": "^6.0.1",
 		"@wordpress/api-fetch": "^6.12.0",

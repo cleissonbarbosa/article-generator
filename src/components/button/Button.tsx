@@ -186,7 +186,7 @@ const Button = ( props: IButton ) => {
 			{ typeof icon !== 'undefined' && iconPosition === 'left' && (
 				<span
 					className={ `${
-						smTextHidden ? 'px-0 sm:px-2' : 'px-2'
+						smTextHidden || !text ? 'px-0 sm:px-2' : 'px-2'
 					} pl-0 ${ iconCustomClass }` }
 				>
 					<FontAwesomeIcon icon={ icon } />

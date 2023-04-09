@@ -5,3 +5,6 @@
 .DS_Store
 /dist
 /languages/*-backup*
+*error.log
+*.lock
+*-lock.json

@@ -4,13 +4,13 @@
 # 🤖 Article Generator
 
   <img width="200" src="assets/images/article-gen-logo.png" alt="logo">
-</div>
-
+  
 ![GitHub repo size](https://img.shields.io/github/repo-size/cleissonbarbosa/article-generator?style=for-the-badge)
 ![GitHub language count](https://img.shields.io/github/languages/count/cleissonbarbosa/article-generator?style=for-the-badge)
 ![GitHub forks](https://img.shields.io/github/forks/cleissonbarbosa/article-generator?style=for-the-badge)
-![Bitbucket open issues](https://img.shields.io/bitbucket/issues/cleissonbarbosa/article-generator?style=for-the-badge)
-![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/cleissonbarbosa/article-generator?style=for-the-badge)
+![Github open issues](https://img.shields.io/github/issues/cleissonbarbosa/article-generator?style=for-the-badge)
+  
+</div>
 
 ## 🔌 Plugin install
 1. [Download the latest version of the plugin](https://github.com/cleissonbarbosa/article-generator/releases/latest)

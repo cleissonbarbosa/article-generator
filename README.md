@@ -33,7 +33,18 @@ npm i && composer i && npm run start
 
 ## 👀 Demo
 ### Gutenberg block
-https://user-images.githubusercontent.com/32576001/230542799-91808ec8-5350-45a2-96f0-7e057df4c665.mp4
+
+latest ⬇️
+
+https://user-images.githubusercontent.com/32576001/230790257-b19f7902-e5c6-4668-9e23-e4ce359b397f.mp4
+
+<details>
+  <summary>📅 (04/01/2023) - (mm-dd-yyyy)</summary>
+  
+  https://user-images.githubusercontent.com/32576001/230542799-91808ec8-5350-45a2-96f0-7e057df4c665.mp4
+  
+</details>    
+
 
 ## 📫 Contributing to the project
 

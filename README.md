@@ -22,9 +22,7 @@
 
 ## 💾 Dev install and run
 
-To install follow these steps:
-
-Install dependencies with yarn or npm:
+Install dependencies and run webpack:
 ```sh
 yarn && composer i && yarn start
 ```

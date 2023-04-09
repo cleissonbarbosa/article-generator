@@ -12,7 +12,15 @@
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/cleissonbarbosa/article-generator?style=for-the-badge)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/cleissonbarbosa/article-generator?style=for-the-badge)
 
-## 💾 installation
+## 🔌 Plugin install
+1. [Download the latest version of the plugin](https://github.com/cleissonbarbosa/article-generator/releases/latest)
+2. In your wordpress dashboard go to:
+    - `Plugins > Add new > Upload plugin` Select `article-generator.zip` from your computer
+    - Click “Install Now”
+    - Activate the plugin in the Plugin dashboard
+
+
+## 💾 Dev install and run
 
 To install follow these steps:
 
@@ -45,4 +53,4 @@ Alternatively, see the GitHub documentation on [how to create a pull request](ht
 
 This project is under license. See the [LICENSE](LICENSE.md) file for more details.
 
-[⬆ back to the top](#)<br>
+[⬆ back to the top](#-article-generator)<br>

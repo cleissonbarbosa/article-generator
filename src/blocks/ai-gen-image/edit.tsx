@@ -43,7 +43,6 @@ export default function Edit( { attributes, setAttributes } ) {
 				toast: true,
 				position: 'center',
 				showConfirmButton: false,
-				timer: 3000,
 			} );
 		}
 	} );
@@ -52,12 +51,15 @@ export default function Edit( { attributes, setAttributes } ) {
 		prompt: string,
 		size: CreateImageRequestSizeEnum
 	) {
+		setLoading(true)
 		
 		if ( ! prompt ) {
+			setLoading(false)
 			throw new Error( 'Bad request - prompt empty' );
 		}
 
 		if ( size && ! /^\d{3,4}x\d{3,4}$/.test( size ) ) {
+			setLoading(false)
 			throw new Error( 'Bad request - size incorrect format' );
 		}
 
@@ -74,9 +76,7 @@ export default function Edit( { attributes, setAttributes } ) {
 				` );
 				dispatch( 'core/block-editor' ).insertBlocks( blocks );
 				return
-
 			}
-
 
 			Swal.fire( {
 				title: __( 'Saving image on library', 'article-gen' ),
@@ -90,28 +90,45 @@ export default function Edit( { attributes, setAttributes } ) {
 				showLoaderOnConfirm: true,
 			} );
 			saveImageToWordPressLibrary(imgURL)
-			.then(
-				( data ) => { 
+				.then(( data ) => { 
+						Swal.fire( {
+							title: __( 'Success!', 'article-gen' ),
+							text: __(
+								'The image has been saved in the wordpress library 🎉',
+								'article-gen'
+							),
+							icon: 'success',
+							position: 'center',
+							showConfirmButton: true,
+						} )
+						const blocks = parse( `
+							<!-- wp:image {"id":${data.id},"sizeSlug":"full","linkDestination":"none"} -->
+								<figure class="wp-block-image size-full"><img src="${data.source_url}" alt="${prompt}" class="wp-image-66"/></figure>
+							<!-- /wp:image -->
+						` );
+						dispatch( 'core/block-editor' ).insertBlocks( blocks );
+				}).catch((e) => {
 					Swal.fire( {
-						title: __( 'Success!', 'article-gen' ),
+						title: __( 'Error!', 'article-gen' ),
 						text: __(
-							'The image has been saved in the wordpress library 🎉',
+							'Error saving image in wordpress library ☹️',
 							'article-gen'
 						),
-						icon: 'success',
+						icon: 'error',
 						position: 'center',
 						showConfirmButton: true,
+						showDenyButton: true,
+						confirmButtonText: __('Try again?', 'article-gen'),
+						preConfirm: () => {
+							GenerateIMG(prompt, size)
+						}
 					} )
-					const blocks = parse( `
-						<!-- wp:image {"id":${data.id},"sizeSlug":"full","linkDestination":"none"} -->
-							<figure class="wp-block-image size-full"><img src="${data.source_url}" alt="${prompt}" class="wp-image-66"/></figure>
-						<!-- /wp:image -->
-					` );
-					dispatch( 'core/block-editor' ).insertBlocks( blocks );
-				}
-			)
+				})
 		} catch ( e ) {
 			throw new Error( 'Bad request' );
+		} finally {
+			setLoading(false)
+			Swal.close()
 		}
 	}
 	return (
@@ -163,7 +180,21 @@ export default function Edit( { attributes, setAttributes } ) {
 				iconCustomClass="btn-icon"
 				type="primary"
 				icon={ faImage }
-				onClick={ () => GenerateIMG( prompt, sizeValue ) }
+				onClick={ async () => { 
+					try {
+						await GenerateIMG( prompt, sizeValue )
+					} catch (e: any) {
+						Swal.fire( {
+							title: __( 'Error', 'article-gen' ),
+							text: e.message,
+							icon: 'error',
+							toast: true,
+							position: 'bottom',
+							showConfirmButton: false,
+							showCloseButton: true,
+						} );
+					}
+				}}
 			/>
 
 			<InspectorControls>

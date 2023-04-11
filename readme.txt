@@ -1,6 +1,6 @@
 === Article Generator ===
 Contributors: cleissonbarbosa
-Tags: article generator, generator, GPT,chatgpt, openai
+Tags: article generator, post generator, generator, GPT,chatgpt, openai, AI Writing, Automated Content Creation, Writing Assistant, Article Writing
 Donate link: https://github.com/sponsors/cleissonbarbosa/
 Requires at least: 6.0.0
 Tested up to: 6.0.0

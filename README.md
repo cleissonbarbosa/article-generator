@@ -10,6 +10,8 @@
 ![GitHub forks](https://img.shields.io/github/forks/cleissonbarbosa/article-generator?style=for-the-badge)
 ![Github open issues](https://img.shields.io/github/issues/cleissonbarbosa/article-generator?style=for-the-badge)
   
+**Available languages**: 	🔵🔴 *En-US*, 🟢🟡 *Pt-BR*
+
 </div>
 
 ## 🔌 Plugin install

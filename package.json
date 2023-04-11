@@ -39,7 +39,7 @@
 		"@wordpress/e2e-tests": "^4.9.2",
 		"@wordpress/eslint-plugin": "^12.4.0",
 		"@wordpress/i18n": "^4.10.0",
-		"@wordpress/jest-preset-default": "^8.5.1",
+		"@wordpress/jest-preset-default": "^11.1.0",
 		"@wordpress/scripts": "^23.7.1",
 		"autoprefixer": "^10.4.8",
 		"babel-jest": "^28.1.3",

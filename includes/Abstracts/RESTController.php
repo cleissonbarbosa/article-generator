@@ -16,7 +16,7 @@ abstract class RESTController extends WP_REST_Controller {
      *
      * @var string
      */
-    protected $namespace = 'ag-settings/v1';
+    protected $namespace = 'article-generator/v1';
 
     /**
      * Check default permission for rest routes.

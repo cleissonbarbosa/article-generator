@@ -28,6 +28,7 @@
 		"@types/ckeditor__ckeditor5-build-classic": "^29.0.1",
 		"@types/enzyme": "^3.10.12",
 		"@types/jest": "^28.1.7",
+		"@types/uuid": "^9.0.1",
 		"@types/webspeechapi": "^0.0.29",
 		"@types/wordpress__block-editor": "^7.0.0",
 		"@types/wordpress__data": "^6.0.1",
@@ -76,6 +77,7 @@
 		"react-scroll": "^1.8.8",
 		"react-select": "^5.4.0",
 		"react-toastify": "^9.0.8",
-		"sweetalert2": "^11.4.8"
+		"sweetalert2": "^11.4.8",
+		"uuid": "^9.0.0"
 	}
 }

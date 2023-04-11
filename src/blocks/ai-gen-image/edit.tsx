@@ -1,6 +1,7 @@
 /**
  * External dependencies.
  */
+import { parse } from '@wordpress/blocks';
 import { __ } from '@wordpress/i18n';
 import Swal from 'sweetalert2';
 import { CreateImageRequestSizeEnum } from 'openai';
@@ -19,6 +20,9 @@ import './editor.scss';
 import Button from '../../components/button/Button';
 import { createImage } from '../../integrations/openai/createImage';
 import Select2Input from '../../components/inputs/Select2Input';
+import saveImageToWordPressLibrary from '../../utils/SaveImgToLibrary';
+import SwitchCheckbox from '../../components/inputs/SwitchCheckbox';
+import { dispatch, select } from '@wordpress/data';
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -28,7 +32,7 @@ import Select2Input from '../../components/inputs/Select2Input';
  * @return {WPElement} Element to render.
  */
 export default function Edit( { attributes, setAttributes } ) {
-	const { prompt, sizesAvailable, sizeValue } = attributes;
+	const { prompt, sizesAvailable, sizeValue, toggleSaveImg } = attributes;
 	const [ loading, setLoading ] = useState< boolean >( false );
 	useEffect( () => {
 		if ( loading ) {
@@ -47,22 +51,8 @@ export default function Edit( { attributes, setAttributes } ) {
 	async function GenerateIMG(
 		prompt: string,
 		size: CreateImageRequestSizeEnum
-	): Promise< string > {
-		Swal.fire( {
-			title: __( 'Under development', 'article-gen' ),
-			text: __(
-				'Feature under development, will be available soon',
-				'article-gen'
-			),
-			icon: 'warning',
-			toast: true,
-			position: 'center',
-			showConfirmButton: false,
-			timer: 3000,
-		} );
-		return '';
-
-		// Todo: implement this later.
+	) {
+		
 		if ( ! prompt ) {
 			throw new Error( 'Bad request - prompt empty' );
 		}
@@ -72,7 +62,54 @@ export default function Edit( { attributes, setAttributes } ) {
 		}
 
 		try {
-			return await createImage( prompt, size );
+			const imgURL = await createImage( prompt, size, toggleSaveImg ? 'base64' : 'url' );
+			dispatch( 'core/block-editor' ).removeBlock(
+				select( 'core/block-editor' ).getSelectedBlockClientId() ??	''
+			);
+			if(!toggleSaveImg) {
+				const blocks = parse( `
+					<!-- wp:image {"sizeSlug":"large"} -->
+						<figure class="wp-block-image size-large"><img src="${imgURL}" alt="${prompt}"/></figure>
+					<!-- /wp:image -->
+				` );
+				dispatch( 'core/block-editor' ).insertBlocks( blocks );
+				return
+
+			}
+
+
+			Swal.fire( {
+				title: __( 'Saving image on library', 'article-gen' ),
+				text: __(
+					'Wait...',
+					'article-gen'
+				),
+				icon: 'info',
+				position: 'center',
+				showConfirmButton: false,
+				showLoaderOnConfirm: true,
+			} );
+			saveImageToWordPressLibrary(imgURL)
+			.then(
+				( data ) => { 
+					Swal.fire( {
+						title: __( 'Success!', 'article-gen' ),
+						text: __(
+							'The image has been saved in the wordpress library 🎉',
+							'article-gen'
+						),
+						icon: 'success',
+						position: 'center',
+						showConfirmButton: true,
+					} )
+					const blocks = parse( `
+						<!-- wp:image {"id":${data.id},"sizeSlug":"full","linkDestination":"none"} -->
+							<figure class="wp-block-image size-full"><img src="${data.source_url}" alt="${prompt}" class="wp-image-66"/></figure>
+						<!-- /wp:image -->
+					` );
+					dispatch( 'core/block-editor' ).insertBlocks( blocks );
+				}
+			)
 		} catch ( e ) {
 			throw new Error( 'Bad request' );
 		}
@@ -106,6 +143,14 @@ export default function Edit( { attributes, setAttributes } ) {
 					setAttributes( { sizeValue: input.value } )
 				}
 			/>
+
+			<label>
+				{ __( 'Save image to library?', 'article-gen' ) }
+				<SwitchCheckbox
+					enabled={ toggleSaveImg }
+					setEnabled={ (action) => setAttributes({toggleSaveImg: action}) }
+				/>
+			</label>
 
 			<Button
 				text={

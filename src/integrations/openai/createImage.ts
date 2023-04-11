@@ -4,7 +4,8 @@ import { __ } from '@wordpress/i18n';
 
 export async function createImage(
 	prompt: string,
-	size: CreateImageRequestSizeEnum | null = null
+	size: CreateImageRequestSizeEnum | null = null,
+	responseType: 'base64' | 'url' = 'url'
 ): Promise< string > {
 	if ( prompt.trim().length === 0 ) {
 		throw new Error( __( 'Please enter a valid prompt', 'article-gen' ) );
@@ -17,9 +18,10 @@ export async function createImage(
 			prompt: generateImagePrompt( prompt ),
 			n: 1,
 			size: size ?? '1024x1024',
+			response_format: responseType === 'url' ? 'url' : 'b64_json',
 		} );
 		return new Promise( ( resolve ) =>
-			resolve( result.data.data[ 0 ].url as string )
+			resolve( responseType === 'url' ? result.data.data[ 0 ].url as string : result.data.data[ 0 ].b64_json as string )
 		);
 	} catch ( error: any ) {
 		// Consider adjusting the error handling logic for your use case

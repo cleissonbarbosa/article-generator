@@ -30,6 +30,11 @@
 		"sizeValue": {
 			"type": "string",
 			"default": "512x512"
+		},
+		
+		"toggleSaveImg": {
+			"type": "boolean",
+			"default": false
 		}
 	},
 	"example": {

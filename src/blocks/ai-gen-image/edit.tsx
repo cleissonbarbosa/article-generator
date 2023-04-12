@@ -52,64 +52,65 @@ export default function Edit( { attributes, setAttributes } ) {
 		prompt: string,
 		size: CreateImageRequestSizeEnum
 	) {
-		setLoading(true)
-		
+		setLoading( true );
+
 		if ( ! prompt ) {
-			setLoading(false)
+			setLoading( false );
 			throw new Error( 'Bad request - prompt empty' );
 		}
 
 		if ( size && ! /^\d{3,4}x\d{3,4}$/.test( size ) ) {
-			setLoading(false)
+			setLoading( false );
 			throw new Error( 'Bad request - size incorrect format' );
 		}
 
 		try {
-			const imgURL = await createImage( prompt, size, toggleSaveImg ? 'base64' : 'url' );
-			dispatch( 'core/block-editor' ).removeBlock(
-				select( 'core/block-editor' ).getSelectedBlockClientId() ??	''
+			const imgURL = await createImage(
+				prompt,
+				size,
+				toggleSaveImg ? 'base64' : 'url'
 			);
-			if(!toggleSaveImg) {
+			dispatch( 'core/block-editor' ).removeBlock(
+				select( 'core/block-editor' ).getSelectedBlockClientId() ?? ''
+			);
+			if ( ! toggleSaveImg ) {
 				const blocks = parse( `
 					<!-- wp:image {"sizeSlug":"large"} -->
-						<figure class="wp-block-image size-large"><img src="${imgURL}" alt="${prompt}"/></figure>
+						<figure class="wp-block-image size-large"><img src="${ imgURL }" alt="${ prompt }"/></figure>
 					<!-- /wp:image -->
 				` );
 				dispatch( 'core/block-editor' ).insertBlocks( blocks );
-				return
+				return;
 			}
 
 			Swal.fire( {
 				title: __( 'Saving image on library', 'article-gen' ),
-				text: __(
-					'Wait...',
-					'article-gen'
-				),
+				text: __( 'Wait...', 'article-gen' ),
 				icon: 'info',
 				position: 'center',
 				showConfirmButton: false,
 				showLoaderOnConfirm: true,
 			} );
-			saveImageToWordPressLibrary(imgURL, prompt)
-				.then(( data ) => { 
-						Swal.fire( {
-							title: __( 'Success!', 'article-gen' ),
-							text: __(
-								'The image has been saved in the wordpress library 🎉',
-								'article-gen'
-							),
-							icon: 'success',
-							position: 'center',
-							showConfirmButton: true,
-						} )
-						const blocks = parse( `
-							<!-- wp:image {"id":${data.id},"sizeSlug":"full","linkDestination":"none"} -->
-								<figure class="wp-block-image size-full"><img src="${data.source_url}" alt="${prompt}" class="wp-image-66"/></figure>
+			saveImageToWordPressLibrary( imgURL, prompt )
+				.then( ( data ) => {
+					Swal.fire( {
+						title: __( 'Success!', 'article-gen' ),
+						text: __(
+							'The image has been saved in the wordpress library 🎉',
+							'article-gen'
+						),
+						icon: 'success',
+						position: 'center',
+						showConfirmButton: true,
+					} );
+					const blocks = parse( `
+							<!-- wp:image {"id":${ data.id },"sizeSlug":"full","linkDestination":"none"} -->
+								<figure class="wp-block-image size-full"><img src="${ data.source_url }" alt="${ prompt }" class="wp-image-66"/></figure>
 							<!-- /wp:image -->
 						` );
-						dispatch( 'core/block-editor' ).insertBlocks( blocks );
-				}).catch((e) => {
-					console.log(e)
+					dispatch( 'core/block-editor' ).insertBlocks( blocks );
+				} )
+				.catch( ( e ) => {
 					Swal.fire( {
 						title: __( 'Error!', 'article-gen' ),
 						text: __(
@@ -120,17 +121,17 @@ export default function Edit( { attributes, setAttributes } ) {
 						position: 'center',
 						showConfirmButton: true,
 						showDenyButton: true,
-						confirmButtonText: __('Try again?', 'article-gen'),
+						confirmButtonText: __( 'Try again?', 'article-gen' ),
 						preConfirm: () => {
-							GenerateIMG(prompt, size)
-						}
-					} )
-				})
+							GenerateIMG( prompt, size );
+						},
+					} );
+				} );
 		} catch ( e ) {
 			throw new Error( 'Bad request' );
 		} finally {
-			setLoading(false)
-			Swal.close()
+			setLoading( false );
+			Swal.close();
 		}
 	}
 	return (
@@ -164,15 +165,16 @@ export default function Edit( { attributes, setAttributes } ) {
 							setAttributes( { sizeValue: input.value } )
 						}
 					/>
-
 				</div>
 				<div className="md:w-1/2 sm:mt-5 md:mt-0">
-					<label className='flex gap-5 justify-center items-center'>
+					<label className="flex gap-5 justify-center items-center">
 						{ __( 'Save image to library?', 'article-gen' ) }
 						<SwitchCheckbox
-							customClass='flex'
+							customClass="flex"
 							enabled={ toggleSaveImg }
-							setEnabled={ (action) => setAttributes({toggleSaveImg: action}) }
+							setEnabled={ ( action ) =>
+								setAttributes( { toggleSaveImg: action } )
+							}
 						/>
 					</label>
 				</div>
@@ -189,10 +191,10 @@ export default function Edit( { attributes, setAttributes } ) {
 				iconCustomClass="btn-icon"
 				type="primary"
 				icon={ faImage }
-				onClick={ async () => { 
+				onClick={ async () => {
 					try {
-						await GenerateIMG( prompt, sizeValue )
-					} catch (e: any) {
+						await GenerateIMG( prompt, sizeValue );
+					} catch ( e: any ) {
 						Swal.fire( {
 							title: __( 'Error', 'article-gen' ),
 							text: e.message,
@@ -203,7 +205,7 @@ export default function Edit( { attributes, setAttributes } ) {
 							showCloseButton: true,
 						} );
 					}
-				}}
+				} }
 			/>
 
 			<InspectorControls>

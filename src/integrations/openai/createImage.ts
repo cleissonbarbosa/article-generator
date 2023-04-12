@@ -21,7 +21,11 @@ export async function createImage(
 			response_format: responseType === 'url' ? 'url' : 'b64_json',
 		} );
 		return new Promise( ( resolve ) =>
-			resolve( responseType === 'url' ? result.data.data[ 0 ].url as string : result.data.data[ 0 ].b64_json as string )
+			resolve(
+				responseType === 'url'
+					? ( result.data.data[ 0 ].url as string )
+					: ( result.data.data[ 0 ].b64_json as string )
+			)
 		);
 	} catch ( error: any ) {
 		// Consider adjusting the error handling logic for your use case

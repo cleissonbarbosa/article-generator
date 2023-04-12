@@ -17,6 +17,7 @@ export async function createImage(
 		 ).createImage( {
 			prompt: generateImagePrompt( prompt ),
 			n: 1,
+			user: (window as any)?.userSettings?.uid,
 			size: size ?? '1024x1024',
 			response_format: responseType === 'url' ? 'url' : 'b64_json',
 		} );

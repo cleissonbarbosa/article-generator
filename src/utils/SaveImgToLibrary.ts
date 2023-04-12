@@ -1,5 +1,6 @@
 import apiFetch from '@wordpress/api-fetch';
 import { v4 as uuidv4 } from 'uuid';
+import stringToSlug from './strToSlug';
 
 /**
  * save image to wp library based on base64
@@ -9,13 +10,15 @@ import { v4 as uuidv4 } from 'uuid';
  * @param {string} imageBase64
  * @returns {Promise<any>}
  */
-export default async function saveImageToWordPressLibrary(imageBase64: string): Promise<any> {
+export default async function saveImageToWordPressLibrary(imageBase64: string, prompt?: string): Promise<unknown> {
   return new Promise(async (resolve, reject) => {
     try {
       const contentType = 'image/png'; // definir o tipo de conteúdo como PNG
   
       // Gerar um UUID para o nome do arquivo
       const uuid = uuidv4();
+
+      const filename = prompt ? stringToSlug(prompt) || uuid : uuid
   
       // Enviar a imagem para a API REST do WordPress
       const data = await apiFetch({
@@ -23,7 +26,7 @@ export default async function saveImageToWordPressLibrary(imageBase64: string): 
         method: 'POST',
         body: b64toBlob(imageBase64, contentType),
         headers: {
-          'Content-Disposition': `attachment; filename="${uuid}.png"`,
+          'Content-Disposition': `attachment; filename="${filename}.png"`,
           'Content-Type': contentType,
         },
       });

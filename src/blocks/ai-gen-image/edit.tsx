@@ -13,6 +13,7 @@ import {
 } from '@wordpress/block-editor';
 import { PanelBody } from '@wordpress/components';
 import { faImage } from '@fortawesome/free-solid-svg-icons';
+
 /**
  * Internal dependencies.
  */
@@ -89,7 +90,7 @@ export default function Edit( { attributes, setAttributes } ) {
 				showConfirmButton: false,
 				showLoaderOnConfirm: true,
 			} );
-			saveImageToWordPressLibrary(imgURL)
+			saveImageToWordPressLibrary(imgURL, prompt)
 				.then(( data ) => { 
 						Swal.fire( {
 							title: __( 'Success!', 'article-gen' ),
@@ -108,6 +109,7 @@ export default function Edit( { attributes, setAttributes } ) {
 						` );
 						dispatch( 'core/block-editor' ).insertBlocks( blocks );
 				}).catch((e) => {
+					console.log(e)
 					Swal.fire( {
 						title: __( 'Error!', 'article-gen' ),
 						text: __(
@@ -152,22 +154,29 @@ export default function Edit( { attributes, setAttributes } ) {
 				required
 			/>
 
-			<Select2Input
-				options={ [ ...sizesAvailable ] }
-				placeholder={ __( 'Select image size', 'article-gen' ) }
-				defaultValue={ sizeValue }
-				onChange={ ( input ) =>
-					setAttributes( { sizeValue: input.value } )
-				}
-			/>
+			<div className="md:flex gap-5 md:items-center">
+				<div className="md:w-1/2">
+					<Select2Input
+						options={ [ ...sizesAvailable ] }
+						placeholder={ __( 'Select image size', 'article-gen' ) }
+						defaultValue={ sizeValue }
+						onChange={ ( input ) =>
+							setAttributes( { sizeValue: input.value } )
+						}
+					/>
 
-			<label>
-				{ __( 'Save image to library?', 'article-gen' ) }
-				<SwitchCheckbox
-					enabled={ toggleSaveImg }
-					setEnabled={ (action) => setAttributes({toggleSaveImg: action}) }
-				/>
-			</label>
+				</div>
+				<div className="md:w-1/2 sm:mt-5 md:mt-0">
+					<label className='flex gap-5 justify-center items-center'>
+						{ __( 'Save image to library?', 'article-gen' ) }
+						<SwitchCheckbox
+							customClass='flex'
+							enabled={ toggleSaveImg }
+							setEnabled={ (action) => setAttributes({toggleSaveImg: action}) }
+						/>
+					</label>
+				</div>
+			</div>
 
 			<Button
 				text={

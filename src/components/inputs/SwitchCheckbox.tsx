@@ -5,6 +5,8 @@ import { Switch } from '@headlessui/react';
 import { __ } from '@wordpress/i18n';
 
 interface ISwitchCheckbox {
+
+	customClass?: string;
 	/**
 	 * Switch checkbox enabled or disabled.
 	 */
@@ -19,9 +21,10 @@ interface ISwitchCheckbox {
 export default function SwitchCheckbox( {
 	enabled = false,
 	setEnabled,
+	customClass
 }: ISwitchCheckbox ) {
 	return (
-		<div>
+		<div className={customClass}>
 			<Switch
 				checked={ enabled }
 				onChange={ setEnabled }

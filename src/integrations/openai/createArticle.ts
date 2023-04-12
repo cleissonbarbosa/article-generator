@@ -7,28 +7,38 @@ export interface IArticlePopulate {
 	content: string;
 }
 
+export type ICreateArticleOptions = Pick< 
+	CreateCompletionRequest, 
+	'temperature' |
+	'max_tokens' |
+	'model'
+>
+
 export async function createArticle(
 	subject: string,
 	context?: string,
-	options?: Pick< CreateCompletionRequest, 'temperature' | 'max_tokens' >
+	options?: ICreateArticleOptions
 ): Promise< IArticlePopulate > {
 	if ( subject.trim().length === 0 ) {
 		throw new Error( __( 'Please enter a valid prompt', 'article-gen' ) );
 	}
 
 	try {
-		// Gera o artigo a partir do texto inicial
-		const response = await (
-			await getOpenAi()
-		 ).createCompletion( {
+
+		const parseOptions = {
 			model: 'text-davinci-003',
 			prompt: generateArticlePrompt( subject, context ),
 			temperature: 0.6,
 			max_tokens: 3024,
+			user: (window as any)?.userSettings?.uid,
 			n: 1,
 			stop: '[CONTENT_END]',
 			...options,
-		} );
+		}
+		// Gera o artigo a partir do texto inicial
+		const response = await (
+			await getOpenAi()
+		 ).createCompletion( parseOptions );
 		// Retorna o texto do artigo gerado separado em titulo e conteúdo
 		return extractTitleAndContent(
 			response.data.choices[ 0 ].text as string

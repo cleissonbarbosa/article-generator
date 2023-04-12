@@ -29,7 +29,7 @@ import Select2Input from '../../components/inputs/Select2Input';
 import SwitchCheckbox from '../../components/inputs/SwitchCheckbox';
 import { IInputResponse, Input } from '../../components/inputs/Input';
 import {
-	IArticlePopulate,
+	ICreateArticleOptions,
 	createArticle,
 } from '../../integrations/openai/createArticle';
 import speech from '../../integrations/speechRecognition/speech';
@@ -57,7 +57,7 @@ interface IAttributesProps {
 interface IHandlePopulate {
 	prompt: string;
 	context: string;
-	options?: Pick< CreateCompletionRequest, 'temperature' | 'max_tokens' >;
+	options?: ICreateArticleOptions;
 }
 
 /**
@@ -76,6 +76,7 @@ export default function Prompt( { attributes, setAttributes } ) {
 		useState< SpeechRecognition | null >( null );
 	const [ temperature, setTemperature ] = useState< number >( 0.6 );
 	const [ maxTokens, setMaxTokens ] = useState< number >( 2048 );
+	const [ model, setModel ] = useState< string >( 'text-davinci-003' );
 	const contexts: IContext[] = useSelect(
 		( select ) => select( contextStore ).getContexts(),
 		[]
@@ -356,6 +357,7 @@ export default function Prompt( { attributes, setAttributes } ) {
 							options: {
 								temperature,
 								max_tokens: maxTokens,
+								model
 							},
 						},
 						setLoading
@@ -367,7 +369,6 @@ export default function Prompt( { attributes, setAttributes } ) {
 					title={ __( 'Settings', 'article-gen' ) }
 					initialOpen={ false }
 					icon={ 'admin-settings' }
-					opened={ true }
 				>
 					<div className="mb-6">
 						<label>
@@ -396,7 +397,7 @@ export default function Prompt( { attributes, setAttributes } ) {
 							</small>
 						</label>
 					</div>
-					<div>
+					<div className="mb-6">
 						<label>
 							{ __( 'Max Tokens', 'article-gen' ) }:{ ' ' }
 							<strong>{ maxTokens }</strong>
@@ -418,6 +419,47 @@ export default function Prompt( { attributes, setAttributes } ) {
 							<small>
 								{ __(
 									"The token count of your prompt plus max_tokens cannot exceed the model's context length. Most models have a context length of 2048 tokens",
+									'article-gen'
+								) }
+							</small>
+						</label>
+					</div>
+					<div className="mb-6">
+						<label>
+							{ __( 'Model', 'article-gen' ) }:{ ' ' }
+							<strong>{ model }</strong>
+							<div className="mt-2">
+								<Select2Input 
+									defaultValue={model}
+									isMulti={false}
+									onChange={ input => setModel( input.value ) }
+									options={[
+										{ 
+											label: 'Davinci 003',
+											value: 'text-davinci-003'
+										},
+										{ 
+											label: 'Davinci 002',
+											value: 'text-davinci-002'
+										},
+										{
+											label: 'Curie', 
+											value: 'text-curie-001'
+										},
+										{
+											label: 'Babbage', 
+											value: 'text-babbage-001'
+										},
+										{
+											label: 'Ada', 
+											value: 'text-ada-001'
+										}
+									]}
+								/>
+							</div>
+							<small>
+								{ __(
+									"The OpenAI API is powered by a diverse set of models with different capabilities and price points.",
 									'article-gen'
 								) }
 							</small>

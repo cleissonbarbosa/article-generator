@@ -44,6 +44,9 @@ export default function Edit( { attributes, setAttributes } ) {
 				toast: true,
 				position: 'center',
 				showConfirmButton: false,
+				didClose: () => {
+					Swal.showLoading();
+				},
 			} );
 		}
 	} );
@@ -105,12 +108,13 @@ export default function Edit( { attributes, setAttributes } ) {
 					} );
 					const blocks = parse( `
 							<!-- wp:image {"id":${ data.id },"sizeSlug":"full","linkDestination":"none"} -->
-								<figure class="wp-block-image size-full"><img src="${ data.source_url }" alt="${ prompt }" class="wp-image-66"/></figure>
+								<figure class="wp-block-image size-full"><img src="${ data.source_url }" alt="${ prompt }"/></figure>
 							<!-- /wp:image -->
 						` );
 					dispatch( 'core/block-editor' ).insertBlocks( blocks );
 				} )
 				.catch( ( e ) => {
+					console.log( e );
 					Swal.fire( {
 						title: __( 'Error!', 'article-gen' ),
 						text: __(

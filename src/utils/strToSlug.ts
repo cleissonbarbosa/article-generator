@@ -38,12 +38,7 @@ const stringToSlug = (str: string): string => {
     str = str.replace(invalidCharsRegex, ' ');
     str = str.replace(whitespaceRegex, '-');
     str = str.replace(/-+/g, '-');
-    str = str.replace(/\//g, '');
-
-    const slugParts = str.split('-').filter(Boolean);
-    if (slugParts.length < 2) {
-        throw new Error(__('The generated slug is not consistent. Check the entry and try again.', 'article-gen'));
-    }
+    str = str.replace(/\//g, '');    
   
     return str;
 };

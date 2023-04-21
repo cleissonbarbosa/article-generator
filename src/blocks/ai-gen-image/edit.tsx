@@ -70,16 +70,17 @@ export default function Edit( { attributes, setAttributes } ) {
 				size,
 				toggleSaveImg ? 'base64' : 'url'
 			);
-			dispatch( 'core/block-editor' ).removeBlock(
-				select( 'core/block-editor' ).getSelectedBlockClientId() ?? ''
-			);
+			
 			if ( ! toggleSaveImg ) {
 				const blocks = parse( `
 					<!-- wp:image {"sizeSlug":"large"} -->
 						<figure class="wp-block-image size-large"><img src="${ imgURL }" alt="${ prompt }"/></figure>
 					<!-- /wp:image -->
 				` );
-				dispatch( 'core/block-editor' ).insertBlocks( blocks );
+				dispatch( 'core/block-editor' ).replaceBlock(
+					select( 'core/block-editor' ).getSelectedBlockClientId() ?? '',
+					blocks
+				);
 				return;
 			}
 
@@ -108,7 +109,10 @@ export default function Edit( { attributes, setAttributes } ) {
 								<figure class="wp-block-image size-full"><img src="${ data.source_url }" alt="${ prompt }"/></figure>
 							<!-- /wp:image -->
 						` );
-					dispatch( 'core/block-editor' ).insertBlocks( blocks );
+					dispatch( 'core/block-editor' ).replaceBlock(
+						select( 'core/block-editor' ).getSelectedBlockClientId() ?? '',
+						blocks
+					);
 				} )
 				.catch( ( e ) => {
 					console.log( e );

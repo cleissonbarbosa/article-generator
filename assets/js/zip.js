@@ -58,8 +58,19 @@ exec(
 
 		console.log( `Finished copying files.` );
 
+		asyncExec('npm run version',{},() => {
+			console.log( `Finished versioning files.` );
+		}).catch( ( error ) => {
+			console.log(
+				chalk.red(
+					`Could not version files.`
+				)
+			);
+			console.log( error );
+		} );
+
 		asyncExec(
-			'composer install -o --no-dev',
+			'composer install -o --no-dev --ignore-platform-reqs',
 			{
 				cwd: dest,
 			},

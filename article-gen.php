@@ -5,7 +5,7 @@
  * Description:       Post generator using artificial intelligence (GPT)
  * Requires at least: 5.8
  * Requires PHP:      7.4
- * Version:           0.7.0
+ * Version:           ARTICLEGEN_SINCE
  * Tested upto:       6.1.1
  * Author:            Cleisson Barbosa<cleissonbarbosa68@gmail.com>
  * License:           GPL-2.0-or-later
@@ -26,7 +26,7 @@ final class Article_Gen {
      *
      * @var string
      */
-    const VERSION = '0.7.0';
+    const VERSION = 'ARTICLEGEN_SINCE';
 
     /**
      * Plugin slug.

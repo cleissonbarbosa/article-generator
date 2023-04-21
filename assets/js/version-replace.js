@@ -2,10 +2,11 @@ const fs = require( 'fs-extra' );
 const replace = require( 'replace-in-file' );
 
 const pluginFiles = [
-	'includes/**/*',
-	'templates/*',
-	'src/*',
-	'article-gen.php',
+	'dist/includes/**/*.php',
+	'dist/templates/*',
+	'dist/build/*',
+	'dist/languages/*',
+	'dist/article-gen.php',
 ];
 
 const { version } = JSON.parse( fs.readFileSync( 'package.json' ) );

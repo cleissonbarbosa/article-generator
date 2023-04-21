@@ -1,1 +1,8 @@
 ### Changelogs
+
+Version 0.7.0 - 04/08/2023 (mm/dd/yyyy)
+ - Generate post with OpenAi GPT model with Gutenberg block
+ - Insert your organization on Settings
+
+Version 0.8.0 - 04/21/2023 (mm/mm/yyyy)
+ - Add Image generator Gutenberg block

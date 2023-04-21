@@ -1,6 +1,6 @@
 {
 	"name": "article-gen",
-	"version": "1.0.0",
+	"version": "0.8.0",
 	"description": "A simple starter kit to work in WordPress plugin development using WordPress Rest API, WP-script and many more...",
 	"main": "src/index.tsx",
 	"scripts": {
@@ -17,7 +17,7 @@
 		"makepot": "wp i18n make-pot --domain='article-gen' --exclude='node_modules,.storybook,src,vendor,assets' . --headers='{\"Last-Translator\":\"cleissonbarbosa68@gmail.com\",\"Report-Msgid-Bugs-To\":\"https://github.com/CleissonBarbosa/article-generator/issues\"}' --file-comment=\"Copyright (c) $(date +'%Y') Cleisson Barbosa. All Rights Reserved.\" languages/article-gen.pot",
 		"zip": "node assets/js/zip",
 		"version": "node assets/js/version-replace",
-		"release": "yarn build && yarn makepot && yarn run version && yarn zip"
+		"release": "yarn build && yarn makepot && yarn zip"
 	},
 	"author": "Cleisson Barbosa <cleissonbarbosa68@gmail.com>",
 	"license": "ISC",

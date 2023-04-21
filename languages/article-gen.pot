@@ -1,14 +1,14 @@
 # Copyright (c) 2023 Cleisson Barbosa. All Rights Reserved.
 msgid ""
 msgstr ""
-"Project-Id-Version: Article Generator 0.7.0\n"
+"Project-Id-Version: Article Generator ARTICLEGEN_SINCE\n"
 "Report-Msgid-Bugs-To: https://github.com/CleissonBarbosa/article-generator/issues\n"
 "Last-Translator: cleissonbarbosa68@gmail.com\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-04-08T15:41:08+00:00\n"
+"POT-Creation-Date: 2023-04-21T17:34:05+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: article-gen\n"
@@ -16,7 +16,7 @@ msgstr ""
 #. Plugin Name of the plugin
 #: includes/Admin/Menu.php:36
 #: templates/blocks/ai-complete/markup.php:14
-#: build/index.js:8312
+#: build/index.js:1
 msgid "Article Generator"
 msgstr ""
 
@@ -30,12 +30,9 @@ msgstr ""
 
 #: article-gen.php:311
 #: includes/Admin/Menu.php:41
-#: build/blocks/ai-complete/index.js:5019
-#: build/blocks/ai-complete/index.js:5084
-#: build/blocks/ai-gen-image/index.js:4867
-#: build/index.js:7795
-#: build/index.js:8467
-#: build/index.js:10928
+#: build/blocks/ai-complete/index.js:1
+#: build/blocks/ai-gen-image/index.js:1
+#: build/index.js:1
 msgid "Settings"
 msgstr ""
 
@@ -44,15 +41,13 @@ msgid "Documentation"
 msgstr ""
 
 #: includes/Admin/Menu.php:39
-#: build/index.js:8449
+#: build/index.js:1
 msgid "Home"
 msgstr ""
 
 #: includes/Admin/Menu.php:40
-#: build/blocks/ai-complete/index.js:5017
-#: build/index.js:7782
-#: build/index.js:8458
-#: build/index.js:10660
+#: build/blocks/ai-complete/index.js:1
+#: build/index.js:1
 msgid "Contexts"
 msgstr ""
 
@@ -106,7 +101,7 @@ msgid "ID of the context"
 msgstr ""
 
 #: includes/REST/ContextsController.php:303
-#: build/index.js:7248
+#: build/index.js:1
 msgid "Context title"
 msgstr ""
 
@@ -215,361 +210,381 @@ msgstr ""
 msgid "Your context: %s"
 msgstr ""
 
-#: build/blocks/ai-complete/index.js:4815
-msgid "GPT Text Generator"
-msgstr ""
-
-#: build/blocks/ai-complete/index.js:4926
-#: build/blocks/ai-gen-image/index.js:4801
-msgid "Wait..."
-msgstr ""
-
-#: build/blocks/ai-complete/index.js:4927
-msgid "Writing text about: %s"
-msgstr ""
-
-#: build/blocks/ai-complete/index.js:4982
-#: build/index.js:7393
-#: build/index.js:7421
-#: build/index.js:8811
-#: build/index.js:8826
-#: build/index.js:8847
-msgid "Error"
-msgstr ""
-
-#: build/blocks/ai-complete/index.js:5030
-msgid "Write the subject of the article"
-msgstr ""
-
-#: build/blocks/ai-complete/index.js:5038
-msgid "Enable pre written context"
-msgstr ""
-
-#: build/blocks/ai-complete/index.js:5041
-msgid "Enable custom context"
-msgstr ""
-
-#: build/blocks/ai-complete/index.js:5045
-msgid "Select context"
-msgstr ""
-
-#: build/blocks/ai-complete/index.js:5063
-msgid "Enter the context of this article (optional)"
-msgstr ""
-
-#: build/blocks/ai-complete/index.js:5069
-msgid "Generating..."
-msgstr ""
-
-#: build/blocks/ai-complete/index.js:5069
-msgid "Generate"
-msgstr ""
-
-#: build/blocks/ai-complete/index.js:5090
-msgid "Temperature"
-msgstr ""
-
-#: build/blocks/ai-complete/index.js:5100
-msgid "What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic."
-msgstr ""
-
-#: build/blocks/ai-complete/index.js:5100
-msgid "Max Tokens"
-msgstr ""
-
-#: build/blocks/ai-complete/index.js:5110
-msgid "The token count of your prompt plus max_tokens cannot exceed the model's context length. Most models have a context length of 2048 tokens"
-msgstr ""
-
-#: build/blocks/ai-complete/index.js:5622
-#: build/blocks/ai-gen-image/index.js:5204
-#: build/index.js:8150
+#: build/blocks/ai-complete/index.js:1
+#: build/blocks/ai-gen-image/index.js:1
+#: build/index.js:1
 msgid "-- Select --"
 msgstr ""
 
-#: build/blocks/ai-complete/index.js:6878
-#: build/blocks/ai-gen-image/index.js:5346
-msgid "OpenAI API key not configured"
-msgstr ""
-
-#: build/blocks/ai-complete/index.js:6906
-#: build/blocks/ai-gen-image/index.js:5375
-msgid "Please enter a valid prompt"
-msgstr ""
-
-#: build/blocks/ai-complete/index.js:6927
-msgid "Failed to generate article. Make sure you entered the API Key in the settings"
-msgstr ""
-
-#: build/blocks/ai-complete/index.js:7095
-#: build/index.js:11206
+#: build/blocks/ai-complete/index.js:1
+#: build/index.js:1
 msgid "Minute"
 msgstr ""
 
-#: build/blocks/ai-complete/index.js:7098
-#: build/index.js:11209
+#: build/blocks/ai-complete/index.js:1
+#: build/index.js:1
 msgid "Hour"
 msgstr ""
 
-#: build/blocks/ai-complete/index.js:7101
-#: build/index.js:11212
+#: build/blocks/ai-complete/index.js:1
+#: build/index.js:1
 msgid "Day"
 msgstr ""
 
-#: build/blocks/ai-gen-image/index.js:4802
-msgid "Creating your image"
+#: build/blocks/ai-complete/index.js:1
+msgid "GPT Text Generator"
 msgstr ""
 
-#: build/blocks/ai-gen-image/index.js:4813
-msgid "Under development"
+#: build/blocks/ai-complete/index.js:1
+#: build/blocks/ai-gen-image/index.js:1
+msgid "Please enter a valid prompt"
 msgstr ""
 
-#: build/blocks/ai-gen-image/index.js:4814
-msgid "Feature under development, will be available soon"
+#: build/blocks/ai-complete/index.js:1
+#: build/blocks/ai-gen-image/index.js:1
+msgid "OpenAI API key not configured"
 msgstr ""
 
-#: build/blocks/ai-gen-image/index.js:4845
-msgid "Describe the image you want to generate"
+#: build/blocks/ai-complete/index.js:1
+msgid "Failed to generate article. Make sure you entered the API Key in the settings"
 msgstr ""
 
-#: build/blocks/ai-gen-image/index.js:4853
-msgid "Select image size"
+#: build/blocks/ai-complete/index.js:1
+#: build/blocks/ai-gen-image/index.js:1
+#: build/index.js:1
+msgid "Error"
 msgstr ""
 
-#: build/blocks/ai-gen-image/index.js:4859
-msgid "Generating image..."
+#: build/blocks/ai-complete/index.js:1
+#: build/blocks/ai-gen-image/index.js:1
+msgid "Wait..."
 msgstr ""
 
-#: build/blocks/ai-gen-image/index.js:4859
-msgid "Generate image"
+#: build/blocks/ai-complete/index.js:1
+msgid "Writing text about: %s"
 msgstr ""
 
-#: build/blocks/ai-gen-image/index.js:4918
+#: build/blocks/ai-complete/index.js:1
+msgid "Write the subject of the article"
+msgstr ""
+
+#: build/blocks/ai-complete/index.js:1
+msgid "Enable pre written context"
+msgstr ""
+
+#: build/blocks/ai-complete/index.js:1
+msgid "Enable custom context"
+msgstr ""
+
+#: build/blocks/ai-complete/index.js:1
+msgid "Select context"
+msgstr ""
+
+#: build/blocks/ai-complete/index.js:1
+msgid "Enter the context of this article (optional)"
+msgstr ""
+
+#: build/blocks/ai-complete/index.js:1
+msgid "Generating..."
+msgstr ""
+
+#: build/blocks/ai-complete/index.js:1
+msgid "Generate"
+msgstr ""
+
+#: build/blocks/ai-complete/index.js:1
+msgid "Temperature"
+msgstr ""
+
+#: build/blocks/ai-complete/index.js:1
+msgid "What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic."
+msgstr ""
+
+#: build/blocks/ai-complete/index.js:1
+msgid "Max Tokens"
+msgstr ""
+
+#: build/blocks/ai-complete/index.js:1
+msgid "The token count of your prompt plus max_tokens cannot exceed the model's context length. Most models have a context length of 2048 tokens"
+msgstr ""
+
+#: build/blocks/ai-complete/index.js:1
+msgid "Model"
+msgstr ""
+
+#: build/blocks/ai-complete/index.js:1
+msgid "The OpenAI API is powered by a diverse set of models with different capabilities and price points."
+msgstr ""
+
+#: build/blocks/ai-gen-image/index.js:1
 msgid "GPT Image Generator"
 msgstr ""
 
-#: build/blocks/ai-gen-image/index.js:5391
+#: build/blocks/ai-gen-image/index.js:1
 msgid "An error occurred during your request."
 msgstr ""
 
-#: build/index.js:7250
-msgid "Enter Context title, eg: Life Style"
+#: build/blocks/ai-gen-image/index.js:1
+msgid "Saving image on library"
 msgstr ""
 
-#: build/index.js:7257
-msgid "Context details"
+#: build/blocks/ai-gen-image/index.js:1
+msgid "Success!"
 msgstr ""
 
-#: build/index.js:7260
-msgid "Enter Context content."
+#: build/blocks/ai-gen-image/index.js:1
+msgid "The image has been saved in the wordpress library 🎉"
 msgstr ""
 
-#: build/index.js:7306
-msgid "General Information"
+#: build/blocks/ai-gen-image/index.js:1
+msgid "Error!"
 msgstr ""
 
-#: build/index.js:7309
-msgid "Context Content"
+#: build/blocks/ai-gen-image/index.js:1
+msgid "Error saving image in wordpress library ☹️"
 msgstr ""
 
-#: build/index.js:7315
-#: build/index.js:9026
-msgid "Quick Jump"
+#: build/blocks/ai-gen-image/index.js:1
+msgid "Try again?"
 msgstr ""
 
-#: build/index.js:7382
-msgid "Please give a context title."
+#: build/blocks/ai-gen-image/index.js:1
+msgid "Creating your image"
 msgstr ""
 
-#: build/index.js:7385
-msgid "Please give context content."
+#: build/blocks/ai-gen-image/index.js:1
+msgid "Describe the image you want to generate"
 msgstr ""
 
-#: build/index.js:7407
-msgid "Context saved"
+#: build/blocks/ai-gen-image/index.js:1
+msgid "Select image size"
 msgstr ""
 
-#: build/index.js:7408
-msgid "Context has been saved successfully."
+#: build/blocks/ai-gen-image/index.js:1
+msgid "Save image to library?"
 msgstr ""
 
-#: build/index.js:7432
-msgid "Cancel"
+#: build/blocks/ai-gen-image/index.js:1
+msgid "Generating image..."
 msgstr ""
 
-#: build/index.js:7437
-#: build/index.js:8858
-msgid "Saving…"
+#: build/blocks/ai-gen-image/index.js:1
+msgid "Generate image"
 msgstr ""
 
-#: build/index.js:7437
-#: build/index.js:8858
-msgid "Save"
-msgstr ""
-
-#: build/index.js:7502
-msgid "Are you sure?"
-msgstr ""
-
-#: build/index.js:7503
-msgid "Are you sure to delete the context?"
-msgstr ""
-
-#: build/index.js:7520
-msgid "Deleted!"
-msgstr ""
-
-#: build/index.js:7530
-msgid "Context status updated"
-msgstr ""
-
-#: build/index.js:7531
-msgid "Context has been updated successfully."
-msgstr ""
-
-#: build/index.js:7569
-msgid "Edit"
-msgstr ""
-
-#: build/index.js:7576
-#: build/index.js:8627
-msgid "Delete"
-msgstr ""
-
-#: build/index.js:7583
-msgid "Make Draft"
-msgstr ""
-
-#: build/index.js:7587
-msgid "Make Publish"
-msgstr ""
-
-#: build/index.js:7630
-msgid "Please select an action."
-msgstr ""
-
-#: build/index.js:7693
-msgid "Context"
-msgstr ""
-
-#: build/index.js:7697
-msgid "Status"
-msgstr ""
-
-#: build/index.js:7701
-msgid "Action"
-msgstr ""
-
-#: build/index.js:7782
+#: build/index.js:1
 msgid "Add/Edit/Delete Contexts for your prompts"
 msgstr ""
 
-#: build/index.js:7789
+#: build/index.js:1
 msgid "View Contexts"
 msgstr ""
 
-#: build/index.js:7795
+#: build/index.js:1
 msgid "add openai settings and edit plugin settings"
 msgstr ""
 
-#: build/index.js:7802
+#: build/index.js:1
 msgid "View Settings"
 msgstr ""
 
-#: build/index.js:8625
-msgid "Select Action"
-msgstr ""
-
-#: build/index.js:8631
-msgid "Applying…"
-msgstr ""
-
-#: build/index.js:8631
-msgid "Apply"
-msgstr ""
-
-#: build/index.js:8666
-msgid "items"
-msgstr ""
-
-#: build/index.js:8666
-msgid "item"
-msgstr ""
-
-#: build/index.js:8666
-msgid "selected"
-msgstr ""
-
-#: build/index.js:8802
-msgid "Please give a setting value to %s."
-msgstr ""
-
-#: build/index.js:8836
-msgid "Setting saved"
-msgstr ""
-
-#: build/index.js:8837
-msgid "Setting has been saved successfully."
-msgstr ""
-
-#: build/index.js:8947
-msgid "OpenAi API Key"
-msgstr ""
-
-#: build/index.js:8951
-msgid "I don't have a key"
-msgstr ""
-
-#: build/index.js:8960
-msgid "Enter a openai api key"
-msgstr ""
-
-#: build/index.js:8966
-msgid "OpenAi Organization ID"
-msgstr ""
-
-#: build/index.js:8969
-msgid "Enter a openai organization"
-msgstr ""
-
-#: build/index.js:9014
-msgid "OpenAi Settings"
-msgstr ""
-
-#: build/index.js:9017
-msgid "Plugin Settings"
-msgstr ""
-
-#: build/index.js:9020
-msgid "Information"
-msgstr ""
-
-#: build/index.js:9207
+#: build/index.js:1
 msgid "Sorry ! No data found."
 msgstr ""
 
-#: build/index.js:10664
+#: build/index.js:1
+msgid "Edit"
+msgstr ""
+
+#: build/index.js:1
+msgid "Are you sure?"
+msgstr ""
+
+#: build/index.js:1
+msgid "Are you sure to delete the context?"
+msgstr ""
+
+#: build/index.js:1
+msgid "Deleted!"
+msgstr ""
+
+#: build/index.js:1
+msgid "Delete"
+msgstr ""
+
+#: build/index.js:1
+msgid "Context status updated"
+msgstr ""
+
+#: build/index.js:1
+msgid "Context has been updated successfully."
+msgstr ""
+
+#: build/index.js:1
+msgid "Make Draft"
+msgstr ""
+
+#: build/index.js:1
+msgid "Make Publish"
+msgstr ""
+
+#: build/index.js:1
+msgid "Select Action"
+msgstr ""
+
+#: build/index.js:1
+msgid "Applying…"
+msgstr ""
+
+#: build/index.js:1
+msgid "Apply"
+msgstr ""
+
+#: build/index.js:1
+msgid "items"
+msgstr ""
+
+#: build/index.js:1
+msgid "item"
+msgstr ""
+
+#: build/index.js:1
+msgid "selected"
+msgstr ""
+
+#: build/index.js:1
+msgid "Please select an action."
+msgstr ""
+
+#: build/index.js:1
+msgid "Please give context content."
+msgstr ""
+
+#: build/index.js:1
+msgid "Please give a context title."
+msgstr ""
+
+#: build/index.js:1
+msgid "Cancel"
+msgstr ""
+
+#: build/index.js:1
+msgid "Saving…"
+msgstr ""
+
+#: build/index.js:1
+msgid "Save"
+msgstr ""
+
+#: build/index.js:1
+msgid "Context saved"
+msgstr ""
+
+#: build/index.js:1
+msgid "Context has been saved successfully."
+msgstr ""
+
+#: build/index.js:1
+msgid "General Information"
+msgstr ""
+
+#: build/index.js:1
+msgid "Context Content"
+msgstr ""
+
+#: build/index.js:1
+msgid "Quick Jump"
+msgstr ""
+
+#: build/index.js:1
+msgid "Enter Context title, eg: Life Style"
+msgstr ""
+
+#: build/index.js:1
+msgid "Context details"
+msgstr ""
+
+#: build/index.js:1
+msgid "Enter Context content."
+msgstr ""
+
+#: build/index.js:1
+msgid "Please give a setting value to %s."
+msgstr ""
+
+#: build/index.js:1
+msgid "Setting saved"
+msgstr ""
+
+#: build/index.js:1
+msgid "Setting has been saved successfully."
+msgstr ""
+
+#: build/index.js:1
+msgid "OpenAi Settings"
+msgstr ""
+
+#: build/index.js:1
+msgid "Plugin Settings"
+msgstr ""
+
+#: build/index.js:1
+msgid "Information"
+msgstr ""
+
+#: build/index.js:1
+msgid "OpenAi API Key"
+msgstr ""
+
+#: build/index.js:1
+msgid "I don't have a key"
+msgstr ""
+
+#: build/index.js:1
+msgid "Enter a openai api key"
+msgstr ""
+
+#: build/index.js:1
+msgid "OpenAi Organization ID"
+msgstr ""
+
+#: build/index.js:1
+msgid "Enter a openai organization"
+msgstr ""
+
+#: build/index.js:1
 msgid "New"
 msgstr ""
 
-#: build/index.js:10677
+#: build/index.js:1
 msgid "Search Contexts…"
 msgstr ""
 
-#: build/index.js:10712
+#: build/index.js:1
+msgid "Context"
+msgstr ""
+
+#: build/index.js:1
+msgid "Status"
+msgstr ""
+
+#: build/index.js:1
+msgid "Action"
+msgstr ""
+
+#: build/index.js:1
 msgid "Sorry !! No contexts found…"
 msgstr ""
 
-#: build/index.js:10785
-#: build/index.js:10868
+#: build/index.js:1
 msgid "Back to contexts"
 msgstr ""
 
-#: build/index.js:10788
+#: build/index.js:1
 msgid "Create New Context"
 msgstr ""
 
-#: build/index.js:10871
+#: build/index.js:1
 msgid "Edit Context"
 msgstr ""
 

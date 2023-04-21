@@ -44,9 +44,6 @@ export default function Edit( { attributes, setAttributes } ) {
 				toast: true,
 				position: 'center',
 				showConfirmButton: false,
-				didClose: () => {
-					Swal.showLoading();
-				},
 			} );
 		}
 	} );

@@ -15,6 +15,8 @@
 
 defined( 'ABSPATH' ) || exit;
 
+use ArticleGen\CBPlugin\Updater\WP_GitHub_Updater;
+
 /**
  * Article_Gen class.
  *
@@ -219,6 +221,35 @@ final class Article_Gen {
         $this->container['contexts'] = new ArticleGen\CBPlugin\Contexts\Manager();
         $this->container['settings'] = new ArticleGen\CBPlugin\Settings\Manager();
     }
+    
+    /**
+     * updater
+     *
+     * @return void
+     */
+    public function updater(){
+        
+        define( 'WP_GITHUB_FORCE_UPDATE', true );
+
+        if ( is_admin() ) { // note the use of is_admin() to double check that this is happening in the admin
+    
+            $config = array(
+                'slug' => plugin_basename( __FILE__ ),
+                'proper_folder_name' => 'article-generator',
+                'api_url' => 'https://api.github.com/repos/cleissonbarbosa/article-generator',
+                'raw_url' => 'https://raw.github.com/cleissonbarbosa/article-generator/master',
+                'github_url' => 'https://github.com/cleissonbarbosa/article-generator',
+                'zip_url' => 'https://github.com/cleissonbarbosa/article-generator/releases/latest/download/article-generator.zip',
+                'sslverify' => true,
+                'requires' => '3.0',
+                'tested' => '5.3',
+                'readme' => 'README.md',
+            );
+    
+            new WP_GitHub_Updater( $config );
+    
+        }
+    }
 
     /**
      * Initialize the hooks.
@@ -230,6 +261,9 @@ final class Article_Gen {
     public function init_hooks() {
         // Init classes
         add_action( 'init', [ $this, 'init_classes' ] );
+
+        // init updater
+        add_action( 'init', [ $this, 'updater' ] );
 
         // Localize our plugin
         add_action( 'init', [ $this, 'localization_setup' ] );

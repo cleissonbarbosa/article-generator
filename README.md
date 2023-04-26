@@ -38,8 +38,13 @@ npm i && composer i && npm run start
 
 latest ⬇️
 
-https://user-images.githubusercontent.com/32576001/230790257-b19f7902-e5c6-4668-9e23-e4ce359b397f.mp4
-
+https://user-images.githubusercontent.com/32576001/233712084-4aa6604f-a9cf-403f-9311-932a7eead404.mp4
+<details>
+  <summary>📅 (09/01/2023) - (mm-dd-yyyy)</summary>
+  
+  https://user-images.githubusercontent.com/32576001/230790257-b19f7902-e5c6-4668-9e23-e4ce359b397f.mp4
+  
+</details>    
 <details>
   <summary>📅 (04/01/2023) - (mm-dd-yyyy)</summary>
   

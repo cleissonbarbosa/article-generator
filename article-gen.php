@@ -3,13 +3,15 @@
 /**
  * Plugin Name:       Article Generator
  * Description:       Post generator using artificial intelligence (GPT)
+ * Plugin URI:        https://github.com/cleissonbarbosa/article-generator
  * Requires at least: 5.8
- * Requires PHP:      7.4
+ * Requires PHP:      8.0
  * Version:           ARTICLEGEN_SINCE
- * Tested upto:       6.1.1
+ * Tested upto:       6.2
  * Author:            Cleisson Barbosa<cleissonbarbosa68@gmail.com>
- * License:           GPL-2.0-or-later
- * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+ * Author URI:        https://github.com/cleissonbarbosa
+ * License:           MIT
+ * License URI:       https://github.com/cleissonbarbosa/article-generator/blob/master/LICENSE.txt
  * Text Domain:       article-gen
  */
 
@@ -242,7 +244,7 @@ final class Article_Gen {
                 'zip_url' => 'https://github.com/cleissonbarbosa/article-generator/releases/latest/download/article-generator.zip',
                 'sslverify' => true,
                 'requires' => '3.0',
-                'tested' => '5.3',
+                'tested' => '6.2',
                 'readme' => 'README.md',
             );
     

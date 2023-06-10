@@ -27,7 +27,7 @@
 		"@testing-library/react": "^12.1.5",
 		"@types/ckeditor__ckeditor5-build-classic": "^29.0.1",
 		"@types/enzyme": "^3.10.12",
-		"@types/jest": "^28.1.7",
+		"@types/jest": "^29.5.2",
 		"@types/uuid": "^9.0.1",
 		"@types/webspeechapi": "^0.0.29",
 		"@types/wordpress__block-editor": "^7.0.0",

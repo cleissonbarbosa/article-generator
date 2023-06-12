@@ -23,7 +23,7 @@
 		"tareq1988/wp-php-cs-fixer": "dev-master",
 		"phpcompatibility/phpcompatibility-wp": "dev-master",
 		"wp-phpunit/wp-phpunit": "^6.0",
-		"yoast/phpunit-polyfills": "^1.0",
+		"yoast/phpunit-polyfills": "^2.0",
 		"phpunit/phpunit": "^9.5"
 	},
 	"autoload": {

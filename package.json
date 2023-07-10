@@ -36,7 +36,7 @@
 		"@wordpress/block-editor": "^10.5.0",
 		"@wordpress/data": "^6.15.0",
 		"@wordpress/e2e-test-utils": "^7.11.0",
-		"@wordpress/e2e-tests": "^4.9.2",
+		"@wordpress/e2e-tests": "^7.8.0",
 		"@wordpress/eslint-plugin": "^12.4.0",
 		"@wordpress/i18n": "^4.10.0",
 		"@wordpress/jest-preset-default": "^8.5.1",

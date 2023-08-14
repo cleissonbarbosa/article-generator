@@ -63,7 +63,7 @@
 	"dependencies": {
 		"@babel/plugin-syntax-import-assertions": "^7.20.0",
 		"@babel/regjsgen": "^0.8.0",
-		"@ckeditor/ckeditor5-build-classic": "^35.3.0",
+		"@ckeditor/ckeditor5-build-classic": "^39.0.1",
 		"@ckeditor/ckeditor5-react": "^5.0.2",
 		"@fortawesome/fontawesome-common-types": "^6.1.2",
 		"@fortawesome/fontawesome-svg-core": "^6.2.0",

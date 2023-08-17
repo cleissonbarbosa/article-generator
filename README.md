@@ -4,6 +4,10 @@
 # 🤖 Article Generator
 
   <img width="200" src="assets/images/article-gen-logo.png" alt="logo">
+
+  [![CodeQL](https://github.com/cleissonbarbosa/article-generator/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/cleissonbarbosa/article-generator/actions/workflows/github-code-scanning/codeql)
+  [![PHPCS check](https://github.com/cleissonbarbosa/article-generator/actions/workflows/phpcs.yml/badge.svg)](https://github.com/cleissonbarbosa/article-generator/actions/workflows/phpcs.yml)
+  [![PHPUnit Tests](https://github.com/cleissonbarbosa/article-generator/actions/workflows/phpunit.yml/badge.svg)](https://github.com/cleissonbarbosa/article-generator/actions/workflows/phpunit.yml)
   
 ![GitHub repo size](https://img.shields.io/github/repo-size/cleissonbarbosa/article-generator?style=for-the-badge)
 ![GitHub language count](https://img.shields.io/github/languages/count/cleissonbarbosa/article-generator?style=for-the-badge)

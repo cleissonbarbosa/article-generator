@@ -4,3 +4,5 @@
 .phpunit.result.cache
 .DS_Store
 /dist
+*.log
+/languages/*-backup-*

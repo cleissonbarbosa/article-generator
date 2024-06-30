@@ -4,7 +4,8 @@
 .phpunit.result.cache
 .DS_Store
 /dist
-/languages/*-backup*
+*.log
+/languages/*-backup-*
 *error.log
 *.lock
 *-lock.json

@@ -63,7 +63,7 @@ class Manager {
 
             if ( file_exists( $markup_file_path ) ) {
                 $block_options['render_callback'] = function( $attributes, $content, $block ) use ( $markup_file_path ) {
-                    $context = $block->context;
+					$context = $block->context;
                     ob_start();
                     include $markup_file_path;
                     return ob_get_clean();

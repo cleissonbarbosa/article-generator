@@ -8,27 +8,27 @@ import EditContext from '../pages/contexts/EditContext';
 import settings from '../pages/settings';
 
 const routes = [
-    {
-        path: '/',
-        element: HomePage,
-    },
-    {
-        path: '/contexts',
-        element: ContextsPage,
-    },
-    {
-        path: '/contexts/new',
-        element: CreateContext,
-    },
-    {
-        path: '/contexts/edit/:id',
-        element: EditContext,
-    },
+	{
+		path: '/',
+		element: HomePage,
+	},
+	{
+		path: '/contexts',
+		element: ContextsPage,
+	},
+	{
+		path: '/contexts/new',
+		element: CreateContext,
+	},
+	{
+		path: '/contexts/edit/:id',
+		element: EditContext,
+	},
 
-    {
-        path: '/settings',
-        element: settings,
-    },
+	{
+		path: '/settings',
+		element: settings,
+	},
 ];
 
 export default routes;

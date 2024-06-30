@@ -1,6 +1,6 @@
 {
     "name": "cleissonbarbosa/article-generator",
-    "description": "A simple starter kit to work in WordPress plugin development using WordPress Rest API, WP-script and many more...",
+    "description": "A simple plugin to generate articles with ai",
     "type": "wordpress-plugin",
     "license": "GPL-2.0-or-later",
     "authors": [

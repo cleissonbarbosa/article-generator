@@ -20,24 +20,28 @@ import './style.scss';
 import edit from './edit';
 import save from './save';
 import json from './block.json';
+import { __ } from '@wordpress/i18n';
 
 const { name, ...settings } = json;
-
+const customSettings = {
+	title: __( 'GPT Image Generator', 'article-gen' ),
+};
 /**
  * Every block starts by registering a new block type definition.
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
-registerBlockType(name, {
-    ...settings,
+registerBlockType( name, {
+	...settings,
+	...customSettings,
 
-    /**
-     * @see ./edit.js
-     */
-    edit,
+	/**
+	 * @see ./edit.js
+	 */
+	edit,
 
-    /**
-     * @see ./save.js
-     */
-    save,
-});
+	/**
+	 * @see ./save.js
+	 */
+	save,
+} );

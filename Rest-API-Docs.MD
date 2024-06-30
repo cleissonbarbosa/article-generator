@@ -4,99 +4,9 @@ Details about the REST API documentation of the plugin.
 
 ---
 
-#### Company dropdown list API
-**URL** - http://localhost/wpex/wp-json/article-generator/v1/companies/dropdown
-**Method** - GET
-**Response** -
-```json
-[
-    {
-        "id": "1",
-        "name": "Akash",
-        "email": "cleissonbarbosa68@gmail.com",
-        "username": "admin"
-    },
-    {
-        "id": "2",
-        "name": "Polash Rana",
-        "email": "polashrana@gmail.com",
-        "username": "Polash"
-    }
-]
-```
-
-#### Context Type List API
-**URL** - http://localhost/wpex/wp-json/article-generator/v1/context-types
-**Method** - GET
-**Response** -
-```json
-[
-    {
-        "id": 1,
-        "name": "Full time",
-        "slug": "full-time",
-        "description": "Full time context",
-        "created_at": "2022-07-31 12:36:20",
-        "updated_at": "2022-07-31 12:36:20",
-        "_links": {
-            "self": [
-                {
-                    "href": "http://localhost/wpex/wp-json/article-generator/v1/context-types/1"
-                }
-            ],
-            "collection": [
-                {
-                    "href": "http://localhost/wpex/wp-json/article-generator/v1/context-types"
-                }
-            ]
-        }
-    },
-    {
-        "id": 2,
-        "name": "Part time",
-        "slug": "part-time",
-        "description": "Part time context",
-        "created_at": "2022-07-31 12:36:20",
-        "updated_at": "2022-07-31 12:36:20",
-        "_links": {
-            "self": [
-                {
-                    "href": "http://localhost/wpex/wp-json/article-generator/v1/context-types/2"
-                }
-            ],
-            "collection": [
-                {
-                    "href": "http://localhost/wpex/wp-json/article-generator/v1/context-types"
-                }
-            ]
-        }
-    },
-    {
-        "id": 3,
-        "name": "Remote",
-        "slug": "remote",
-        "description": "Remote context",
-        "created_at": "2022-07-31 12:36:20",
-        "updated_at": "2022-07-31 12:36:20",
-        "_links": {
-            "self": [
-                {
-                    "href": "http://localhost/wpex/wp-json/article-generator/v1/context-types/3"
-                }
-            ],
-            "collection": [
-                {
-                    "href": "http://localhost/wpex/wp-json/article-generator/v1/context-types"
-                }
-            ]
-        }
-    }
-]
-```
-
 
 #### Context Lists API
-**URL** - http://localhost/wpex/wp-json/article-generator/v1/contexts
+**URL** - http://localhost/wp-json/article-generator/v1/contexts
 **Method** - `GET`
 **Middleware** - WordPress user logged in.
 **Parameters** -
@@ -108,7 +18,7 @@ orderby=id
 order=asc
 ```
 **Full Endpoint** with all of the supported params -
-http://localhost/wpex/wp-json/article-generator/v1/contexts?page=1&per_page=10&search=first
+http://localhost/wp-json/article-generator/v1/contexts?page=1&per_page=10&search=first
 
 **API Response**
 ```json
@@ -117,29 +27,20 @@ http://localhost/wpex/wp-json/article-generator/v1/contexts?page=1&per_page=10&s
         "id": 1,
         "title": "First Context",
         "slug": "first-context",
-        "context_type": {
-            "id": "1",
-            "name": "Full time",
-            "slug": "full-time"
-        },
         "is_remote": false,
-        "status": "published",
-        "company": {
-            "name": "Agami Soft Ltd.",
-            "avatar_url": "http://1.gravatar.com/avatar/737340ad976d2c52de2a26589ff116d2?s=96&d=mm&r=g"
-        },
-        "description": "",
+        "status": "available",
+        "content": "Article generator is a plugin for wordpress under development, its purpose is to make the technology of the natural language model (GPT) available to wordpress users.",
         "created_at": "2022-07-31 10:05:21",
         "updated_at": "2022-07-31 10:05:21",
         "_links": {
             "self": [
                 {
-                    "href": "http://localhost/wpex/wp-json/article-generator/v1/contexts/1"
+                    "href": "http://localhost/wp-json/article-generator/v1/contexts/1"
                 }
             ],
             "collection": [
                 {
-                    "href": "http://localhost/wpex/wp-json/article-generator/v1/contexts"
+                    "href": "http://localhost/wp-json/article-generator/v1/contexts"
                 }
             ]
         }
@@ -148,7 +49,7 @@ http://localhost/wpex/wp-json/article-generator/v1/contexts?page=1&per_page=10&s
 ```
 
 #### Context Detail API
-**URL** - http://localhost/wpex/wp-json/article-generator/v1/contexts/2
+**URL** - http://localhost/wp-json/article-generator/v1/contexts/2
 **Method** - `GET`
 **Middleware** - WordPress user logged in.
 **Response** -
@@ -157,29 +58,20 @@ http://localhost/wpex/wp-json/article-generator/v1/contexts?page=1&per_page=10&s
     "id": 2,
     "title": "Second Context",
     "slug": "second-context",
-    "context_type": {
-        "id": "2",
-        "name": "Part time",
-        "slug": "part-time"
-    },
     "is_remote": false,
-    "status": "published",
-    "company": {
-        "name": "Cleisson Barbosa",
-        "avatar_url": "http://1.gravatar.com/avatar/4c0a55ab2542912358b53b7c99dc73c3?s=96&d=mm&r=g"
-    },
-    "description": "",
+    "status": "available",
+    "content": "Generative Pre-Trained Transformer (GPT)",
     "created_at": "2022-07-31 10:05:21",
     "updated_at": "2022-07-31 10:05:21",
     "_links": {
         "self": [
             {
-                "href": "http://localhost/wpex/wp-json/article-generator/v1/contexts/2"
+                "href": "http://localhost/wp-json/article-generator/v1/contexts/2"
             }
         ],
         "collection": [
             {
-                "href": "http://localhost/wpex/wp-json/article-generator/v1/contexts"
+                "href": "http://localhost/wp-json/article-generator/v1/contexts"
             }
         ]
     }
@@ -198,7 +90,7 @@ http://localhost/wpex/wp-json/article-generator/v1/contexts?page=1&per_page=10&s
 ```
 
 #### Context Create API
-**URL** - http://localhost/wpex/wp-json/article-generator/v1/contexts
+**URL** - http://localhost/wp-json/article-generator/v1/contexts
 **Method** - `POST`
 **Middleware** - WordPress user logged in.
 **Body** -
@@ -206,9 +98,7 @@ http://localhost/wpex/wp-json/article-generator/v1/contexts?page=1&per_page=10&s
 {
     "title": "Simple Context Post Awesome",
     "slug": "simple-context-post-awesome",
-    "description": "Simple context post description",
-    "company_id": 1,
-    "context_type_id": 2,
+    "content": "Simple context content",
     "is_active": 1
 }
 ```
@@ -218,36 +108,27 @@ http://localhost/wpex/wp-json/article-generator/v1/contexts?page=1&per_page=10&s
     "id": 49,
     "title": "Simple Context Post Awesome",
     "slug": "simple-context-post-awesome",
-    "context_type": {
-        "id": "2",
-        "name": "Part time",
-        "slug": "part-time"
-    },
     "is_remote": false,
-    "status": "published",
-    "company": {
-        "name": "admin",
-        "avatar_url": "http://1.gravatar.com/avatar/1c82531094a13dc2b339ab5decf5c446?s=96&d=mm&r=g"
-    },
-    "description": "Simple context post description",
+    "status": "available",
+    "content": "Simple context content",
     "created_at": "2022-08-10 21:34:28",
     "updated_at": "2022-08-10 21:34:28",
     "_links": {
         "self": [
             {
-                "href": "http://localhost/wpex/wp-json/article-generator/v1/contexts/49"
+                "href": "http://localhost/wp-json/article-generator/v1/contexts/49"
             }
         ],
         "collection": [
             {
-                "href": "http://localhost/wpex/wp-json/article-generator/v1/contexts"
+                "href": "http://localhost/wp-json/article-generator/v1/contexts"
             }
         ]
     }
 }
 ```
 #### Context Update API
-**URL** - http://localhost/wpex/wp-json/article-generator/v1/contexts/2
+**URL** - http://localhost/wp-json/article-generator/v1/contexts/2
 **Method** - `PUT`
 **Middleware** - WordPress user logged in.
 **Body** -
@@ -255,9 +136,7 @@ http://localhost/wpex/wp-json/article-generator/v1/contexts?page=1&per_page=10&s
 {
     "title": "Simple Context Post Awesome Updated",
     "slug": "simple-context-post-awesome-updated",
-    "description": "Simple context post description",
-    "company_id": 1,
-    "context_type_id": 2,
+    "content": "Simple context content",
     "is_active": 1
 }
 ```
@@ -268,29 +147,20 @@ http://localhost/wpex/wp-json/article-generator/v1/contexts?page=1&per_page=10&s
     "id": 49,
     "title": "Simple Context Post Awesome Updated",
     "slug": "simple-context-post-awesome-updated",
-    "context_type": {
-        "id": "2",
-        "name": "Part time",
-        "slug": "part-time"
-    },
     "is_remote": false,
-    "status": "published",
-    "company": {
-        "name": "admin",
-        "avatar_url": "http://1.gravatar.com/avatar/1c82531094a13dc2b339ab5decf5c446?s=96&d=mm&r=g"
-    },
-    "description": "Simple context post description",
+    "status": "available",
+    "content": "Simple context",
     "created_at": "2022-08-10 21:36:09",
     "updated_at": "2022-08-10 21:36:09",
     "_links": {
         "self": [
             {
-                "href": "http://localhost/wpex/wp-json/article-generator/v1/contexts/49"
+                "href": "http://localhost/wp-json/article-generator/v1/contexts/49"
             }
         ],
         "collection": [
             {
-                "href": "http://localhost/wpex/wp-json/article-generator/v1/contexts"
+                "href": "http://localhost/wp-json/article-generator/v1/contexts"
             }
         ]
     }
@@ -299,7 +169,7 @@ http://localhost/wpex/wp-json/article-generator/v1/contexts?page=1&per_page=10&s
 
 
 #### Contexts Delete API
-**URL** - http://localhost/wpex/wp-json/article-generator/v1/contexts
+**URL** - http://localhost/wp-json/article-generator/v1/contexts
 **Method** - `DELETE`
 **Middleware** - WordPress user logged in.
 **Body** -

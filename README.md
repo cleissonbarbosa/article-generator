@@ -4,19 +4,31 @@
 # 🤖 Article Generator
 
   <img width="200" src="assets/images/article-gen-logo.png" alt="logo">
-</div>
 
+  [![CodeQL](https://github.com/cleissonbarbosa/article-generator/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/cleissonbarbosa/article-generator/actions/workflows/github-code-scanning/codeql)
+  [![PHPCS check](https://github.com/cleissonbarbosa/article-generator/actions/workflows/phpcs.yml/badge.svg)](https://github.com/cleissonbarbosa/article-generator/actions/workflows/phpcs.yml)
+  [![PHPUnit Tests](https://github.com/cleissonbarbosa/article-generator/actions/workflows/phpunit.yml/badge.svg)](https://github.com/cleissonbarbosa/article-generator/actions/workflows/phpunit.yml)
+  
 ![GitHub repo size](https://img.shields.io/github/repo-size/cleissonbarbosa/article-generator?style=for-the-badge)
 ![GitHub language count](https://img.shields.io/github/languages/count/cleissonbarbosa/article-generator?style=for-the-badge)
 ![GitHub forks](https://img.shields.io/github/forks/cleissonbarbosa/article-generator?style=for-the-badge)
-![Bitbucket open issues](https://img.shields.io/bitbucket/issues/cleissonbarbosa/article-generator?style=for-the-badge)
-![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/cleissonbarbosa/article-generator?style=for-the-badge)
+![Github open issues](https://img.shields.io/github/issues/cleissonbarbosa/article-generator?style=for-the-badge)
+  
+**Available languages**: 	🔵🔴 *En-US*, 🟢🟡 *Pt-BR*
 
-## 💾 installation
+</div>
 
-To install follow these steps:
+## 🔌 Plugin install
+1. [Download the latest version of the plugin](https://github.com/cleissonbarbosa/article-generator/releases/latest)
+2. In your wordpress dashboard go to:
+    - `Plugins > Add new > Upload plugin` Select `article-generator.zip` from your computer
+    - Click “Install Now”
+    - Activate the plugin in the Plugin dashboard
 
-Install dependencies with yarn or npm:
+
+## 💾 Dev install and run
+
+Install dependencies and run webpack:
 ```sh
 yarn && composer i && yarn start
 ```
@@ -26,8 +38,24 @@ npm i && composer i && npm run start
 ```
 
 ## 👀 Demo
-[![article-gen-wp-plugin-demo.gif](https://s2.gifyu.com/images/article-gen-wp-plugin-demo.gif)](https://gifyu.com/image/SIo3e)
-<a href="https://s2.gifyu.com/images/article-gen-wp-plugin-demo.gif" target="_blank">Open Gif in new tab ↗️</a>
+### Gutenberg block
+
+latest ⬇️
+
+https://user-images.githubusercontent.com/32576001/233712084-4aa6604f-a9cf-403f-9311-932a7eead404.mp4
+<details>
+  <summary>📅 (09/01/2023) - (mm-dd-yyyy)</summary>
+  
+  https://user-images.githubusercontent.com/32576001/230790257-b19f7902-e5c6-4668-9e23-e4ce359b397f.mp4
+  
+</details>    
+<details>
+  <summary>📅 (04/01/2023) - (mm-dd-yyyy)</summary>
+  
+  https://user-images.githubusercontent.com/32576001/230542799-91808ec8-5350-45a2-96f0-7e057df4c665.mp4
+  
+</details>    
+
 
 ## 📫 Contributing to the project
 
@@ -43,6 +71,10 @@ Alternatively, see the GitHub documentation on [how to create a pull request](ht
 
 ## 📝 License
 
-This project is under license. See the [LICENSE](LICENSE.md) file for more details.
+This project is under license. See the [LICENSE](LICENSE.txt) file for more details.
 
-[⬆ back to the top](#)<br>
+## Credits
+
+- [WP React Kit](https://github.com/ManiruzzamanAkash/wp-react-kit)
+
+[⬆ back to the top](#-article-generator)<br>

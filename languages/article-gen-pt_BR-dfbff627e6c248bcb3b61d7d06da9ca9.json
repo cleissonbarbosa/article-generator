@@ -1,0 +1,103 @@
+{
+	"translation-revision-date": "2023-04-08 15:44+0000",
+	"generator": "Loco https://localise.biz/",
+	"source": "build/index.js",
+	"domain": "article-gen",
+	"locale_data": {
+		"article-gen": {
+			"": {
+				"domain": "article-gen",
+				"lang": "pt_BR",
+				"plural-forms": "nplurals=2; plural=n != 1;"
+			},
+			"-- Select --": [ "-- Selecione --" ],
+			"Action": [ "A\u00e7\u00e3o" ],
+			"add openai settings and edit plugin settings": [
+				"Adicionar configura\u00e7\u00f5es da OpenAi e Plugin"
+			],
+			"Add/Edit/Delete Contexts for your prompts": [
+				"Adicionar/Editar/Deletar contextos para o seu prompts"
+			],
+			"Apply": [ "Aplicar" ],
+			"Applying\u2026": [ "Aplicando..." ],
+			"Are you sure to delete the context?": [
+				"Tem certeza de que deseja excluir o contexto?"
+			],
+			"Are you sure?": [ "Tem certeza?" ],
+			"Article Generator": [ "Gerador de artigos" ],
+			"Back to contexts": [ "Voltar para contextos" ],
+			"Cancel": [ "Cancelar" ],
+			"Context": [ "Contexto" ],
+			"Context Content": [ "Conte\u00fado do Contexto" ],
+			"Context details": [ "Detalhes do contexto" ],
+			"Context has been saved successfully.": [
+				"O contexto foi salvo com sucesso."
+			],
+			"Context has been updated successfully.": [
+				"O contexto foi atualizado com sucesso."
+			],
+			"Context saved": [ "Contexto salvo" ],
+			"Context status updated": [ "Status do contexto atualizado" ],
+			"Context title": [ "T\u00edtulo do contexto" ],
+			"Contexts": [ "Contextos" ],
+			"Create New Context": [ "Criar novo contexto" ],
+			"Day": [ "Dia" ],
+			"Delete": [ "Excluir" ],
+			"Deleted!": [ "Exclu\u00eddo!" ],
+			"Edit": [ "Editar" ],
+			"Edit Context": [ "Editar Contexto" ],
+			"Enter a openai api key": [ "Insira uma chave de API OpenAI" ],
+			"Enter a openai organization": [
+				"Inserir organiza\u00e7\u00e3o na OpenAI"
+			],
+			"Enter Context content.": [ "Digite o conte\u00fado do Contexto." ],
+			"Enter Context title, eg: Life Style": [
+				"Digite o t\u00edtulo do Contexto, por exemplo: Estilo de Vida"
+			],
+			"Error": [ "Erro" ],
+			"General Information": [ "Informa\u00e7\u00f5es gerais" ],
+			"Home": [ "Home" ],
+			"Hour": [ "Hora" ],
+			"I don't have a key": [ "eu n\u00e3o tenho uma chave" ],
+			"Information": [ "Informa\u00e7\u00e3o" ],
+			"item": [ "item" ],
+			"items": [ "itens" ],
+			"Make Draft": [ "Fazer Rascunho" ],
+			"Make Publish": [ "Publicar" ],
+			"Minute": [ "Minuto" ],
+			"New": [ "Novo" ],
+			"OpenAi API Key": [ "Chave da API OpenAi" ],
+			"OpenAi Organization ID": [ "ID da Organiza\u00e7\u00e3o OpenAi" ],
+			"OpenAi Settings": [ "Configura\u00e7\u00f5es OpenAi" ],
+			"Please give a context title.": [
+				"Por favor, d\u00ea um t\u00edtulo ao contexto."
+			],
+			"Please give a setting value to %s.": [
+				"Forne\u00e7a um valor de configura\u00e7\u00e3o para %s."
+			],
+			"Please give context content.": [
+				"Forne\u00e7a o conte\u00fado do contexto."
+			],
+			"Please select an action.": [ "Selecione uma a\u00e7\u00e3o." ],
+			"Plugin Settings": [ "Configura\u00e7\u00f5es do plugin" ],
+			"Quick Jump": [ "Ir para" ],
+			"Save": [ "Salvar" ],
+			"Saving\u2026": [ "Salvando\u2026" ],
+			"Search Contexts\u2026": [ "Contextos de pesquisa\u2026" ],
+			"Select Action": [ "Selecionar a\u00e7\u00e3o" ],
+			"selected": [ "selecionado" ],
+			"Setting has been saved successfully.": [
+				"A configura\u00e7\u00e3o foi salva com sucesso."
+			],
+			"Setting saved": [ "Configura\u00e7\u00e3o salva" ],
+			"Settings": [ "Configura\u00e7\u00f5es" ],
+			"Sorry ! No data found.": [ "Desculpe ! Nenhum dado encontrado." ],
+			"Sorry !! No contexts found\u2026": [
+				"Desculpe !! Nenhum contexto encontrado..."
+			],
+			"Status": [ "Status" ],
+			"View Contexts": [ "Ver contextos" ],
+			"View Settings": [ "Ver Configura\u00e7\u00f5es" ]
+		}
+	}
+}

@@ -1,0 +1,55 @@
+{
+	"translation-revision-date": "2023-04-08 15:44+0000",
+	"generator": "Loco https://localise.biz/",
+	"source": "build/blocks/ai-complete/index.js",
+	"domain": "article-gen",
+	"locale_data": {
+		"article-gen": {
+			"": {
+				"domain": "article-gen",
+				"lang": "pt_BR",
+				"plural-forms": "nplurals=2; plural=n != 1;"
+			},
+			"-- Select --": [ "-- Selecione --" ],
+			"Contexts": [ "Contextos" ],
+			"Day": [ "Dia" ],
+			"Enable custom context": [ "Ativar contexto personalizado" ],
+			"Enable pre written context": [
+				"Ativar contexto pr\u00e9-escrito"
+			],
+			"Enter the context of this article (optional)": [
+				"Insira o contexto deste artigo (opcional)"
+			],
+			"Error": [ "Erro" ],
+			"Failed to generate article. Make sure you entered the API Key in the settings": [
+				"Falha ao gerar o artigo. Certifique-se de inserir a chave API nas configura\u00e7\u00f5es"
+			],
+			"Generate": [ "Gerar" ],
+			"Generating...": [ "Gerando..." ],
+			"GPT Text Generator": [ "Gerador de Texto (GPT)" ],
+			"Hour": [ "Hora" ],
+			"Max Tokens": [ "M\u00e1ximo de tokens" ],
+			"Minute": [ "Minuto" ],
+			"OpenAI API key not configured": [
+				"Chave de API OpenAI n\u00e3o configurada"
+			],
+			"Please enter a valid prompt": [ "Insira um prompt v\u00e1lido" ],
+			"Select context": [ "Selecione o contexto" ],
+			"Settings": [ "Configura\u00e7\u00f5es" ],
+			"Temperature": [ "Temperatura" ],
+			"The token count of your prompt plus max_tokens cannot exceed the model's context length. Most models have a context length of 2048 tokens": [
+				"A contagem de token de seu prompt n\u00e3o pode exceder o comprimento do contexto do modelo. A maioria dos modelos tem um comprimento de contexto de 2048 tokens"
+			],
+			"Wait...": [ "Aguarde..." ],
+			"What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.": [
+				"Qual temperatura de amostragem usar, entre 0 e 2. Valores mais altos, como 0.8, tornar\u00e3o a sa\u00edda mais aleat\u00f3ria, enquanto valores mais baixos, como 0.2, a tornar\u00e3o mais focada e determin\u00edstica."
+			],
+			"Write the subject of the article": [
+				"Escreva o assunto do artigo"
+			],
+			"Writing text about: %s": [
+				"Escrevendo texto sobre: \u200b\u200b%s"
+			]
+		}
+	}
+}

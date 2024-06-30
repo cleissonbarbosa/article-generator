@@ -16,56 +16,56 @@ import contextStore from '../../data/contexts';
 import { IContext } from '../../interfaces';
 
 export default function EditContext() {
-    const navigate = useNavigate();
-    const { id } = useParams();
+	const navigate = useNavigate();
+	const { id } = useParams();
 
-    const backToContextsPage = () => {
-        navigate('/contexts');
-    };
+	const backToContextsPage = () => {
+		navigate( '/contexts' );
+	};
 
-    const contextDetails: IContext = useSelect(
-        (select) => select(contextStore).getContextDetail(id),
-        []
-    );
+	const contextDetails: IContext = useSelect(
+		( select ) => select( contextStore ).getContextDetail( id ),
+		[]
+	);
 
-    /**
-     * Get Page Content - Title and New Context button.
-     *
-     * @return JSX.Element
-     */
-    const pageTitleContent = (
-        <div className="">
-            <div className="mr-3 mb-4">
-                <button
-                    onClick={backToContextsPage}
-                    className="text-gray-dark border-none"
-                >
-                    ← {__('Back to contexts', 'article-gen')}
-                </button>
-            </div>
-            <div className="text-left">
-                <PageHeading text={__('Edit Context', 'article-gen')} />
-            </div>
-        </div>
-    );
+	/**
+	 * Get Page Content - Title and New Context button.
+	 *
+	 * @return JSX.Element
+	 */
+	const pageTitleContent = (
+		<div className="">
+			<div className="mr-3 mb-4">
+				<button
+					onClick={ backToContextsPage }
+					className="text-gray-dark border-none"
+				>
+					← { __( 'Back to contexts', 'article-gen' ) }
+				</button>
+			</div>
+			<div className="text-left">
+				<PageHeading text={ __( 'Edit Context', 'article-gen' ) } />
+			</div>
+		</div>
+	);
 
-    /**
-     * Get Right Side Content - Create Context form data.
-     */
-    const pageRightSideContent = (
-        <div className="mt-7 fixed invisible md:visible md:top-28 right-10 z-50">
-            <ContextSubmit />
-        </div>
-    );
+	/**
+	 * Get Right Side Content - Create Context form data.
+	 */
+	const pageRightSideContent = (
+		<div className="mt-7 fixed invisible md:visible md:top-28 right-10 z-50">
+			<ContextSubmit />
+		</div>
+	);
 
-    return (
-        <Layout
-            title={pageTitleContent}
-            slug="edit-context"
-            hasRightSideContent={true}
-            rightSideContent={pageRightSideContent}
-        >
-            <ContextForm context={contextDetails} />
-        </Layout>
-    );
+	return (
+		<Layout
+			title={ pageTitleContent }
+			slug="edit-context"
+			hasRightSideContent={ true }
+			rightSideContent={ pageRightSideContent }
+		>
+			<ContextForm context={ contextDetails } />
+		</Layout>
+	);
 }

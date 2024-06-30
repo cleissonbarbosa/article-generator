@@ -6,3 +6,6 @@
 /dist
 *.log
 /languages/*-backup-*
+*error.log
+*.lock
+*-lock.json

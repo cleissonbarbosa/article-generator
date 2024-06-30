@@ -4,6 +4,7 @@ namespace ArticleGen\CBPlugin\Setup;
 
 use ArticleGen\CBPlugin\Common\Keys;
 
+
 /**
  * Class Installer.
  *

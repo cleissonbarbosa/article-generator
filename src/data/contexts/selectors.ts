@@ -5,59 +5,59 @@
 import { IContexts } from '../../interfaces';
 
 const selectors = {
-    getContexts(state: IContexts) {
-        const { contexts } = state;
+	getContexts( state: IContexts ) {
+		const { contexts } = state;
 
-        return contexts;
-    },
+		return contexts;
+	},
 
-    getContextDetail(state: IContexts) {
-        const { context } = state;
+	getContextDetail( state: IContexts ) {
+		const { context } = state;
 
-        return context;
-    },
+		return context;
+	},
 
-    getContextsSaving(state: IContexts) {
-        const { contextsSaving } = state;
+	getContextsSaving( state: IContexts ) {
+		const { contextsSaving } = state;
 
-        return contextsSaving;
-    },
+		return contextsSaving;
+	},
 
-    getContextsDeleting(state: IContexts) {
-        const { contextsDeleting } = state;
+	getContextsDeleting( state: IContexts ) {
+		const { contextsDeleting } = state;
 
-        return contextsDeleting;
-    },
+		return contextsDeleting;
+	},
 
-    getLoadingContexts(state: IContexts) {
-        const { loadingContexts } = state;
+	getLoadingContexts( state: IContexts ) {
+		const { loadingContexts } = state;
 
-        return loadingContexts;
-    },
+		return loadingContexts;
+	},
 
-    getTotalPage(state: IContexts) {
-        const { totalPage } = state;
+	getTotalPage( state: IContexts ) {
+		const { totalPage } = state;
 
-        return totalPage;
-    },
+		return totalPage;
+	},
 
-    getTotal(state: IContexts) {
-        const { total } = state;
+	getTotal( state: IContexts ) {
+		const { total } = state;
 
-        return total;
-    },
+		return total;
+	},
 
-    getFilter(state: IContexts) {
-        const { filters } = state;
+	getFilter( state: IContexts ) {
+		const { filters } = state;
 
-        return filters;
-    },
+		return filters;
+	},
 
-    getForm(state: IContexts) {
-        const { form } = state;
+	getForm( state: IContexts ) {
+		const { form } = state;
 
-        return form;
-    },
+		return form;
+	},
 };
 
 export default selectors;

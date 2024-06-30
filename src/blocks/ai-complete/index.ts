@@ -21,24 +21,29 @@ import prompt from './prompt';
 import save from './save';
 import json from './block.json';
 import '../../data/store';
+import { __ } from '@wordpress/i18n';
 
 const { name, ...settings } = json;
+const customSettings = {
+	title: __( 'GPT Text Generator', 'article-gen' ),
+};
 
 /**
  * Every block starts by registering a new block type definition.
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
-registerBlockType(name, {
-    ...settings,
+registerBlockType( name, {
+	...settings,
+	...customSettings,
 
-    /**
-     * @see ./prompt.js
-     */
-    edit: prompt,
+	/**
+	 * @see ./prompt.js
+	 */
+	edit: prompt,
 
-    /**
-     * @see ./save.js
-     */
-    save,
-});
+	/**
+	 * @see ./save.js
+	 */
+	save,
+} );

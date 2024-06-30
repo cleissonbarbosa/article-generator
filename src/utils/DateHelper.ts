@@ -6,7 +6,7 @@ import { format, subDays, addDays } from 'date-fns';
  * @return string
  */
 export function getDefaultFormat() {
-    return 'yyyy-MM-dd';
+	return 'yyyy-MM-dd';
 }
 
 /**
@@ -16,8 +16,8 @@ export function getDefaultFormat() {
  *
  * @return {Object} Date
  */
-export function getCurrentDate(viewFormat: string = getDefaultFormat()) {
-    return format(new Date(), viewFormat);
+export function getCurrentDate( viewFormat: string = getDefaultFormat() ) {
+	return format( new Date(), viewFormat );
 }
 
 /**
@@ -27,17 +27,17 @@ export function getCurrentDate(viewFormat: string = getDefaultFormat()) {
  * @param  formation
  * @return string
  */
-export function getFormattedDate(date: Date, formation = getDefaultFormat()) {
-    try {
-        date = new Date(date);
-        return format(date, formation);
-    } catch (error) {
-        // Fix for any fall-back date format.
-        if (typeof date === 'object') {
-            return '';
-        }
-        return date;
-    }
+export function getFormattedDate( date: Date, formation = getDefaultFormat() ) {
+	try {
+		date = new Date( date );
+		return format( date, formation );
+	} catch ( error ) {
+		// Fix for any fall-back date format.
+		if ( typeof date === 'object' ) {
+			return '';
+		}
+		return date;
+	}
 }
 
 /**
@@ -51,19 +51,19 @@ export function getFormattedDate(date: Date, formation = getDefaultFormat()) {
  * @return string
  */
 export function getSubOrAddDaysDate(
-    type: string,
-    days: number,
-    date = new Date(),
-    viewFormat: string = getDefaultFormat()
+	type: string,
+	days: number,
+	date = new Date(),
+	viewFormat: string = getDefaultFormat()
 ): string {
-    date = date === null ? new Date() : date;
-    viewFormat = viewFormat === null ? getDefaultFormat() : viewFormat;
+	date = date === null ? new Date() : date;
+	viewFormat = viewFormat === null ? getDefaultFormat() : viewFormat;
 
-    if (type === 'sub') {
-        return format(subDays(date, days), viewFormat);
-    } else if (type === 'add') {
-        return format(addDays(date, days), viewFormat);
-    }
+	if ( type === 'sub' ) {
+		return format( subDays( date, days ), viewFormat );
+	} else if ( type === 'add' ) {
+		return format( addDays( date, days ), viewFormat );
+	}
 
-    return getCurrentDate();
+	return getCurrentDate();
 }

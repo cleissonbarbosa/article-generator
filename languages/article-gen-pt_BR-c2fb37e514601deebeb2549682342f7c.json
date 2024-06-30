@@ -1,0 +1,37 @@
+{
+	"translation-revision-date": "2023-04-08 15:44+0000",
+	"generator": "Loco https://localise.biz/",
+	"source": "build/blocks/ai-gen-image/index.js",
+	"domain": "article-gen",
+	"locale_data": {
+		"article-gen": {
+			"": {
+				"domain": "article-gen",
+				"lang": "pt_BR",
+				"plural-forms": "nplurals=2; plural=n != 1;"
+			},
+			"-- Select --": [ "-- Selecione --" ],
+			"An error occurred during your request.": [
+				"Ocorreu um erro durante sua solicita\u00e7\u00e3o."
+			],
+			"Creating your image": [ "Criando sua imagem" ],
+			"Describe the image you want to generate": [
+				"Descreva a imagem que deseja gerar"
+			],
+			"Feature under development, will be available soon": [
+				"Recurso em desenvolvimento, estar\u00e1 dispon\u00edvel em breve"
+			],
+			"Generate image": [ "Gerar imagem" ],
+			"Generating image...": [ "Gerando imagem..." ],
+			"GPT Image Generator": [ "Gerador de imagens (GPT)" ],
+			"OpenAI API key not configured": [
+				"Chave de API OpenAI n\u00e3o configurada"
+			],
+			"Please enter a valid prompt": [ "Insira um prompt v\u00e1lido" ],
+			"Select image size": [ "Selecione o tamanho da imagem" ],
+			"Settings": [ "Configura\u00e7\u00f5es" ],
+			"Under development": [ "Em desenvolvimento" ],
+			"Wait...": [ "Aguarde..." ]
+		}
+	}
+}

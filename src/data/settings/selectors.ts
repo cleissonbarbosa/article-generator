@@ -5,36 +5,35 @@
 import { ISettings } from '../../interfaces';
 
 const selectors = {
-    getSettings(state: ISettings) {
-        const { settings } = state;
+	getSettings( state: ISettings ) {
+		const { settings } = state;
 
-        return settings;
-    },
+		return settings;
+	},
 
-    getSettingDetail(state: ISettings) {
-        const { setting } = state;
+	getSettingDetail( state: ISettings ) {
+		const { setting } = state;
 
-        return setting;
-    },
+		return setting;
+	},
 
-    getSettingsSaving(state: ISettings) {
-        const { settingsSaving } = state;
+	getSettingsSaving( state: ISettings ) {
+		const { settingsSaving } = state;
 
-        return settingsSaving;
-    },
+		return settingsSaving;
+	},
 
-    getLoadingSettings(state: ISettings) {
-        const { loadingSettings } = state;
+	getLoadingSettings( state: ISettings ) {
+		const { loadingSettings } = state;
 
-        return loadingSettings;
-    },
+		return loadingSettings;
+	},
 
+	getForm( state: ISettings ) {
+		const { form } = state;
 
-    getForm(state: ISettings) {
-        const { form } = state;
-
-        return form;
-    },
+		return form;
+	},
 };
 
 export default selectors;

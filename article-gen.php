@@ -2,18 +2,22 @@
 
 /**
  * Plugin Name:       Article Generator
- * Description:       test
+ * Description:       Post generator using artificial intelligence (GPT)
+ * Plugin URI:        https://github.com/cleissonbarbosa/article-generator
  * Requires at least: 5.8
- * Requires PHP:      7.4
- * Version:           0.7.0
- * Tested upto:       6.1.1
+ * Requires PHP:      8.0
+ * Version:           ARTICLEGEN_SINCE
+ * Tested upto:       6.2
  * Author:            Cleisson Barbosa<cleissonbarbosa68@gmail.com>
- * License:           GPL-2.0-or-later
- * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+ * Author URI:        https://github.com/cleissonbarbosa
+ * License:           MIT
+ * License URI:       https://github.com/cleissonbarbosa/article-generator/blob/master/LICENSE.txt
  * Text Domain:       article-gen
  */
 
 defined( 'ABSPATH' ) || exit;
+
+use ArticleGen\CBPlugin\Updater\WP_GitHub_Updater;
 
 /**
  * Article_Gen class.
@@ -26,7 +30,7 @@ final class Article_Gen {
      *
      * @var string
      */
-    const VERSION = '0.7.0';
+    const VERSION = 'ARTICLEGEN_SINCE';
 
     /**
      * Plugin slug.
@@ -219,6 +223,35 @@ final class Article_Gen {
         $this->container['contexts'] = new ArticleGen\CBPlugin\Contexts\Manager();
         $this->container['settings'] = new ArticleGen\CBPlugin\Settings\Manager();
     }
+    
+    /**
+     * updater
+     *
+     * @return void
+     */
+    public function updater(){
+        
+        define( 'WP_GITHUB_FORCE_UPDATE', true );
+
+        if ( is_admin() ) { // note the use of is_admin() to double check that this is happening in the admin
+    
+            $config = array(
+                'slug' => plugin_basename( __FILE__ ),
+                'proper_folder_name' => 'article-generator',
+                'api_url' => 'https://api.github.com/repos/cleissonbarbosa/article-generator',
+                'raw_url' => 'https://raw.github.com/cleissonbarbosa/article-generator/master',
+                'github_url' => 'https://github.com/cleissonbarbosa/article-generator',
+                'zip_url' => 'https://github.com/cleissonbarbosa/article-generator/releases/latest/download/article-generator.zip',
+                'sslverify' => true,
+                'requires' => '3.0',
+                'tested' => '6.2',
+                'readme' => 'README.md',
+            );
+    
+            new WP_GitHub_Updater( $config );
+    
+        }
+    }
 
     /**
      * Initialize the hooks.
@@ -230,6 +263,9 @@ final class Article_Gen {
     public function init_hooks() {
         // Init classes
         add_action( 'init', [ $this, 'init_classes' ] );
+
+        // init updater
+        add_action( 'init', [ $this, 'updater' ] );
 
         // Localize our plugin
         add_action( 'init', [ $this, 'localization_setup' ] );
@@ -263,8 +299,10 @@ final class Article_Gen {
 
         // Load the React-pages translations.
         if ( is_admin() ) {
-            // Load wp-script translation for article-generatorenerator-app
-            wp_set_script_translations( 'article-generatorenerator-app', 'article-gen', plugin_dir_path( __FILE__ ) . 'languages/' );
+            // Load wp-script translation
+            wp_set_script_translations( 'article-generator-app', 'article-gen', plugin_dir_path( __FILE__ ) . 'languages/' );
+            wp_set_script_translations( 'ag-create-text-editor-script', 'article-gen', plugin_dir_path( __FILE__ ) . 'languages/' );
+            wp_set_script_translations( 'ag-img-generator-editor-script', 'article-gen', plugin_dir_path( __FILE__ ) . 'languages/' );
         }
     }
 
@@ -307,7 +345,7 @@ final class Article_Gen {
      */
     public function plugin_action_links( $links ) {
         $links[] = '<a href="' . admin_url( 'admin.php?page=article-gen#/settings' ) . '">' . __( 'Settings', 'article-gen' ) . '</a>';
-        $links[] = '<a href="https://github.com/CleissonBarbosa/article-generator#quick-start" target="_blank">' . __( 'Documentation', 'article-gen' ) . '</a>';
+        $links[] = '<a href="https://github.com/cleissonbarbosa/article-generator#quick-start" target="_blank">' . __( 'Documentation', 'article-gen' ) . '</a>';
 
         return $links;
     }

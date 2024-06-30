@@ -14,8 +14,8 @@ import './style/tailwind.css';
 import './style/main.scss';
 
 // Render the App component into the DOM
-const articleGenElement = document.getElementById('article-gen');
+const articleGenElement = document.getElementById( 'article-gen' );
 
-if (articleGenElement) {
-    render(<App />, articleGenElement);
+if ( articleGenElement ) {
+	render( <App />, articleGenElement );
 }

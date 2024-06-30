@@ -21,7 +21,7 @@ class ContextStatus {
      *
      * @since 0.3.0
      */
-    const PUBLISHED = 'published';
+    const AVAILABLE = 'available';
 
     /**
      * Trashed status.
@@ -43,7 +43,7 @@ class ContextStatus {
         }
 
         if ( $context->is_active ) {
-            return self::PUBLISHED;
+            return self::AVAILABLE;
         }
 
         return self::DRAFT;

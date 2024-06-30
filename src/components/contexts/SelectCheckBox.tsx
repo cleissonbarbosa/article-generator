@@ -12,38 +12,38 @@ import SelectListItem from '../page-partials/SelectListItem';
 import SelectedItem from '../page-partials/SelectedItem';
 
 type Props = {
-    checked: number[];
+	checked: number[];
 
-    onChange: (checked: number[]) => void;
+	onChange: ( checked: number[] ) => void;
 };
 
-export default function SelectCheckBox({ checked }: Props) {
-    const [action, setAction] = useState('');
-    const applyActionLoading = false;
+export default function SelectCheckBox( { checked }: Props ) {
+	const [ action, setAction ] = useState( '' );
+	const applyActionLoading = false;
 
-    const handleApplyAction = () => {
-        if (action === '') {
-            toast.warning(__('Please select an action.', 'article-gen'));
-            return;
-        }
+	const handleApplyAction = () => {
+		if ( action === '' ) {
+			toast.warning( __( 'Please select an action.', 'article-gen' ) );
+			return;
+		}
 
-        if (action === 'delete') {
-            //  dispatch(deleteEmailTemplateAction(checked));
-        }
+		if ( action === 'delete' ) {
+			//  dispatch(deleteEmailTemplateAction(checked));
+		}
 
-        // finally clear the action
-        setAction('');
-    };
+		// finally clear the action
+		setAction( '' );
+	};
 
-    return (
-        <div className="bg-white p-3">
-            <SelectListItem
-                action={action}
-                setAction={setAction}
-                applyActionLoading={applyActionLoading}
-                handleApplyAction={handleApplyAction}
-            />
-            <SelectedItem checked={checked} />
-        </div>
-    );
+	return (
+		<div className="bg-white p-3">
+			<SelectListItem
+				action={ action }
+				setAction={ setAction }
+				applyActionLoading={ applyActionLoading }
+				handleApplyAction={ handleApplyAction }
+			/>
+			<SelectedItem checked={ checked } />
+		</div>
+	);
 }

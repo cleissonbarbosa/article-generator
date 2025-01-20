@@ -24,7 +24,7 @@
 	"devDependencies": {
 		"@babel/preset-typescript": "^7.18.6",
 		"@testing-library/jest-dom": "^6.0.0",
-		"@testing-library/react": "^12.1.5",
+		"@testing-library/react": "^16.2.0",
 		"@types/ckeditor__ckeditor5-build-classic": "^29.0.1",
 		"@types/enzyme": "^3.10.12",
 		"@types/jest": "^29.5.2",
